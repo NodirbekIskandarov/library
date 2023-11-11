@@ -1,0 +1,77 @@
+.footer {
+    width: 100%;
+    margin-top: 150px;
+    background-color: var(--3, #454343);
+    padding-top: 68px;
+    padding-bottom: 56px;
+}
+.footerIn {
+    display: flex;
+    justify-content: space-between;
+}
+.footer .logo {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .logo .images {
+    display: flex;
+    margin-right: 10px;
+}
+.footer .logo .images img {
+    width: 44px;
+    height: 44px;
+}
+.footer .logo p {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.footer .footerMenuPart1 {
+    list-style-type: none;
+}
+.footer .footerMenuPart1 li {
+    margin-bottom: 24px;
+}
+.footer .footerMenuPart1 .link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+.footer .addressPart .phoneNumber {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.footer .addressPart p {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.footer .addressPart .phoneNumber img {
+    margin-right: 15px;
+}
+.footer .addressPart .location {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.footer .addressPart .location img {
+    margin-right: 15px;
+}
+.footer .addressPart .location p {
+    width: 138px;
+}
+.footer .addressPart .socialMedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer .addressPart .socialMedia a {
+    width: 24px;
+    height: 24px;
+}
+.footer .addressPart .socialMedia img {
+    width: 100%;
+}

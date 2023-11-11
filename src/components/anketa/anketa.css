@@ -1,0 +1,19 @@
+.anketa {
+    margin-top: 56px;
+}
+.anketa .title {
+    display: flex;
+    align-items: center;
+}
+.anketa .title .titlePart h2 {
+    font-size: 32px;
+}
+.anketa .title .titlePart p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.anketa .formPart {
+    width: 80%;
+    margin: 0 auto;
+}

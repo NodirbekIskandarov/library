@@ -1,0 +1,30 @@
+.results h2 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--font-color, #1F1F1F);
+    margin-top: 150px;
+    margin-bottom: 56px;
+}
+.results .numbers {
+    display: flex;
+    justify-content: space-between;
+}
+.results .numbers .box {
+    width: 31%;
+    background-color: #F8F8F8;
+    border-radius: 35px;
+    padding-top: 36px;
+    padding-bottom: 36px;
+    text-align: center;
+}
+.results .numbers .box p {
+    margin-top: 8px;
+    font-size: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    color: rgba(31, 31, 31, 0.60);
+}
+.results .numbers .box span {
+    color: #E47762;
+    font-size: 32px;
+}

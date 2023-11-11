@@ -1,0 +1,25 @@
+.partners {
+    margin-top: 150px;
+}
+.partners .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+}
+.partners .title .titlePart p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+.partners .title .titlePart h2 {
+    font-size: 32px;
+}
+.partners .carusel {
+    width: 100%;
+    background-color: #F8F8F8;
+    padding-top: 72px;
+    padding-bottom: 152px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-radius: 35px;
+}

@@ -1,0 +1,49 @@
+.contact {
+    margin-top: 150px;
+}
+.contact .titlePart {
+    display: flex;
+    align-items: center;
+}
+.contact .titlePart .title h2 {
+    font-size: 32px;
+}
+.contact .title p {
+    font-size: 18px;
+}
+.contact .inputPart {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 64px;
+}
+.contact .inputPart .singleInput {
+    margin-top: 36px;
+}
+.contact .inputPart .singleInput p{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+.contact .inputPart .singleInput input, .contact .inputPart .singleInput select {
+    width: 580px;
+    border-radius: 12px;
+    border: 1px solid rgba(31, 31, 31, 0.20);
+    padding-left: 18px;
+    padding-top: 22px;
+    padding-bottom: 23px;
+    margin-top: 12px;
+    outline: none;
+}
+.contact .inputPart .inputs button {
+    width: 189px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #55697A;
+    font-size: 16px;
+    padding: 16px 58px;
+    border-radius: 28px;
+    border: none;
+    margin-top: 56px;
+}

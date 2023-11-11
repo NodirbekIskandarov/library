@@ -1,0 +1,30 @@
+.rahbaryat {
+    margin-top: 56px;
+}
+.rahbaryat .title {
+    display: flex;
+    align-items: center;
+}
+.rahbaryat .titlePart h2 {
+    font-size: 32px;
+}
+.rahbaryat .titlePart p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.rahbaryat .rahbarlar {
+    margin-top: 56px;
+}
+.rahbaryat .rahbarlar .box {
+    text-align: center;
+    margin-bottom: 150px;
+}
+.rahbaryat .rahbarlar .box h3 {
+    margin-top: 24px;
+}
+.rahbaryat .rahbarlar .box p {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 12px;
+}

@@ -1,0 +1,45 @@
+.onlineCourse {
+    margin-top: 150px;
+}
+.onlineCourse .box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #454343;
+    border-radius: 35px;
+    padding-left: 56px;
+    padding-top: 47px;
+    padding-right: 36px;
+    padding-bottom: 51px;
+}
+.onlineCourse .box .image {
+    width: 40%;
+}
+.onlineCourse .box .imaage img {
+    width: 100%;
+}
+.onlineCourse .box .textPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 40px;
+}
+.onlineCourse .box .textPart h2 {
+    color: white;
+}
+.onlineCourse .box .textPart p {
+    font-size: 18px;
+    color: white;
+}
+.onlineCourse .box .textPart button {
+    width: 252px;
+    height: 56px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: #454343;
+    border: 1px solid white;
+    border-radius: 28px;
+}

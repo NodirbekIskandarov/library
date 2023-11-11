@@ -1,0 +1,26 @@
+.tarix .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.tarix .main .image {
+    width: 48%;
+}
+.tarix .main .image img {
+    border-radius: 20px;
+    width: 100%;
+}
+.tarix .main .text1 {
+    width: 50%;
+}
+.tarix .main .text1 .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+.tarix .main .text1 .title .titlePart p {
+    margin: 0;
+    padding: 0;
+}

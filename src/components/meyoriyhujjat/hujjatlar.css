@@ -1,0 +1,15 @@
+.hujjatlar {
+    margin-top: 56px;
+}
+.hujjatlar .title {
+    display: flex;
+    align-items: center;
+}
+.hujjatlar .title .titlePart h3 {
+    font-size: 32px;
+}
+.hujjatlar .title .titlePart p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}

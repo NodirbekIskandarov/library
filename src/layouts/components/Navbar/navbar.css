@@ -1,0 +1,45 @@
+.navbar {
+    width: 100%;
+    height: 128px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center!important;
+}
+.navbar .logo .images {
+    display: flex;
+    margin-right: 10px;
+}
+.navbar .logo .images img {
+    width: 44px;
+    height: 44px;
+}
+.navbar .logo p {
+    margin: 0;
+    padding: 0;
+}
+.navbar .search input {
+    width: 359px;
+    border: 1px solid gray;
+    border-radius: 32px;
+    padding: 16px 56px;
+    outline: none;
+    margin-left: 200px;
+}
+.navbar .locale select {
+    border: none;
+}
+.navbar .avatar {
+    width: 48px;
+    height: 48px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}

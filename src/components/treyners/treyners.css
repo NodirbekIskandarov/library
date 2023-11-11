@@ -1,0 +1,57 @@
+.treyners {
+    width: 100%;
+    margin-top: 150px;
+}
+.treyners .title {
+    display: flex;
+    align-items: center;
+}
+.treyners .title .titlePart p {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+.treyners .title .titlePart h2 {
+    font-size: 32px;
+}
+
+.treyners .carusel {
+    width: 100%;
+    margin-top: 56px;
+}
+.treyners .carusel .caruselItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.treyners .carusel .singleCarusel {
+    width: calc(100%/3);
+    position: relative;
+}
+
+.treyners .carusel .singleCarusel .box {
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+}
+.treyners .carusel .singleCarusel .box h3 {
+    margin-top: 16px;
+    font-size: 24px;
+}
+.treyners .carusel .singleCarusel .box p {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+    padding-top: 12px;
+    padding-bottom: 24px;
+}
+.treyners .box .socialMedias {
+    width: 55%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

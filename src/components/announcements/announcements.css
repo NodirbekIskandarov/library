@@ -1,0 +1,32 @@
+.announcements {
+    margin-top: 150px;
+}
+.announcements .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+.announcements .title p {
+    margin: 0;
+    padding: 0;
+}
+.announcements .textPart {
+    width: 100%;
+    margin-top: 24px;
+    background-color: #F8F8F8;
+    border-radius: 25px;
+    padding-left: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.announcements .textPart span {
+    opacity: 0.4;
+    font-size: 18px;
+    font-style: italic;
+}
+.announcements .textPart p {
+    margin-top: 16px;
+    font-size: 18px;
+    color: var(--font-color, #1F1F1F);
+}

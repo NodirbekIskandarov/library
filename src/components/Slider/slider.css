@@ -1,0 +1,39 @@
+.slider {
+    width: 100%;
+}
+.slider .sliderIn {
+    width: 100%;
+    height: 608px;
+    background-image: url('../../assets/images/books.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.slider .sliderIn .blurImage {
+    width: 100%;
+    height: 608px;
+    background-image: url('../../assets/images/Rectangle\ 2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider .sliderIn .blurImage .textPart {
+    width: 50%;
+    text-align: center;
+}
+.slider .sliderIn .blurImage .textPart h2 {
+    color: white;
+}
+.slider .sliderIn .blurImage .textPart button {
+    width: 178px;
+    height: 56px;
+    margin-top: 48px;
+    color: white;
+    border-radius: 28px;
+    border: 2px solid #FFF;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(2px);
+}
