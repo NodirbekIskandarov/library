@@ -1,0 +1,53 @@
+.viloyat .image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 56px;
+    padding-top: 48px;
+    padding-right: 36px;
+    padding-left: 48px;
+    padding-bottom: 48px;
+    background-color: #F8F8F8;
+    border-radius: 35px;
+}
+.viloyat .image .imagePart {
+    width: 30%;
+}
+.viloyat .image .imagePart img {
+    width: 100%;
+}
+.viloyat .image .textPart {
+    width: 65%;
+}
+.viloyat .image .textPart p {
+    font-size: 16px;
+    margin-bottom: 48px;
+}
+.viloyat .image .textPart a {
+    text-decoration: none;
+}
+.viloyat .image .textPart a button {
+    width: 226px;
+    height: 48px;
+    color: white;
+    background-color: #55697A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 24px;
+}
+.viloyat .image .textPart a button img {
+    margin-right: 10px;
+}
+.viloyat .maqsadPart {
+    margin-top: 28px;
+}
+.viloyat .maqsadPart h2 {
+    font-size: 32px;
+}
+.viloyat .maqsadPart p {
+    margin-top: 24px;
+    font-size: 16px;
+}

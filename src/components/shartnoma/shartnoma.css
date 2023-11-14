@@ -1,0 +1,139 @@
+.shartnoma .forms {
+    margin-top: 150px;
+}
+.shartnoma .forms h2 {
+    margin-bottom: 22px;
+}
+.shartnoma .forms label {
+    margin-top: 24px;
+}
+.shartnoma .container2 {
+    width: 70%;
+    margin: 0 auto;
+}
+.shartnoma .container2 .box {
+    margin-top: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.shartnoma .container2 .box .cart {
+    width: 48%;
+    margin-top: 48px;
+}
+.shartnoma .container2 .box .cart p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.shartnoma .container2 .box .cart .item {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ECECEC;
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    margin-top: 12px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+}
+.shartnoma .container2 .tinglovchi {
+    margin-top: 100px;
+    font-size: 32px;
+}
+.shartnoma .container3 {
+    width: 75%;
+    margin: 0 auto;
+}
+.shartnoma .container3 .box2 {
+    width: 100%;
+    background-color: #F8F8F8;
+    border-radius: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 56px;
+    padding-top: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 27px;
+}
+.shartnoma .container3 .box2 .cart {
+    width: 48%;
+    margin-top: 48px;
+}
+.shartnoma .container3 .box2 .cart p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.shartnoma .container3 .box2 .cart .item {
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    margin-top: 12px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+}
+.shartnoma .container3 h2 {
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.shartnoma .container3 button {
+    border: none;
+    background-color: white;
+    color: #55697A;
+    margin-top: 24px;
+}
+.shartnoma .container3 .box3 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.shartnoma .container3 .box3 .cart {
+    width: 48%;
+    margin-top: 26px;
+}
+.shartnoma .container3 .box3 .cart p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+.shartnoma .container3 .box3 .cart .item {
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    padding-top: 16px;
+    padding-right: 24px;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    margin-top: 12px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+}
+.shartnoma .container3 .box3 .saqlash {
+    width: 100%;
+    margin-top: 56px;
+}
+.shartnoma .container3 .box3 .saqlash button {
+    width: 339px;
+    height: 71px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #55697A;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    margin: 0 auto;
+}

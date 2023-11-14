@@ -1,0 +1,75 @@
+.title {
+    display: flex;
+    align-items: center;
+}
+.title .titlePart h3 {
+    font-size: 32px;
+}
+.title .titlePart p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.kurslar .information {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 56px;
+}
+.kurslar .information .box {
+    width: 48%;
+    border-radius: 35px;
+    background-color: #F8F8F8;
+    text-align: center;
+    padding-left: 16px;
+    padding-top: 28px;
+    padding-right: 16px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+.kurslar .information .box h3 {
+    margin-top: 28px;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.kurslar .information .box p {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+.kurslar .information .box .narx {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 56px;
+}
+.kurslar .information .box .narx button {
+    width: 176px;
+    height: 56px;
+    color: white;
+    background-color: #55697A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    border: none;
+}
+.kurslar .information .box .narx .p {
+    display: flex;
+    align-items: center;
+}
+.kurslar .information .box .narx .p p {
+    margin: 0;
+    padding: 0;
+}
+.kurslar .information .box .narx .p span {
+    font-size: 24px;
+    color: #E47762;
+    margin-left: 5px;
+}
+.kurslar .link {
+    text-decoration: none;
+    color: white;
+}

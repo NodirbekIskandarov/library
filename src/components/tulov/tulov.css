@@ -1,0 +1,36 @@
+.tulov .box {
+    width: 100%;
+    border-radius: 35px;
+    padding-top: 156px;
+    padding-left: 36px;
+    padding-right: 36px;
+    margin-top: 56px;
+    background-color: var(--bg, #F8F8F8);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tulov .box .cart {
+    margin-bottom: 56px;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+
+}
+.tulov .box .cart img {
+    margin-left: 20px;
+}
+.tulov .box button {
+    width: 378px;
+    height: 71px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: var(--1, #55697A);
+    border: none;
+    border-radius: 50px;
+    margin-top: 16px;
+    margin-bottom: 36px;
+}

@@ -6,10 +6,10 @@ function Contact() {
   return (
     <div className='contact'>
         <div className='container'>
-            <div className='titlePart'>
+            <div className='title'>
                 <Line/>
-                <div className='title'>
-                    <h2>Bog'lanish</h2>
+                <div className='titlePart'>
+                    <h3>Bog'lanish</h3>
                     <p>O'z ma'lumotlaringizni qoldiring va biz siz bilan bog'lanamiz</p>
                 </div>
             </div>

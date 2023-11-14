@@ -1,0 +1,49 @@
+.ariza .forms {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 56px;
+    padding-top: 150px;
+}
+.ariza .forms .image {
+    width: 50%;
+}
+.ariza .forms .image img {
+    width: 100%;
+}
+.ariza .forms .formPart {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ariza .forms .formPart .cart {
+    width: 100%;
+}
+.ariza .forms .formPart .cart p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.ariza .forms .formPart .cart input {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background-color: #ECECEC;
+    padding-top: 16px;
+    padding-left: 50px;
+    padding-bottom: 16px;
+    margin-top: 12px;
+    margin-bottom: 24px;
+}
+.ariza .forms .formPart button {
+    width: 227px;
+    height: 56px;
+    color: white;
+    background-color: #55697A;
+    border: none;
+    border-radius: 28px;
+    margin: 48px;
+}

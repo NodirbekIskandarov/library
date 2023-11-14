@@ -26,15 +26,15 @@ function Menu() {
                 },
                 {
                     menu: "Fotogalereya",
-                    link: "/"
+                    link: "/galery"
                 },
                 {
                     menu: "Tashkiliy tuzulmalar",
-                    link: "/"
+                    link: "/structures"
                 },
                 {
                     menu: "Tasdiqnoma",
-                    link: "/"
+                    link: "/confirmation"
                 }
             ]
         },
@@ -44,11 +44,11 @@ function Menu() {
             hoverMenu: [
                 {
                     menu: "Onlayn darslar",
-                    link: "/"
+                    link: "/online"
                 },
                 {
                     menu: "Offlayn darslar",
-                    link: "/"
+                    link: "/courses"
                 }
             ]
         },
@@ -58,15 +58,15 @@ function Menu() {
             hoverMenu: [
                 {
                     menu: "Savol-javoblar",
-                    link: "/"
+                    link: "/questions"
                 },
                 {
                     menu: "Online shartnoma berish",
-                    link: "/"
+                    link: "/contract"
                 },
                 {
                     menu: "Online sertifikat olish",
-                    link: "/"
+                    link: "/certificate"
                 }
             ]
         },
@@ -124,7 +124,7 @@ function Menu() {
                 },
                 {
                     menu: "Xorazm viloyati",
-                    link: "/"
+                    link: "/xorazm"
                 },
                 {
                     menu: "Toshkent viloyati",
@@ -134,7 +134,7 @@ function Menu() {
         },
         {
             menu: "Aloqa",
-            link: "/",
+            link: "/contact",
             hoverMenu: []
         }
     ]
@@ -153,7 +153,7 @@ function Menu() {
                                             item.hoverMenu && item.hoverMenu.map((item, index) => {
                                                 return (
                                                     <div className='singleHoverMenu'>
-                                                        <Link className='link' key={index} to={item.link}>{item.menu}</Link>
+                                                        <Link className='link' key={index} state={{name: item.menu}} to={item.link}>{item.menu}</Link>
                                                     </div>
                                                 )
                                             })

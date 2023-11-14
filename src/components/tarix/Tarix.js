@@ -2,9 +2,13 @@ import React from 'react'
 import './tarix.css'
 import Line from '../line/Line'
 import books from '../../assets/images/books-1617327_1280 1.png'
+import { useLocation } from 'react-router-dom'
 function Tarix() {
+    const {state} = useLocation()
+    console.log(state);
   return (
     <div className='tarix'>
+        <h3>{state.name}</h3>
         <div className='container'>
             <div className='main'>
                 <div className='image'>

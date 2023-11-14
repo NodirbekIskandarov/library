@@ -1,0 +1,68 @@
+
+.savollar {
+    width: 60%;
+    margin: 0 auto;
+}
+.savollar .answer {
+    transition: all 0.3s;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    background-color: var(--bg, #F8F8F8);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 16px;
+}
+.savollar .answer h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+.savollar .answer p {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+.savollar .answer.active {
+    height: 130px;
+    opacity: 1;
+}
+.savollar .renderSon {
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 10px 20px 10px 40px;
+}
+.savollar .question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    background-color: var(--1, #55697A);
+    padding-top: 26px;
+    padding-left: 16px;
+    padding-bottom: 26px;
+    padding-right: 16px;
+    border-radius: 15px;
+}
+.savollar .question p {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.savollar .question button {
+    border: none;
+    background: transparent;
+}
+.savollar .question button span {
+    display: inline-block;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.savollar .question button span:hover {
+    transition: 0.4s;
+}

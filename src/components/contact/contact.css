@@ -1,16 +1,6 @@
 .contact {
     margin-top: 150px;
 }
-.contact .titlePart {
-    display: flex;
-    align-items: center;
-}
-.contact .titlePart .title h2 {
-    font-size: 32px;
-}
-.contact .title p {
-    font-size: 18px;
-}
 .contact .inputPart {
     display: flex;
     justify-content: space-between;

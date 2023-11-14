@@ -1,0 +1,46 @@
+.registratsiya .box {
+    width: 70%;
+    margin: 44px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.registratsiya .box .cart {
+    width: 48%;
+    margin-top: 48px;
+}
+.registratsiya .box .cart p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+.registratsiya .box .cart .writing {
+    width: 100%;
+    padding-left: 50px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    border-radius: 5px;
+    background-color: #ECECEC;
+    margin-top: 12px;
+    outline: none;
+}
+.registratsiya .box .sending {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.registratsiya .box .sending button {
+    width: 227px;
+    height: 56px;
+    background-color: var(--1, #55697A);
+    color: white;
+    border: none;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 56px;
+}

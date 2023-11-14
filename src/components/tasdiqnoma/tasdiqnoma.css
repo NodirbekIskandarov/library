@@ -1,0 +1,54 @@
+.tasdiqnoma {
+    margin-top: 56px;
+}
+.tasdiqnoma .title {
+    display: flex;
+    align-items: center;
+}
+.tasdiqnoma .titlePart h3 {
+    font-size: 32px;
+}
+.tasdiqnoma .titlePart p {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.tasdiqnoma .text {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+}
+.tasdiqnoma .textPart {
+    width: 781px;
+}
+.tasdiqnoma .textPart p {
+    font-size: 16px;
+}
+.tasdiqnoma .filePart {
+    width: 379px;
+    text-align: center;
+}
+/* .tasdiqnoma .filePart img {
+    width: 100%;
+} */
+.tasdiqnoma .filePart h3 {
+    font-size: 24px;
+    margin-top: 24px;
+}
+.tasdiqnoma .filePart button {
+    width: 232px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #55697A;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 24px;
+    margin-top: 16px;
+    margin: 16px auto;
+}
+.tasdiqnoma .filePart button img {
+    width: 30px;
+}

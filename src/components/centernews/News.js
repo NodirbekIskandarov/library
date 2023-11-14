@@ -21,27 +21,27 @@ function News() {
                     <Carousel.Item className="caruselItem">
                         <div className='singleCarusel'>
                             <div className='box'>
-                                <img src={img1} alt="girl img"/>
+                                <img src={img1} alt="girl img" className='img'/>
                                 <h3>Kutubxona yangilik1</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur. Amet risus egestas nibh sed rutrum mi. Nulla faucibus blandit pharetra nisl in. Turpis nibh ipsum nunc enim dictum sed viverra. Suspendisse augue volutpat lacinia lorem sed sem egestas. Amet.</p>
                             </div>
-                            <button>Batafsil</button>
+                            <button className='btn'>Batafsil</button>
                         </div>
                         <div className='singleCarusel'>
                             <div className='box'>
-                                <img src={img2} alt="girl img"/>
+                                <img src={img2} alt="girl img" className='img'/>
                                 <h3>Kutubxona yangilik1</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur. Amet risus egestas nibh sed rutrum mi. Nulla faucibus blandit pharetra nisl in. Turpis nibh ipsum nunc enim dictum sed viverra. Suspendisse augue volutpat lacinia lorem sed sem egestas. Amet.</p>
                             </div>
-                            <button>Batafsil</button>
+                            <button className="btn">Batafsil</button>
                         </div>
                         <div className='singleCarusel'>
                             <div className='box'>
-                                <img src={img3} alt="girl img"/>
+                                <img src={img3} alt="girl img" className='img'/>
                                 <h3>Kutubxona yangilik1</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur. Amet risus egestas nibh sed rutrum mi. Nulla faucibus blandit pharetra nisl in. Turpis nibh ipsum nunc enim dictum sed viverra. Suspendisse augue volutpat lacinia lorem sed sem egestas. Amet.</p>
                             </div>
-                            <button>Batafsil</button>
+                            <button className='btn'>Batafsil</button>
                         </div>
                     </Carousel.Item>
                 </Carousel>

@@ -4,6 +4,7 @@
     background-color: #454343;
     padding-top: 56px;
     padding-bottom: 123px;
+    position: relative;
 }
 .news .title {
     display: flex;
@@ -28,36 +29,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
 }
 .news .carusel .singleCarusel {
     width: calc(100%/3);
-    height: 525px;
-    position: relative;
+    /* height: 525px; */
+    /* position: relative; */
 }
-.news .carusel .singleCarusel button {
+.news .carusel .singleCarusel .btn{
     width: 176px;
     height: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
     background-color: #454343;
     border: 1px solid white;
     border-radius: 25px; 
-    position: absolute;
-    bottom: 0; 
-    left: 130px;  
-    z-index: 9;
+    margin-left: 29.2%;   
+    position: relative;
+    margin-top: -7%;
+    /* margin-bottom: 10%; */
 }
 .news .carusel .singleCarusel .box {
     width: 90%;
+    height: 500px;
     margin: 0 auto;
     border: 1px solid white;
     border-radius: 20px;
     padding: 24px;
 }
 .news .carusel .singleCarusel .box h3 {
-    margin-top: 16px;
+    /* margin-top: 16px; */
     color: white;
     font-size: 24px;
 }
@@ -65,4 +65,7 @@
     color: white;
     margin-top: 12px;
     font-size: 16px;
+}
+.news .box .img{
+    width: 100%;
 }

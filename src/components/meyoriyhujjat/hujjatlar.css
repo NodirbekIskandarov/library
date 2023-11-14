@@ -13,3 +13,31 @@
     margin: 0;
     padding: 0;
 }
+.hujjatlar .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.hujjatlar .cart {
+    background-color: #55697A;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    margin-top: 56px;
+    height: 106px;
+    width: 600px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.hujjatlar .box p {
+    color: white;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.hujjatlar .link {
+    text-decoration: none;
+}

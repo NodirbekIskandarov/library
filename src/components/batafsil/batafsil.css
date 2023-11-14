@@ -1,0 +1,88 @@
+.batafsil .box {
+    margin-top: 56px;
+    display: flex;
+    justify-content: space-between;
+}
+.batafsil .box .imagePart {
+    width: 50%;
+}
+.batafsil .box .imagePart img {
+    width: 100%;
+}
+.batafsil .box .cart {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.batafsil .box .cart h2 {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+    margin-bottom: 37px;
+}
+.batafsil .box .cart .group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+.batafsil .box .cart p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+.batafsil .box .cart .group .second {
+    font-weight: 700;
+    color: #1F1F1F;
+}
+.batafsil .box .cart .time {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.batafsil .box .cart img {
+    margin-right: 10px;
+}
+.batafsil .box .cart .time .second {
+    font-weight: 700;
+    margin-left: 10px;
+}
+.batafsil .box .cart .buttonPart {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 94px;
+}
+.batafsil .box .cart .buttonPart .link {
+    text-decoration: none;
+}
+.batafsil .box .cart .buttonPart button {
+    width: 209px;
+    height: 56px;
+    color: white;
+    background-color: #55697A;
+    border: none;
+    border-radius: 28px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.batafsil .box .cart .buttonPart p {
+    color: orange;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+}
+.batafsil .box .cart .buttonPart p span {
+    color: black;
+    font-size: 14px;
+    margin-right: 10px;
+}
+.batafsil .plan h4 {
+    margin-top: 24px;
+    font-size: 16px;
+}
+.batafsil .plan h2 {
+    font-size: 32px;
+    margin-top: 150px;
+}

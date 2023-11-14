@@ -36,7 +36,7 @@ function Selection() {
                             <p>Lorem ipsum dolor sit amet consectetur. Enim risus aliquam elit risus amet.</p>
                         </div>
                     </div>
-                    <button><Link className='link' to="/anketa">Ro'yhatdan o'tish</Link></button>
+                    <Link className='link' to="/registration"><button>Ro'yhatdan o'tish</button></Link>
                 </div>
                 <div className='imagePart'>
                     <img src={girl} alt='girl'/>
