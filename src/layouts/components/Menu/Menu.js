@@ -1,10 +1,16 @@
 import React from 'react'
 import './menu.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
+// import i18n from '../../../i18n'
 function Menu() {
+    // const { t, i18n } = useTranslation();
+    // const changeLanguage = (til) => {
+    //     i18n.changeLanguage(til)
+    //   }
     const data = [
         {
-            menu: "Asosiy menyu",
+            menu: "Asosiy sahifa",
             link: "/",
             hoverMenu: []
         },
@@ -141,6 +147,11 @@ function Menu() {
   return (
     <div className='menu'>
         <div className='container'>
+        {/* <select>
+                    <option onClick={() => changeLanguage("uz")}>UZ</option>
+                    <option onClick={() => changeLanguage("ru")}>RU</option>
+                </select>
+            <p>{t("H1")}</p> */}
             <div className='mainMenuList'>
                 {
                     data && data.map((item, index) => {

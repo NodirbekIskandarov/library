@@ -4,11 +4,19 @@ import "./onlinedars.css";
 import img from "../../assets/images/undraw_data_points_re_vkpq.png";
 import group from "../../assets/images/Group 2.png";
 import clock from "../../assets/images/Time Circle 6.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 function Onlinedars() {
+  const { state } = useLocation();
+
   return (
     <div className="onlayndars">
       <div className="container">
+      <div className="locationOfPage">
+          <p>O'quv kurslari</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
         <div className="title">
           <Line />
           <div className="titlePart">

@@ -2,7 +2,8 @@ import React from 'react'
 import './hujjatlar.css'
 import Line from '../line/Line'
 import right from '../../assets/images/Right 2.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 function Hujjatlar() {
     const data = [
         {
@@ -42,9 +43,16 @@ function Hujjatlar() {
             link: "/documents"
         }
     ]
+  const { state } = useLocation();
+
   return (
     <div className='hujjatlar'>
         <div className='container'>
+        <div className="locationOfPage">
+          <p>Markaz haqida</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>

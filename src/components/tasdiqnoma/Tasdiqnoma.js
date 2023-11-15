@@ -3,10 +3,19 @@ import "./tasdiqnoma.css";
 import Line from "../line/Line";
 import fayl from "../../assets/images/Rectangle 39.png";
 import download from "../../assets/images/Download.png";
+import { useLocation } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 function Tasdiqnoma() {
+  const { state } = useLocation();
+
   return (
     <div className="tasdiqnoma">
       <div className="container">
+      <div className="locationOfPage">
+          <p>Markaz haqida</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
         <div className="title">
           <Line />
           <div className="titlePart">

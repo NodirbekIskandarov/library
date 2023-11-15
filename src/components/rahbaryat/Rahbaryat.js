@@ -5,6 +5,8 @@ import man from '../../assets/images/Ellipse 8 (1).png'
 import clock from '../../assets/images/Time Circle 6.png'
 import phone from '../../assets/images/Calling 1 2.png'
 import gmail from '../../assets/images/Message 36.png'
+import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useLocation } from 'react-router-dom'
 function Rahbaryat() {
     const data = [
         {
@@ -56,9 +58,16 @@ function Rahbaryat() {
             gmail: "kutubxonachi@gmail.com"
         }
     ]
+  const { state } = useLocation();
+
   return (
     <div className='rahbaryat'>
         <div className='container'>
+        <div className="locationOfPage">
+          <p>Markaz haqida</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>

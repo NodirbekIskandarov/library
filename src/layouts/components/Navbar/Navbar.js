@@ -3,7 +3,12 @@ import vector1 from '../../../assets/images/Vector (1).svg'
 import vector from '../../../assets/images/Vector.svg'
 import avatar from '../../../assets/images/eyeglasses_FILL0_wght400_GRAD0_opsz24 1.svg'
 import './navbar.css'
+import { useTranslation } from 'react-i18next'
 function Navbar() {
+    const {t, i18n} = useTranslation();
+    const changeLanguage = (til) => {
+        i18n.changeLanguage(til)
+      }
   return (
     <div className='navbar'>
         <div className='container'>
@@ -22,8 +27,8 @@ function Navbar() {
             </label>
             <div className='locale'>
                 <select>
-                    <option>UZ</option>
-                    <option>RU</option>
+                    <option onClick={() => changeLanguage("uz")}>UZ</option>
+                    <option onClick={() => changeLanguage("ru")}>RU</option>
                 </select>
             </div>
             <div className='avatar'>

@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import Line from "../line/Line";
 import "./shartnoma.css";
+import { useLocation } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 function Shartnoma() {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const { state } = useLocation();
+
   return (
     <div className="shartnoma">
       <div className="container">
+      <div className="locationOfPage">
+          <p>Interaktiv xizmatlar</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
         <div className="title">
           <Line />
           <div className="titlePart">

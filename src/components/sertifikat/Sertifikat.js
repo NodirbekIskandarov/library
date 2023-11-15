@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import Line from "../line/Line";
 import "./sertifikat.css";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 function Sertifikat() {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const { state } = useLocation();
+
   return (
     <div className="sertifikat">
       <div className="container">
+      <div className="locationOfPage">
+          <p>Interaktiv xizmatlar</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
         <div className="title">
           <Line />
           <div className="titlePart">

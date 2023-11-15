@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./savollar.css";
 import right from '../../assets/images/Right 2.png'
 import down from '../../assets/images/Down 2.png'
+import { useLocation } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 function Savollar() {
   const [questionIndex, setQuestionIndex] = useState(0);
 
@@ -27,8 +29,10 @@ function Savollar() {
         "Lorem ipsum dolor sit amet consectetur. Venenatis faucibus porttitor in sapien. Semper a quis blandit volutpat sodales. Tristique quis orci cum vitae bibendum diam fusce. Eget sed iaculis blandit proin ac morbi. Cras et accumsan orci dui urna amet vitae. Purus pretium dictum tellus faucibus dui enim. Odio quisque tellus phasellus faucibus pharetra. Sed mauris risus at praesent nulla odio.",
     },
   ];
+
   return (
     <div className="savollar">
+     
       {data &&
         data.map((item, index) => {
           return (

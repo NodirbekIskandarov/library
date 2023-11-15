@@ -24,3 +24,13 @@
     margin: 0;
     padding: 0;
 }
+.locationOfPage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 57px;
+}
+.locationOfPage p {
+    margin: 0;
+    padding: 0;
+}

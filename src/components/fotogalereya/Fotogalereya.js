@@ -6,6 +6,8 @@ import img4 from "../../assets/images/fotogalereya4.png";
 import img5 from "../../assets/images/fotogalereya5.png";
 import img6 from "../../assets/images/fotogalereya6.png";
 import Line from "../line/Line";
+import { useLocation } from "react-router-dom";
+import { MdKeyboardArrowRight } from "react-icons/md";
 function Fotogalereya() {
   const data = [
     {
@@ -51,9 +53,16 @@ function Fotogalereya() {
       btn: "Batafsil",
     },
   ];
+  const { state } = useLocation();
+
   return (
     <div className="fotogalereya">
       <div className="container">
+      <div className="locationOfPage">
+          <p>Markaz haqida</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
         <div className="title">
           <Line />
           <div className="titlePart">

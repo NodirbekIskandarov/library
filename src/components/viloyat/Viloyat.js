@@ -3,10 +3,19 @@ import './viloyat.css'
 import Line from '../line/Line'
 import logo from '../../assets/images/logo1 1.png'
 import website from '../../assets/images/Website.png'
+import { useLocation } from 'react-router-dom'
+import { MdKeyboardArrowRight } from 'react-icons/md'
 function Viloyat() {
+  const { state } = useLocation();
+
   return (
     <div className='viloyat'>
         <div className='container'>
+        <div className="locationOfPage">
+          <p>Monitoring</p>
+          <MdKeyboardArrowRight />
+          <p>{state.name}</p>
+        </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>

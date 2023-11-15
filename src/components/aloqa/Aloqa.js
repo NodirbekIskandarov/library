@@ -6,6 +6,9 @@ function Aloqa() {
   return (
     <div className='aloqa'>
         <div className='container'>
+        <div className="locationOfPage">
+          <p>Aloqa</p>
+        </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
