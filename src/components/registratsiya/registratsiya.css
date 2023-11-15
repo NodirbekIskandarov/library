@@ -10,6 +10,20 @@
     width: 48%;
     margin-top: 48px;
 }
+.registratsiya .box .cart .cart2 {
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background-color: #ECECEC;
+    padding-left: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+}
+.registratsiya .box .cart .cart2 img {
+    margin-right: 10px;
+}
 .registratsiya .box .cart p {
     margin: 0;
     padding: 0;
@@ -18,14 +32,8 @@
 }
 .registratsiya .box .cart .writing {
     width: 100%;
-    padding-left: 50px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    padding-right: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.20);
-    border-radius: 5px;
     background-color: #ECECEC;
-    margin-top: 12px;
+    border: none;
     outline: none;
 }
 .registratsiya .box .sending {
@@ -43,4 +51,31 @@
     font-size: 16px;
     font-weight: 600;
     margin-top: 56px;
+}
+.uploading[type=file] {
+    display: none;
+}
+.uploadImg {
+    width: 76px;
+    height: 56px;
+    float: right;
+    background-color: var(--1, #55697A);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background-color: #ECECEC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+}
+.upload span {
+    font-size: 16px;
+    opacity: 0.4;
+    color: var(--3, #454343);
 }
