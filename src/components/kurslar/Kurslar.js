@@ -8,6 +8,7 @@ import img4 from '../../assets/images/undraw_profile_data_re_v81r.png'
 import clock from '../../assets/images/Time Circle 6.png'
 import { Link, useLocation } from 'react-router-dom'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useTranslation } from 'react-i18next'
 function Kurslar() {
     const data = [
         {
@@ -40,20 +41,20 @@ function Kurslar() {
         }
     ]
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className='kurslar'>
         <div className='container'>
         <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>Kurslar</h3>
-                    <p>An’anaviy ta’lim yo’nalishidagi kurslar</p>
+                    <h3>{t("kurslar")}</h3>
+                    <p>{t("ananaviy_talim_yonalishidagi_kurslar")}</p>
                 </div>
             </div>
             <div className='information'>

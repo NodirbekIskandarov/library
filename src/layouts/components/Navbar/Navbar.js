@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import vector1 from '../../../assets/images/Vector (1).svg'
 import vector from '../../../assets/images/Vector.svg'
 import avatar from '../../../assets/images/eyeglasses_FILL0_wght400_GRAD0_opsz24 1.svg'
 import './navbar.css'
 import { useTranslation } from 'react-i18next'
 function Navbar() {
+    const [lang, setLang] = useState("uz")
     const {t, i18n} = useTranslation();
-    const changeLanguage = (til) => {
-        i18n.changeLanguage(til)
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng)
+      }
+
+    const changedFunc = (props) => {
+        i18n.changeLanguage(props)
       }
   return (
     <div className='navbar'>
@@ -26,9 +31,9 @@ function Navbar() {
                 <input type='search' placeholder='qidirish'/>
             </label>
             <div className='locale'>
-                <select>
-                    <option onClick={() => changeLanguage("uz")}>UZ</option>
-                    <option onClick={() => changeLanguage("ru")}>RU</option>
+                <select onChange={(e) => changedFunc(e.target.value)}>
+                    <option value="uz">UZ</option>
+                    <option value="ru">RU</option>
                 </select>
             </div>
             <div className='avatar'>

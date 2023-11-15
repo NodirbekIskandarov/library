@@ -3,28 +3,27 @@ import Line from "../line/Line";
 import "./sertifikat.css";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 function Sertifikat() {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className="sertifikat">
       <div className="container">
       <div className="locationOfPage">
-          <p>Interaktiv xizmatlar</p>
+          <p>{t("oqish_uchun_shartnomani_online_amalga_oshiring")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Online sertifikat olish</h3>
-            <p>
-              Ma’lumotlaringizni taqdim eting va sertifikatingizni online qabul
-              qiling
+            <h3>{t("online_sertifikat_olish")}</h3>
+            <p>{t("malumotlaringizni_taqdim_eting_va_sertifikatingizni_online_qabul_qiling")}
             </p>
           </div>
         </div>

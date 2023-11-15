@@ -2,15 +2,17 @@ import React from 'react'
 import './contact.css'
 import books from '../../assets/images/casual-life-3d-stack-of-books-mockup 1.png'
 import Line from '../line/Line'
+import { useTranslation } from 'react-i18next'
 function Contact() {
+    const { t } = useTranslation()
   return (
     <div className='contact'>
         <div className='container'>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>Bog'lanish</h3>
-                    <p>O'z ma'lumotlaringizni qoldiring va biz siz bilan bog'lanamiz</p>
+                    <h3>{t("boglanish")}</h3>
+                    <p>{t("oz_malumotlaringizni_qoldiring_va_biz_siz_bilan_boglanamiz")}</p>
                 </div>
             </div>
             <div className='inputPart'>
@@ -30,7 +32,7 @@ function Contact() {
                             <option>Bakalavr</option>
                         </select>
                     </div>
-                    <button>Jo'natish</button>
+                    <button>{t("jonatish")}</button>
                 </div>
                 <div className='image'>
                     <img src={books} alt='books'/>

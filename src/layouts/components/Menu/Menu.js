@@ -2,82 +2,78 @@ import React from 'react'
 import './menu.css'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-// import i18n from '../../../i18n'
 function Menu() {
-    // const { t, i18n } = useTranslation();
-    // const changeLanguage = (til) => {
-    //     i18n.changeLanguage(til)
-    //   }
+    const { t } = useTranslation();
     const data = [
         {
-            menu: "Asosiy sahifa",
+            menu: t("asosiy_sahifa"),
             link: "/",
             hoverMenu: []
         },
         {
-            menu: "Markaz haqida",
+            menu: t("markaz_haqida"),
             link: "/",
             hoverMenu: [
                 {
-                    menu: "Tarix",
+                    menu: t("tarix"),
                     link: "/history"
                 },
                 {
-                    menu: "Raxbariyat",
+                    menu: t("raxbariyat"),
                     link: "/managment"
                 },
                 {
-                    menu: "Me'yoriy hujjatlar",
+                    menu: t("meyoriy_hujjatlar"),
                     link: "/regulatory"
                 },
                 {
-                    menu: "Fotogalereya",
+                    menu: t("fotogalereya"),
                     link: "/galery"
                 },
                 {
-                    menu: "Tashkiliy tuzulmalar",
+                    menu: t("tashkiliy_tuzilmalar"),
                     link: "/structures"
                 },
                 {
-                    menu: "Tasdiqnoma",
+                    menu: t("tasdiqnoma"),
                     link: "/confirmation"
                 }
             ]
         },
         {
-            menu: "O'quv kurslari",
+            menu: t("oquv_kurslari"),
             link: "/",
             hoverMenu: [
                 {
-                    menu: "Onlayn darslar",
+                    menu: t("onlayn_darslar"),
                     link: "/online"
                 },
                 {
-                    menu: "Offlayn darslar",
+                    menu: t("offlayn_darslar"),
                     link: "/courses"
                 }
             ]
         },
         {
-            menu: "Interaktiv xizmatlar",
+            menu: t("interaktiv_xizmatlar"),
             link: "/",
             hoverMenu: [
                 {
-                    menu: "Savol-javoblar",
+                    menu: t("savol_javoblar"),
                     link: "/questions"
                 },
                 {
-                    menu: "Online shartnoma berish",
+                    menu: t("online_shartnoma_berish"),
                     link: "/contract"
                 },
                 {
-                    menu: "Online sertifikat olish",
+                    menu: t("online_sertifikat_berish"),
                     link: "/certificate"
                 }
             ]
         },
         {
-            menu: "Monitoring",
+            menu: t("monitoring"),
             link: "/",
             hoverMenu: [
                 {
@@ -139,7 +135,7 @@ function Menu() {
             ]
         },
         {
-            menu: "Aloqa",
+            menu: t("aloqa"),
             link: "/contact",
             hoverMenu: []
         }
@@ -147,11 +143,6 @@ function Menu() {
   return (
     <div className='menu'>
         <div className='container'>
-        {/* <select>
-                    <option onClick={() => changeLanguage("uz")}>UZ</option>
-                    <option onClick={() => changeLanguage("ru")}>RU</option>
-                </select>
-            <p>{t("H1")}</p> */}
             <div className='mainMenuList'>
                 {
                     data && data.map((item, index) => {

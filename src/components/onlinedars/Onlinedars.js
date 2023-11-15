@@ -6,22 +6,23 @@ import group from "../../assets/images/Group 2.png";
 import clock from "../../assets/images/Time Circle 6.png";
 import { Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 function Onlinedars() {
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className="onlayndars">
       <div className="container">
       <div className="locationOfPage">
-          <p>O'quv kurslari</p>
+          <p>{t("oquv_kurslari")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Kurs xaqida</h3>
-            <p>Kurs xaqida batafsil ma’lumot</p>
+            <h3>{t("kurs_xaqida")}</h3>
+            <p>{t("kurs_xaqida_batafsil_malumot")}</p>
           </div>
         </div>
         <div className="box">
@@ -29,31 +30,30 @@ function Onlinedars() {
             <img src={img} alt="image" />
           </div>
           <div className="cart">
-            <h2>
-              АXBOROT-KUTUBXONA MUASSASALARI TIZIMINI RIVOJLANTIRISH ASOSLARI
+            <h2>{t("axborot_kutubxona_muassasalari_tizimini_rivojlantirish_asoslari")}
             </h2>
             <div className="group">
               <p className="first">
                 <img src={group} alt="group" />
-                Tinglovchilar kontingenti:
+                {t("tinglovchilar_kontingenti")}
               </p>
               <p className="second">
-                Аxborot-kutubxona muassasalari rahbar hamda xodimlari{" "}
+                {t("axborot_kutubxona_muassasalari_rahbar_hamda_xodimlari")}
               </p>
             </div>
             <div className="time">
               <p className="first">
                 <img src={clock} alt="clock" />
-                Kurs davomiyligi:
+                {t("kurs_davomiyligi")}
               </p>
-              <p className="second"> 5 kun (40 soat)</p>
+              <p className="second"> 5 {t("kun")} (40 {t("soat")})</p>
             </div>
             <div className="buttonPart">
               <Link className="link" to="/applicationforonline">
-                <button>Kursga yozilish</button>
+                <button>{t("kursga_yozilish")}</button>
               </Link>
               <p>
-                <span>Narx: </span> 300 000 UZS
+                <span>{t("narx")} </span> 300 000 UZS
               </p>
             </div>
           </div>

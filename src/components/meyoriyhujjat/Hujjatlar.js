@@ -4,6 +4,7 @@ import Line from '../line/Line'
 import right from '../../assets/images/Right 2.png'
 import { Link, useLocation } from 'react-router-dom'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { useTranslation } from 'react-i18next'
 function Hujjatlar() {
     const data = [
         {
@@ -44,20 +45,20 @@ function Hujjatlar() {
         }
     ]
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className='hujjatlar'>
         <div className='container'>
         <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>Axborot-kutubxona faoliyatiga oid me'yoriy-huquqiy hujjatlar</h3>
-                    <p>Huquqiy me’yoriy xujjatlar</p>
+                    <h3>{t("axborot_kutubxona_faoliyatiga_oid_hujjatlar")}</h3>
+                    <p>{t("huquqiy_meyoriy_hujjatlar")}</p>
                 </div>
             </div>
             <div className='box'>

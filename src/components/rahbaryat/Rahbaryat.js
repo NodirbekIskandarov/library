@@ -7,6 +7,7 @@ import phone from '../../assets/images/Calling 1 2.png'
 import gmail from '../../assets/images/Message 36.png'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 function Rahbaryat() {
     const data = [
         {
@@ -59,20 +60,20 @@ function Rahbaryat() {
         }
     ]
   const { state } = useLocation();
-
+    const { t } = useTranslation() 
   return (
     <div className='rahbaryat'>
         <div className='container'>
         <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h2>Rahbariyat</h2>
-                    <p>Bizning rahbarlarimiz</p>
+                    <h2>{t("raxbariyat")}</h2>
+                    <p>{t("bizning_rahbarlarimiz")}</p>
                 </div>
             </div>
             <div className='row rahbarlar'>

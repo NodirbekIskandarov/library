@@ -21,7 +21,9 @@ import Questions from "./pages/questions/Questions";
 import Registration from "./pages/registration/Registration";
 import Galery from "./pages/galery/Galery";
 import Index from "./layouts/components/Index";
+import './i18n'
 function App() {
+  
   return (
     <div>
       <BrowserRouter>

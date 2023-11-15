@@ -5,22 +5,23 @@ import fayl from "../../assets/images/Rectangle 39.png";
 import download from "../../assets/images/Download.png";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 function Tasdiqnoma() {
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className="tasdiqnoma">
       <div className="container">
       <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Tasdiqnoma</h3>
-            <p>Kutubxonamiz yuridik jihatdan tashkil topishi xaqida</p>
+            <h3>{t("tasdiqnoma")}</h3>
+            <p>{t("kutubxonamiz_yuridik_jihatdan_tashkil_topishi_xaqida")}</p>
           </div>
         </div>
         <div className="text">

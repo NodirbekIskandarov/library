@@ -9,7 +9,9 @@ import instagram from '../../../assets/images/instagram-fill.png'
 import facebook from '../../../assets/images/facebook-circle-fill.png'
 import youtube from '../../../assets/images/youtube-fill 1.png'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 function Footer() {
+  const { t } = useTranslation()
   return (
     <div className='footer'>
       <div className='container'>
@@ -22,14 +24,14 @@ function Footer() {
             <p>RESPUBLIKA AXBOROT-KUTUBXONA MARKAZI</p>
           </div>
           <ul className='footerMenuPart1'>
-            <li><Link className='link' to='/'>Asosiy menyu</Link></li>
-            <li><Link className='link' to='/'>Markaz haqida</Link></li>
-            <li><Link className='link' to='/'>O'quv kurslari</Link></li>
+            <li><Link className='link' to='/'>{t("asosiy_sahifa")}</Link></li>
+            <li><Link className='link' to='/'>{t("markaz_haqida")}</Link></li>
+            <li><Link className='link' to='/'>{t("oquv_kurslari")}</Link></li>
           </ul>
           <ul className='footerMenuPart1'>
-            <li><Link className='link' to='/'>Interaktiv xizmatlar</Link></li>
-            <li><Link className='link' to='/'>Monitoring</Link></li>
-            <li><Link className='link' to='/'>Aloqa</Link></li>
+            <li><Link className='link' to='/'>{t("interaktiv_xizmatlar")}</Link></li>
+            <li><Link className='link' to='/'>{t("monitoring")}</Link></li>
+            <li><Link className='link' to='/'>{t("aloqa")}</Link></li>
           </ul>
           <div className='addressPart'>
             <div className='phoneNumber'>

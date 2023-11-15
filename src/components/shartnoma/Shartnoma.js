@@ -3,26 +3,27 @@ import Line from "../line/Line";
 import "./shartnoma.css";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 function Shartnoma() {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
   const { state } = useLocation();
-
+const { t } = useTranslation()
   return (
     <div className="shartnoma">
       <div className="container">
       <div className="locationOfPage">
-          <p>Interaktiv xizmatlar</p>
+          <p>{t("interaktiv_xizmatlar")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Online shartnoma</h3>
-            <p>O’qish uchun shartnomani online amalga oshiring</p>
+            <h3>{t("online_shartnoma")}</h3>
+            <p>{t("oqish_uchun_shartnomani_online_amalga_oshiring")}</p>
           </div>
         </div>
         <div className="container2">

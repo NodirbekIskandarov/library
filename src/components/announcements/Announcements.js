@@ -1,15 +1,17 @@
 import React from 'react'
 import './announcements.css'
 import Line from '../line/Line'
+import { useTranslation } from 'react-i18next'
 function Announcements() {
+    const { t } = useTranslation()
   return (
     <div className='announcements'>
         <div className='container'>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>E'lonlar</h3>
-                    <p>Yangi e'lonlar</p>
+                    <h3>{t("elonlar")}</h3>
+                    <p>{t("yangi_elonlar")}</p>
                 </div>
             </div>
             <div className='textPart'>

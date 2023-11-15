@@ -7,7 +7,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import aoka from '../../assets/images/aoka_logo.png'
 import tatu from '../../assets/images/W73eM8T-hn5cLRoa_rQWKshn3eUutXvm.png'
 import logot from '../../assets/images/logot.png'
+import { useTranslation } from "react-i18next";
 function Partners() {
+  const {t} = useTranslation()
   const settings = {
     dots: true,
     infinite: true,
@@ -21,9 +23,8 @@ function Partners() {
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h2>BIZNING HAMKORLAR</h2>
-            <p>
-              Ziyo ulashishimizda bizni doyimo qo’llab quvvatlovchi tashkilotlar
+            <h2>{t("bizning_hamkorlar")}</h2>
+            <p>{t("ziyo_ulashishimizda_bizni_doimo_qollab_quvvatlovchi_tashkilotlar")}
             </p>
           </div>
         </div>

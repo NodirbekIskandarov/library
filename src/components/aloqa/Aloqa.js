@@ -2,18 +2,20 @@ import React from 'react'
 import './aloqa.css'
 import Line from '../line/Line'
 import location from '../../assets/images/Ellipse 16.png'
+import { useTranslation } from 'react-i18next'
 function Aloqa() {
+    const { t } = useTranslation()
   return (
     <div className='aloqa'>
         <div className='container'>
         <div className="locationOfPage">
-          <p>Aloqa</p>
+          <p>{t("aloqa")}</p>
         </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>Biz bilan bo'g'lanish</h3>
-                    <p>Bizning aloqa uchun ma'lumotlarimiz</p>
+                    <h3>{t("biz_bilan_boglanish")}</h3>
+                    <p>{t("biz_bilan_boglanish")}</p>
                 </div>
             </div>
             <div className='contacts'>

@@ -8,16 +8,17 @@ import img3 from "../../assets/images/Ellipse 10.png";
 import telegram from "../../assets/images/telegram-fill (1).png";
 import instagram from "../../assets/images/instagram-fill (1).png";
 import facebook from "../../assets/images/facebook-circle-fill (1).png";
+import { useTranslation } from "react-i18next";
 function Treyners() {
+  const { t } = useTranslation()
   return (
     <div className="treyners">
       <div className="container">
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h2>BIZNING TRENERLAR</h2>
-            <p>
-              Darslar o’z ishining mutaxassislari tomonidan tashkillashtiriladi
+            <h2>{t("bizning_trenerlar")}</h2>
+            <p>{t("darslar_oz_ishining_mutaxassislari_tomonidan_tashkillashtiriladi")}
             </p>
           </div>
         </div>

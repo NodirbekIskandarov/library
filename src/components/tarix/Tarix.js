@@ -4,13 +4,15 @@ import Line from "../line/Line";
 import books from "../../assets/images/books-1617327_1280 1.png";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 function Tarix() {
+    const { t } = useTranslation()
   const { state } = useLocation();
   return (
     <div className="tarix">
       <div className="container">
         <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
@@ -22,8 +24,8 @@ function Tarix() {
             <div className="title">
               <Line />
               <div className="titlePart">
-                <h2>Markaz tarixi</h2>
-                <p>Markazimiz tarizi haqidagi ma'lumotlar</p>
+                <h2>{t("markaz_tarixi")}</h2>
+                <p>{t("markazimiz_tarixi_haqidagi_malumotlar")}</p>
               </div>
             </div>
             <p>

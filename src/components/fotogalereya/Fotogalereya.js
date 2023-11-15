@@ -8,6 +8,7 @@ import img6 from "../../assets/images/fotogalereya6.png";
 import Line from "../line/Line";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useTranslation } from "react-i18next";
 function Fotogalereya() {
   const data = [
     {
@@ -15,59 +16,53 @@ function Fotogalereya() {
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
     {
       img: img2,
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
     {
       img: img3,
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
     {
       img: img4,
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
     {
       img: img5,
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
     {
       img: img6,
       title: "Tadbir nomi",
       date: "12.04.2023",
       text: "Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.Lorem ipsum dolor sit amet consectetur. At interdum tincidunt mattis dictum luctus dolor eget dictum sit. Habitant.",
-      btn: "Batafsil",
     },
   ];
   const { state } = useLocation();
-
+  const { t } = useTranslation() 
   return (
     <div className="fotogalereya">
       <div className="container">
       <div className="locationOfPage">
-          <p>Markaz haqida</p>
+          <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
         </div>
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Fotogalereya</h3>
-            <p>Tadbirlardan estalik suratlar</p>
+            <h3>{t("fotogalereya")}</h3>
+            <p>{t("tadbirlardan_estalik_suratlar")}</p>
           </div>
         </div>
         <div className="row justify-content-between holidays">
@@ -80,7 +75,7 @@ function Fotogalereya() {
                   <h5>{item.date}</h5>
                   <p> {item.text}</p>
                   <button>
-                    <p>{item.btn}</p>
+                    <p>{t("batafsil")}</p>
                   </button>
                 </div>
               </div>
