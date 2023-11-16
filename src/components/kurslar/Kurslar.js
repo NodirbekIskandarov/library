@@ -67,9 +67,9 @@ const { t } = useTranslation()
                                 <p>{item.text}</p>
                                 <p><img src={clock} alt='clock'/> {item.time}</p>
                                 <div className='narx'>
-                                <Link className='link' to="/batafsil"><button>Batafsil</button></Link>
+                                <Link className='link' to="/batafsil"><button>{t("batafsil")}</button></Link>
                                     <div className='p'>
-                                        <p>Narx:</p> <span>{item.prise}</span>
+                                        <p>{t("narx")}</p> <span>{item.prise}</span>
                                     </div>
                                 </div>
                             </div>

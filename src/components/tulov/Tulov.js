@@ -4,19 +4,21 @@ import "./tulov.css";
 import click from "../../assets/images/click-white 1.png";
 import payme from "../../assets/images/logo_01.png";
 import uzum from "../../assets/images/article-original.png";
+import { useTranslation } from "react-i18next";
 function Tulov() {
   const [selectedOption, setSelectedOption] = useState("");
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+  const { t } = useTranslation()
   return (
     <div className="tulov">
       <div className="container">
         <div className="title">
           <Line />
           <div className="titlePart">
-            <h3>Kursni sotib olish uchun to’lovni amalga oshiring</h3>
-            <p>Online kursni sotib olish uchun to’lovni amalga oshiring</p>
+            <h3>{t("kursni_sotib_olish_uchun_tolovni_amalga_oshiring")}</h3>
+            <p>{t("online_kursni_sotib_olish_uchun_tolovni_amalga_oshiring")}</p>
           </div>
         </div>
         <div className="box">
@@ -53,7 +55,7 @@ function Tulov() {
               <img src={uzum} alt="uzum" />
             </label>
           </div>
-          <button>Davom etish</button>
+          <button>{t("davom_etish")}</button>
         </div>
       </div>
     </div>

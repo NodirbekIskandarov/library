@@ -20,23 +20,32 @@
 .ariza .forms .formPart .cart {
     width: 100%;
 }
-.ariza .forms .formPart .cart p {
+.forms .formPart .cart p {
     margin: 0;
     padding: 0;
     font-size: 16px;
     font-weight: 500;
 }
-.ariza .forms .formPart .cart input {
+.forms .formPart .cart input {
     width: 100%;
-    border-radius: 5px;
     outline: none;
+    border: none;
+    background-color: #ECECEC;
+
+}
+.forms .formPart .cart .cart2 {
+    display: flex;
+    border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background-color: #ECECEC;
     padding-top: 16px;
-    padding-left: 50px;
+    padding-left: 16px;
     padding-bottom: 16px;
     margin-top: 12px;
     margin-bottom: 24px;
+}
+.forms .formPart .cart .cart2 img {
+    margin-right: 10px;
 }
 .ariza .forms .formPart button {
     width: 227px;

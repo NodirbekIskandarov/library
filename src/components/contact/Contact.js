@@ -18,15 +18,15 @@ function Contact() {
             <div className='inputPart'>
                 <div className='inputs'>
                     <div className='singleInput'>
-                        <p>F.I.SH</p>
-                        <input type='text' placeholder='Ism Sharif'/>
+                        <p>{t("f_i_o")}</p>
+                        <input type='text' placeholder={t("ism_sharif")}/>
                     </div>
                     <div className='singleInput'>
-                        <p>Telefon raqam</p>
+                        <p>{t("telefon_raqam")}</p>
                         <input type='text' placeholder='+998'/>
                     </div>
                     <div className='singleInput'>
-                        <p>Ma'lumotingiz</p>
+                        <p>{t("malumotlaringiz")}</p>
                         <select>
                             <option disabled>Ma'lumot</option>
                             <option>Bakalavr</option>

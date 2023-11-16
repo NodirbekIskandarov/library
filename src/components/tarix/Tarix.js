@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./tarix.css";
 import Line from "../line/Line";
 import books from "../../assets/images/books-1617327_1280 1.png";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { BASE_URL, HISTORY } from "../../tools/urls";
 function Tarix() {
-    const { t } = useTranslation()
+  const { t } = useTranslation()
   const { state } = useLocation();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  let lang = JSON.parse(localStorage.getItem("lang"))
+  console.log(lang)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/${HISTORY}`);
+        setData(response.data.translations);
+        console.log(data)
+        // console.log(response.data.translations)
+        // if (lang === 'ru'){
+        //   setData(response.data.translations.ru)
+        //   console.log(data)
+        // }
+        // else setData(response.data.translations.uz)
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
   return (
     <div className="tarix">
       <div className="container">
@@ -24,10 +55,12 @@ function Tarix() {
             <div className="title">
               <Line />
               <div className="titlePart">
-                <h2>{t("markaz_tarixi")}</h2>
-                <p>{t("markazimiz_tarixi_haqidagi_malumotlar")}</p>
+                <div>{lang==="ru" ? (<h2>{data.ru.title}</h2>) : (<h2>{data.uz.title}</h2>)}</div>
+                <div>{lang==="ru" ? (<p>{data.ru.subtitle}</p>) : (<p>{data.uz.subtitle}</p>)}</div>
               </div>
             </div>
+            {/* {lang==="ru" ? (<p>{data.ru.body}</p>) : (<p>{data.uz.body}</p>)} */}
+
             <p>
               Lorem ipsum dolor sit amet consectetur. Ipsum sollicitudin egestas
               posuere a. Nisl est commodo adipiscing donec et tellus eu facilisi
