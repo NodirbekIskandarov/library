@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Line from '../line/Line'
 import './showhujjat.css'
 import img from '../../assets/images/Rectangle 39.png'
@@ -6,37 +6,65 @@ import right from '../../assets/images/Right 1.png'
 import download from '../../assets/images/Download.png'
 import { useTranslation } from 'react-i18next'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL, DOCUMENTS_ID } from '../../tools/urls'
 function Showhujjat() {
-    const data = [
-        {
-            img: img,
-            name: "Xujjat nomi"
-        },
-        {
-            img: img,
-            name: "Xujjat nomi"
-        },
-        {
-            img: img,
-            name: "Xujjat nomi"
-        },
-        {
-            img: img,
-            name: "Xujjat nomi"
-        },
-        {
-            img: img,
-            name: "Xujjat nomi"
-        },
-        {
-            img: img,
-            name: "Xujjat nomi"
-        }
-    ]
+    // const data = [
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     },
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     },
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     },
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     },
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     },
+    //     {
+    //         img: img,
+    //         name: "Xujjat nomi"
+    //     }
+    // ]
   const { state } = useLocation();
 
     const  { t } = useTranslation()
+    const pk = useParams()
+
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    let lang = JSON.parse(localStorage.getItem("lang"))
+    console.log(lang)
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`${BASE_URL}/${DOCUMENTS_ID}/${pk.id}`);
+          setData(response.data);
+          console.log(response.data)
+        } catch (error) {
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchData();
+    }, []);
+  
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className='showhujjat'>
         <div className='container'>
@@ -57,11 +85,13 @@ function Showhujjat() {
                     data.map((item, index) => {
                         return (
                             <div key={index} className='cart'>
-                                <img src={item.img} alt={item.name}/>
-                                <p>{item.name}</p>
-                                <button><img src={download} alt="download"/>PDF da yuklab olish</button>
+                                <img src={img} alt="rasm"/>
+                                {lang==="ru" ? (<p>{item.translations.ru.name}</p>) : (<p>{item.translations.uz.name}</p>)}
+                                {/* <button onClick={() =>lang==="ru" ? handleDownload(item.translations.ru.file) : handleDownload(item.translations.uz.file)}><img src={download} alt="download"/>PDF da yuklab olish</button> */}
+                                <a className='button' href={lang==="ru" ? item.translations.ru.file : item.translations.uz.file} target='_blank'><img src={download} alt="download"/>PDF da yuklab olish</a>
                                 <br/>
-                                <a href='/'> Manba <img src={right} alt="right"/></a>
+                                <br/>
+                                <a href={item.url}> Manba <img src={right} alt="right"/></a>
                             </div>
                         )
                     })

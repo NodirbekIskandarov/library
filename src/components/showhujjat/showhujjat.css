@@ -14,7 +14,9 @@
     font-size: 24px;
     margin-top: 24px;
 }
-.showhujjat .box .cart button {
+.showhujjat .box .cart .button {
+    text-decoration: none;
+    padding: 12px 24px;
     width: 232px;
     height: 48px;
     border: none;
@@ -22,9 +24,8 @@
     color: white;
     background-color: #55697A;
     font-size: 16px;
-    margin-bottom: 16px;
 }
-.showhujjat .box .cart button img {
+.showhujjat .box .cart .button img {
     margin-right: 10px;
 }
 .showhujjat .box .cart a {

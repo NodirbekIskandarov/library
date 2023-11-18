@@ -2,7 +2,7 @@
     "asosiy_sahifa": "Главная страница",
     "markaz_haqida": "О центре",
     "tarix": "История",
-    "raxbariyat": "Лидерство",
+    "raxbariyat": "Руководство",
     "meyoriy_hujjatlar": "Нормативные документы",
     "fotogalereya": "Фотогалерея",
     "tashkiliy_tuzilmalar": "Организационные структуры",
@@ -35,7 +35,7 @@
     "boglanish": "СВЯЗАТЬСЯ С НАМИ",
     "oz_malumotlaringizni_qoldiring_va_biz_siz_bilan_boglanamiz": "Оставьте свои данные и мы свяжемся с вами",
     "jonatish": "Отправить",
-    "bizning_rahbarlarimiz": "Наши лидеры",
+    "bizning_rahbarlarimiz": "Наше руководство",
     "axborot_kutubxona_faoliyatiga_oid_hujjatlar": "Нормативно-правовые документы, связанные с информационно-библиотечной деятельностью",
     "huquqiy_meyoriy_hujjatlar": "Правовые нормы",
     "tadbirlardan_estalik_suratlar": "Памятные фотографии с мероприятий",
@@ -76,7 +76,11 @@
     "tolov_qilish": "Оплата",
     "kursni_sotib_olish_uchun_tolovni_amalga_oshiring": "Оплатите покупку курса",
     "online_kursni_sotib_olish_uchun_tolovni_amalga_oshiring": "Оплатите покупку онлайн-курса",
-    "davom_etish": "Продолжать"
+    "davom_etish": "Продолжать",
+    "kurs_haqida": "О курсе",
+    "kurs_haqida_batafsil_malumot": "Подробная информация о курсе",
+    "ariza_berish": "Подавать заявление",
+    "tinglovchi_kontingenti": "Контингент аудитории"
 
 
 

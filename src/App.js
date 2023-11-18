@@ -37,11 +37,11 @@ function App() {
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path={`/batafsil/:id`} element={<Detail />} />
             <Route path="/xorazm" element={<Region />} />
             <Route path="/contract" element={<Contract />} />
             <Route path="/certificate" element={<Certificate />} />
-            <Route path="/documents" element={<Aboutdocuments />} />
-            <Route path="/batafsil" element={<Detail />} />
+            <Route path={`/documents/:id`} element={<Aboutdocuments />} />
             <Route path="/application" element={<Application />} />
             <Route path="/online" element={<Online />} />
             <Route

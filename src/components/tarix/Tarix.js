@@ -21,12 +21,6 @@ function Tarix() {
         const response = await axios.get(`${BASE_URL}/${HISTORY}`);
         setData(response.data.translations);
         console.log(data)
-        // console.log(response.data.translations)
-        // if (lang === 'ru'){
-        //   setData(response.data.translations.ru)
-        //   console.log(data)
-        // }
-        // else setData(response.data.translations.uz)
       } catch (error) {
         setError(error);
       } finally {
