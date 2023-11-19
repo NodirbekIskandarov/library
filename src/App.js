@@ -22,6 +22,7 @@ import Registration from "./pages/registration/Registration";
 import Galery from "./pages/galery/Galery";
 import Index from "./layouts/components/Index";
 import './i18n'
+import Onlinecourses from "./pages/onlinecourses/Onlinecourses";
 function App() {
   
   return (
@@ -43,7 +44,7 @@ function App() {
             <Route path="/certificate" element={<Certificate />} />
             <Route path={`/documents/:id`} element={<Aboutdocuments />} />
             <Route path="/application" element={<Application />} />
-            <Route path="/online" element={<Online />} />
+            <Route path="/online" element={<Onlinecourses />} />
             <Route
               path="/applicationforonline"
               element={<Applicationforonline />}
