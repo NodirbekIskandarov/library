@@ -88,8 +88,8 @@ const [data, setData] = useState(null);
                         return (
                             <div key={index} className='box'>
                                 <img src={item.image} alt="image"/>
-                                {lang==="ru" ? (<h3>{item.translations.ru.name}</h3>) : (<h3>{item.translations.uz.name}</h3>)}
-                                {lang==="ru" ? (<p>{item.translations.ru.sub_name}</p>) : (<p>{item.translations.uz.sub_name}</p>)}
+                                {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
+                                {lang==="uz" ? (<p>{item.translations.uz.sub_name}</p>) : (<p>{item.translations.ru.sub_name}</p>)}
                                 <p><img src={clock} alt='clock'/> {lang==="ru" ? (<span>{item.translations.ru.duration}</span>) : (<span>{item.translations.uz.duration}</span>)}</p>
                                 <div className='narx'>
                                 <Link className='link' to={`/batafsil/${item.id}`}><button>{t("batafsil")}</button></Link>

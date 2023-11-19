@@ -50,15 +50,15 @@ function Batafsil() {
                     <img src={data.image} alt='image'/>
                 </div>
                 <div className='cart'>
-                    {lang==="ru" ? (<h2>{data.translations.ru.name}</h2>) : (<h2>{data.translations.uz.name}</h2>)}
+                    {lang==="uz" ? (<h2>{data.translations.uz.name}</h2>) : (<h2>{data.translations.ru.name}</h2>)}
                     <div className='group'>
                         <p className='first'><img src={group} alt='group'/>{t("tinglovchi_kontingenti")}:</p>
                         {/* <p className='second'>Аxborot-kutubxona muassasalari rahbar hamda xodimlari </p> */}
-                        {lang==="ru" ? (<p className='second'>{data.translations.ru.sub_name}</p>) : (<p className='second'>{data.translations.uz.sub_name}</p>)}
+                        {lang==="uz" ? (<p className='second'>{data.translations.uz.sub_name}</p>) : (<p className='second'>{data.translations.ru.sub_name}</p>)}
                     </div>
                     <div className='time'>
                         <p className='first'><img src={clock} alt="clock"/>{t("kurs_davomiyligi")}</p>
-                        {lang==="ru" ? (<p className='second'>{data.translations.ru.duration}</p>) : (<p className='second'>{data.translations.uz.duration}</p>)}
+                        {lang==="uz" ? (<p className='second'>{data.translations.uz.duration}</p>) : (<p className='second'>{data.translations.ru.duration}</p>)}
                     </div>
                     <div className='buttonPart'>
                         <Link className='link' to="/application"><button>{t("ariza_berish")}</button></Link>
@@ -67,7 +67,7 @@ function Batafsil() {
                 </div>
             </div>
             <div className='plan'>
-                {lang==="ru" ? (<p>{data.translations.ru.description}</p>) : (<p>{data.translations.uz.description}</p>)}
+                {lang==="uz" ? (<p>{data.translations.uz.description}</p>) : (<p>{data.translations.ru.description}</p>)}
                 {/* <h2>Kurs rejasi</h2>
                 <h4>1. UMUMIY TAYYORGARLIK</h4>
                 <p>- Аxborot-kutubxona faoliyatiga oid Oʼzbekiston Respublika qonunlari, Prizident farmonlari, qarorlari va farmoyishlari, Vazirlar Mahkamasining qarorlari farmoyishlari, boshqa vakolatli orgalarning normativ-huquqiy xujjatlari.  </p>

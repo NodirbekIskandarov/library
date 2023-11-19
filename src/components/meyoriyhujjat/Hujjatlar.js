@@ -92,7 +92,7 @@ const [data, setData] = useState(null);
                         return (
                             <Link className='link' to={`/documents/${item.id}`}>
                                 <div key={index} className='cart'>
-                                    {lang==="ru" ? (<p>{item.translations.ru.name}</p>) : (<p>{item.translations.uz.name}</p>)}
+                                    {lang==="uz" ? (<p>{item.translations.uz.name}</p>) : (<p>{item.translations.ru.name}</p>)}
                                     <img src={right} alt="toright"/>
                                 </div>
                             </Link>

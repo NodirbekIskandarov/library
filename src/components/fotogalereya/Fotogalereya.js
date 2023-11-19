@@ -100,9 +100,9 @@ function Fotogalereya() {
               <div className=" col-4 bigbox">
                 <div className="box" key={index}>
                   <img src={item.image} className="img" />
-                  {lang==="ru" ? (<h3>{item.translations.ru.name}</h3>) : (<h3>{item.translations.uz.name}</h3>)}
+                  {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
                   <h5>{item.created}</h5>
-                  {lang==="ru" ? (<p>{item.translations.ru.description}</p>) : (<p>{item.translations.uz.description}</p>)}
+                  {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
                   <button>
                     <p>{t("batafsil")}</p>
                   </button>

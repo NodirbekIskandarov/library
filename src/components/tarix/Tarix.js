@@ -49,8 +49,8 @@ function Tarix() {
             <div className="title">
               <Line />
               <div className="titlePart">
-                <div>{lang==="ru" ? (<h2>{data.ru.title}</h2>) : (<h2>{data.uz.title}</h2>)}</div>
-                <div>{lang==="ru" ? (<p>{data.ru.subtitle}</p>) : (<p>{data.uz.subtitle}</p>)}</div>
+                <div>{lang==="uz" ? (<h2>{data.uz.title}</h2>) : (<h2>{data.ru.title}</h2>)}</div>
+                <div>{lang==="uz" ? (<p>{data.uz.subtitle}</p>) : (<p>{data.ru.subtitle}</p>)}</div>
               </div>
             </div>
             {/* {lang==="ru" ? (<p>{data.ru.body}</p>) : (<p>{data.uz.body}</p>)} */}

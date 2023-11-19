@@ -53,11 +53,11 @@ const [data, setData] = useState(null);
         </div>
         <div className="text">
           <div className="textPart">
-            {lang==="ru" ? (<p>{data.translations.ru.body}</p>) : (<p>{data.translations.uz.body}</p>)}
+            {lang==="uz" ? (<p>{data.translations.uz.body}</p>) : (<p>{data.translations.ru.body}</p>)}
           </div>
           <div className="filePart">
             <img src={fayl} alt="file" />
-            {lang==="ru" ? (<p>{data.translations.ru.title}</p>) : (<p>{data.translations.uz.title}</p>)}
+            {lang==="uz" ? (<p>{data.translations.uz.title}</p>) : (<p>{data.translations.ru.title}</p>)}
             <button>
               <img src={download} alt="down" /> PDF da yuklab olish
             </button>

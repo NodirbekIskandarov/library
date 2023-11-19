@@ -107,8 +107,8 @@ function Rahbaryat() {
                         return (
                             <div className='col-4 box' key={index}>
                                 <img src={item.image} alt="rasm"/>
-                                {lang==="ru" ? (<h3>{item.translations.ru.full_name}</h3>) : (<h3>{item.translations.uz.full_name}</h3>)}
-                                {lang==="ru" ? (<p>{item.translations.ru.about}</p>) : (<p>{item.translations.uz.about}</p>)}
+                                {lang==="uz" ? (<h3>{item.translations.uz.full_name}</h3>) : (<h3>{item.translations.ru.full_name}</h3>)}
+                                {lang==="uz" ? (<p>{item.translations.uz.about}</p>) : (<p>{item.translations.ru.about}</p>)}
                                 <p><img src={clock} alt='clock'/> {item.work_time}</p>
                                 <p><img src={phone} alt='phone'/> {item.phone}</p>
                                 <p><img src={gmail} alt='gmail'/> {item.email}</p>

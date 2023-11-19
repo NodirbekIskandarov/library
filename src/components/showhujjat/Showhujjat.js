@@ -86,9 +86,9 @@ function Showhujjat() {
                         return (
                             <div key={index} className='cart'>
                                 <img src={img} alt="rasm"/>
-                                {lang==="ru" ? (<p>{item.translations.ru.name}</p>) : (<p>{item.translations.uz.name}</p>)}
+                                {lang==="uz" ? (<p>{item.translations.uz.name}</p>) : (<p>{item.translations.ru.name}</p>)}
                                 {/* <button onClick={() =>lang==="ru" ? handleDownload(item.translations.ru.file) : handleDownload(item.translations.uz.file)}><img src={download} alt="download"/>PDF da yuklab olish</button> */}
-                                <a className='button' href={lang==="ru" ? item.translations.ru.file : item.translations.uz.file} target='_blank'><img src={download} alt="download"/>PDF da yuklab olish</a>
+                                <a className='button' href={lang==="uz" ? item.translations.uz.file : item.translations.ru.file} target='_blank'><img src={download} alt="download"/>PDF da yuklab olish</a>
                                 <br/>
                                 <br/>
                                 <a href={item.url}> Manba <img src={right} alt="right"/></a>
