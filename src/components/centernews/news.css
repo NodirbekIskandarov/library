@@ -1,3 +1,5 @@
+/* 
+
 .news {
     width: 100%;
     margin-top: 150px;
@@ -6,37 +8,103 @@
     padding-bottom: 123px;
     position: relative;
 }
-.news .title {
+ .news .title {
     display: flex;
     align-items: center;
     margin-bottom: 56px;
 }
-.news .titlePart h2 {
+ .news .titlePart h2 {
     color: white;
     font-size: 32px;
 }
-.news .titlePart p {
+ .news .titlePart p {
     margin: 0;
     padding: 0;
     color: white;
     font-size: 18px;
 }
-.news .carusel {
+ .news .carusel {
     width: 100%;
 }
-.news .carusel .caruselItem {
+ .news .carusel .caruselItem {
     width: 100%;
+    margin-bottom: 50px;
+}
+ .news .carusel .singleCarusel {
+    width: calc(100%/3);
+}
+ .news .carusel .caruselItem .btn{
+    width: 176px;
+    height: 56px;
+    color: white;
+    background-color: #454343;
+    border: 1px solid white;
+    border-radius: 25px; 
+    margin-left: 29.2%;   
+    position: relative;
+    margin-top: -7%;
+}
+.news .box {
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+}
+ .news .carusel .singleCarusel .box h3 {
+    color: white;
+    font-size: 24px;
+}
+ .news .carusel .singleCarusel .box p {
+    color: white;
+    margin-top: 12px;
+    font-size: 16px;
+}
+ .news .box .img{
+    width: 100%;
+} */
+
+.news {
+    width: 100%;
+    margin-top: 150px;
+    background-color: #454343;
+    padding-top: 56px;
+    padding-bottom: 123px;
+    position: relative;
+}
+ .news .title {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+}
+ .news .titlePart h2 {
+    color: white;
+    font-size: 32px;
+}
+ .news .titlePart p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 18px;
+}
+ .news .carusel {
+    width: 100%;
+}
+ .news .carusel .caruselItem {
+    width: 100%;
+    /* display: flex; */
+    /* justify-content: column; */
     align-items: center;
     margin-bottom: 50px;
 }
-.news .carusel .singleCarusel {
+ .news .carusel .singleCarusel {
     width: calc(100%/3);
     /* height: 525px; */
     /* position: relative; */
 }
-.news .carusel .singleCarusel .btn{
+ .news .carusel .caruselItem .btn{
     width: 176px;
     height: 56px;
     color: white;
@@ -48,24 +116,74 @@
     margin-top: -7%;
     /* margin-bottom: 10%; */
 }
-.news .carusel .singleCarusel .box {
+.news .box {
     width: 90%;
     height: 500px;
     margin: 0 auto;
     border: 1px solid white;
     border-radius: 20px;
     padding: 24px;
+    color: white;
 }
-.news .carusel .singleCarusel .box h3 {
+ .news .carusel .singleCarusel .box h3 {
     /* margin-top: 16px; */
     color: white;
     font-size: 24px;
 }
-.news .carusel .singleCarusel .box p {
+ .news .carusel .singleCarusel .box p {
     color: white;
     margin-top: 12px;
     font-size: 16px;
 }
-.news .box .img{
+ .news .box .img{
     width: 100%;
 }
+.news .slick-slider .slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  content: '';
+}
+.news .slick-slider .slick-dots li  button {
+    width: 8px;
+    height: 8px;
+    /* background-color: #fff; */
+    content: '';
+    color: none;
+}
+.news .slick-dots li.slick-active button::before {
+    opacity: none;
+    color: none;
+    width: 20px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    content: '';
+  }
+.news .slick-slider .slick-dots li.slick-active{
+    width: 20px;
+    height: 9px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+  .news .slick-slider .slick-dots li button::before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    content: '';
+    text-align: center;
+    color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

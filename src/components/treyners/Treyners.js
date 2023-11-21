@@ -1,16 +1,74 @@
-import React from "react";
+
 import "./treyners.css";
 import Line from "../line/Line";
-import Carousel from "react-bootstrap/Carousel";
-import img1 from "../../assets/images/Ellipse 8.png";
-import img2 from "../../assets/images/Ellipse 9.png";
-import img3 from "../../assets/images/Ellipse 10.png";
 import telegram from "../../assets/images/telegram-fill (1).png";
 import instagram from "../../assets/images/instagram-fill (1).png";
 import facebook from "../../assets/images/facebook-circle-fill (1).png";
 import { useTranslation } from "react-i18next";
+import Slider from "react-slick";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { BASE_URL, LANDING } from "../../tools/urls";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none", background: "red" }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "none" }}
+      onClick={onClick}
+    />
+  );
+}
+
 function Treyners() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  let lang = JSON.parse(localStorage.getItem("lang"));
+  console.log(lang);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/${LANDING}`);
+        setData(response.data.treners);
+        console.log(response.treners);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    // autoplay: true,
+    autoplaySpeed: 2000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
   return (
     <div className="treyners">
       <div className="container">
@@ -18,69 +76,43 @@ function Treyners() {
           <Line />
           <div className="titlePart">
             <h2>{t("bizning_trenerlar")}</h2>
-            <p>{t("darslar_oz_ishining_mutaxassislari_tomonidan_tashkillashtiriladi")}
+            <p>
+              {t(
+                "darslar_oz_ishining_mutaxassislari_tomonidan_tashkillashtiriladi"
+              )}
             </p>
           </div>
         </div>
         <div className="carusel">
-          <Carousel>
-            <Carousel.Item className="caruselItem">
-              <div className="singleCarusel">
-                <div className="box">
-                  <img src={img1} alt="girl img" />
-                  <h3>Razzoqova Muxlisa</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. At interdum
-                    tincidunt mattis dictum luctus dolor eget dictum sit.
-                    Habitant.
-                  </p>
-                  <div className="socialMedias">
-                    <a href="/">
-                      <img src={telegram} alt="tg" />
-                    </a>
-                    <a href="/"><img src={instagram} alt="insta"/></a>
-                  <a href="/"><img src={facebook} alt="facebook"/></a>
+          <Slider {...settings}>
+            {data &&
+              data.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <div className="caruselItem">
+                      <div className="box">
+                        <img src={item.image} alt="image" className="img" />
+                        {lang === "uz" ? (
+                          <h3>{item.translations.uz.full_name}</h3>
+                        ) : (
+                          <h3>{item.translations.ru.full_name}</h3>
+                        )}
+                        {lang === "uz" ? (
+                          <p>{item.translations.uz.about}</p>
+                        ) : (
+                          <p>{item.translations.ru.about}</p>
+                        )}
+                        <div className="socials">
+                          <a href={item.telegram}><img src={telegram} alt="social"/></a>
+                          <a href={item.instagram}><img src={instagram} alt="social"/></a>
+                          <a href={item.facebook}><img src={facebook} alt="social"/></a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="singleCarusel">
-                <div className="box">
-                  <img src={img2} alt="girl img" />
-                  <h3>Razzoqova Muxlisa</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. At interdum
-                    tincidunt mattis dictum luctus dolor eget dictum sit.
-                    Habitant.
-                  </p>
-                  <div className="socialMedias">
-                    <a href="/">
-                      <img src={telegram} alt="tg" />
-                    </a>
-                    <a href="/"><img src={instagram} alt="insta"/></a>
-                  <a href="/"><img src={facebook} alt="facebook"/></a>
-                  </div>
-                </div>
-              </div>
-              <div className="singleCarusel">
-                <div className="box">
-                  <img src={img3} alt="girl img" />
-                  <h3>Razzoqova Muxlisa</h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. At interdum
-                    tincidunt mattis dictum luctus dolor eget dictum sit.
-                    Habitant.
-                  </p>
-                  <div className="socialMedias">
-                    <a href="/">
-                      <img src={telegram} alt="tg" />
-                    </a>
-                    <a href="/"><img src={instagram} alt="insta"/></a>
-                  <a href="/"><img src={facebook} alt="facebook"/></a>
-                  </div>
-                </div>
-              </div>
-            </Carousel.Item>
-          </Carousel>
+                );
+              })}
+          </Slider>
         </div>
       </div>
     </div>

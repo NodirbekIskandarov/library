@@ -1,9 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './announcements.css'
 import Line from '../line/Line'
 import { useTranslation } from 'react-i18next'
+import { BASE_URL, LANDING } from '../../tools/urls'
+import axios from 'axios'
 function Announcements() {
     const { t } = useTranslation()
+
+    const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  let lang = JSON.parse(localStorage.getItem("lang"))
+  console.log(lang)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/${LANDING}`);
+        setData(response.data.elon);
+        console.log(response.data)
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
   return (
     <div className='announcements'>
         <div className='container'>
@@ -14,17 +40,18 @@ function Announcements() {
                     <p>{t("yangi_elonlar")}</p>
                 </div>
             </div>
-            <div className='textPart'>
-                <span>31.12.2023</span>
-                <p>Lorem ipsum dolor sit amet consectetur. Posuere enim proin facilisis sagittis convallis ultrices auctor. Faucibus pellentesque in ac sit velit. Mauris neque vestibulum adipiscing mi odio. Turpis cras ipsum purus neque. Nibh augue pretium leo donec netus.</p>
-            </div>
-            <div className='textPart'>
-                <span>31.12.2023</span>
-                <p>Lorem ipsum dolor sit amet consectetur. Posuere enim proin facilisis sagittis convallis ultrices auctor. Faucibus pellentesque in ac sit velit. Mauris neque vestibulum adipiscing mi odio. Turpis cras ipsum purus neque. Nibh augue pretium leo donec netus.</p>
-            </div>
-            <div className='textPart'>
-                <span>31.12.2023</span>
-                <p>Lorem ipsum dolor sit amet consectetur. Posuere enim proin facilisis sagittis convallis ultrices auctor. Faucibus pellentesque in ac sit velit. Mauris neque vestibulum adipiscing mi odio. Turpis cras ipsum purus neque. Nibh augue pretium leo donec netus.</p>
+            <div>
+                {
+                    data && data.map((item, index) => {
+                        return  (
+                            <div className='textPart'>
+                                <span>sana</span>
+                                {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
+                            </div>
+
+                        )
+                    })
+                }
             </div>
         </div>
     </div>
