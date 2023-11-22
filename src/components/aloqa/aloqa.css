@@ -31,3 +31,52 @@
 .aloqa .contacts .nomerlar p img {
     margin-right: 10px;
 }
+
+/* RESPONSIVE */
+@media (min-width: 0px) and (max-width:570px){
+    .container{
+        width: 100%;
+    }
+    .aloqa{
+        width: 100%;
+        margin-top: 42px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .aloqa .title{        
+        width: 100%;
+        text-align: left;
+    }
+    .aloqa .titlePart{
+        width: 100%;
+    }
+    .aloqa .titlePart h3{
+        width: 100%;
+        font-size: 24px !important;
+    }
+    .aloqa .titlePart p{
+        font-size: 16px !important;
+        width: 100%;
+    }
+    .aloqa .contacts{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .aloqa .xarita{
+        width: 470px !important;
+    }
+    .aloqa .xarita .map{
+        width: 100%;
+    }
+    .aloqa .nomerlar{
+        width: 100% !important;
+        display: flex;
+        margin-top: 50px;
+        justify-content: space-around;
+        text-align: center;
+    }    
+    .aloqa .nomerlar p{
+        font-size: 14px !important;
+    }
+}

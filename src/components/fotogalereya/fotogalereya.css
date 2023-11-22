@@ -112,3 +112,49 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     text-align: center;
     color: #1F1F1F;
 }
+/* RESPONSIVE */
+@media (min-width: 0px) and (max-width:570px){
+    .fotogalereya{
+        margin-top: 48px;
+        margin-right: 16px;
+        margin-left: 16px;
+        width: 100%;
+    } 
+    .fotogalereya .title{
+        display: flex;
+        align-items: left;
+        width: 100%;
+    }
+    .fotogalereya .titlePart{
+        width: 100%;
+    }
+    .fotogalereya .titlePart h3{
+        font-size: 24px !important;
+        margin: 0;
+        width: 100%;
+    }
+    .fotogalereya .titlePart p{
+        font-size: 16px !important;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .fotogalereya .holidays{
+        width: 100%;
+        display: block;
+        text-align: center;
+        justify-content: center;
+    }
+    .fotogalereya .bigbox{
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .fotogalereya .box{
+        display: block;
+        margin: 0;
+        padding: 0;
+
+    }
+}

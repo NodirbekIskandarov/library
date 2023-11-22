@@ -101,3 +101,105 @@
     border: none;
 }
 
+/* RESPONSIVE */
+@media (min-width: 0px) and (max-width:570px){
+    .container{
+        width: 100%;
+    }
+    .sertifikat{
+        width: 100%;
+        margin-top: 42px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .sertifikat .title{
+        
+        width: 100%;
+        text-align: left;
+    }
+    .sertifikat .titlePart{
+        width: 100%;
+    }
+    .sertifikat .titlePart h3{
+        width: 100%;
+        font-size: 24px;
+    }
+    .sertifikat .titlePart p{
+        font-size: 16px;
+        width: 100%;
+    }
+    .sertifikat .container2{
+        width: 100%;
+    }
+    .sertifikat .forms{
+        display: block;
+        width: 100% ;
+        margin-top: 20px;
+    }
+    .sertifikat .forms h2{
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .sertifikat .labels{
+        display: block;
+        text-align: left;
+        margin-left: 0;
+    }
+    .sertifikat label span{
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    .sertifikat .container2 .box{
+        width: 100%;
+        margin-top: 0;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .sertifikat .container2 .box .cart p{
+        font-size: 14px;    
+    }
+    .sertifikat .box .item {
+        font-size: 14px;
+    }
+    .sertifikat .container2 .tinglovchi{
+        font-size: 20px;
+        margin-top: 24px;
+        text-align: center;
+    }
+    .sertifikat .container3 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .sertifikat .container3 .box2{
+        width: 100%;
+        margin-top: 0;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .sertifikat .container3 .cart .box2{
+        margin-top: 12px;
+    }
+    .sertifikat .container3 .box2 .cart p{
+        font-size: 14px;  
+        width: 100%;  
+    }
+    .sertifikat .container3 .item{
+        display: flex;
+        width: 100%;
+    }
+    .sertifikat .container3 .cart input::placeholder{
+        font-size: 14px;
+    }
+    
+    .sertifikat  .yuklash {
+        width: 165px;
+        height: 42px;
+        display: flex;
+    }
+
+}

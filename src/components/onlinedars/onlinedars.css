@@ -86,3 +86,55 @@
     font-size: 32px;
     margin-top: 150px;
 }
+
+/* RESPONSIVE */
+@media (min-width: 0px) and (max-width:570px){
+    .onlayndars{
+        margin-left: 16px;
+        margin-right: 16px;
+        display: block;
+        
+    }
+    .onlayndars .title{
+        width: 100%;
+        margin-top: 42px;
+
+    }
+    .onlayndars .titlePart{
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .onlayndars .titlePart h3{
+        width: 100%;
+        font-size: 24px;
+        margin-left: 0;
+    }
+    .onlayndars .titlePart p{
+        font-size: 16px;
+        margin-left: 0;
+    }
+    .onlayndars .box {
+        width: 100% !important;
+        display: block;
+        margin-top: 12px;
+    }
+    .onlayndars .box .imagePart{
+        width: 0;
+        display: none;
+        align-items: center;
+
+    }
+    .onlayndars .box .imagePart img{
+        display: none;
+        width: 0;
+    }
+    .onlayndars .cart{
+        width: 100% !important;
+    }
+    .onlayndars .cart h2{
+        width: 100% !important;
+        font-size: 16px;
+    }
+}

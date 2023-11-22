@@ -36,6 +36,7 @@ function Navbar() {
                 <select onChange={(e) => changedFunc(e.target.value)}>
                     <option value="uz">UZ</option>
                     <option value="ru">RU</option>
+                    <option value="en">EN</option>
                 </select>
             </div>
             <div className='avatar'>
