@@ -27,3 +27,8 @@
     display: block;
     z-index: 9999;
 }
+@media (max-width:570px) {
+    .menu {
+        display: none;
+    }
+}

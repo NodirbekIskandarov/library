@@ -187,3 +187,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  @media (max-width:570px) {
+    .news {
+        width: 100%;
+    }
+    .news .titlePart h2 {
+        font-size: 20px;
+    }
+  }

@@ -43,3 +43,33 @@
     border: 1px solid white;
     border-radius: 28px;
 }
+@media (max-width:570px) {
+    .onlineCourse {
+        width: 100%;
+        padding: 0;
+    }
+    .onlineCourse .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+    }
+    .onlineCourse .box .image {
+        width: 100%;
+        text-align: center;
+    }
+    .onlineCourse .box .image img {
+        width: 100px!important;
+    }
+    .onlineCourse .box .textPart h2 {
+        font-size: 24px;
+
+    }
+    .onlineCourse .box .textPart p {
+        font-size: 14px;
+    }
+    .onlineCourse .box button {
+        margin: 0 auto;
+    }
+}

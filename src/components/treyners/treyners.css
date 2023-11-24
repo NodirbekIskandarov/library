@@ -113,3 +113,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  @media (max-width:570px) {
+    .treyners {
+        width: 100%;
+
+    }
+  }

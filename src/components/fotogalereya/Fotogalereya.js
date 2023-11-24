@@ -94,10 +94,10 @@ function Fotogalereya() {
             <p>{t("tadbirlardan_estalik_suratlar")}</p>
           </div>
         </div>
-        <div className="row justify-content-between holidays">
+        <div className="holidays">
           {data.map((item, index) => {
             return (
-              <div className=" col-4 bigbox">
+              <div className="bigbox">
                 <div className="box" key={index}>
                   <img src={item.image} className="img" />
                   {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}

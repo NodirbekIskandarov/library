@@ -29,34 +29,36 @@
     letter-spacing: -0.02em;
     text-align: left;
 }
-
+.fotogalereya .holidays {
+    width: 100%;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 .fotogalereya .holidays .bigbox{
-    width: 379px;
-    height: 589px;
+    width: 30%;
     margin-top: 50px;
-    margin-left: 24px;
+    /* margin-left: 24px; */
     gap: 10px;
 }
 .fotogalereya .holidays .box{
-    width: 379px;
-    height: 559px;
+    width: 100%;
     border-radius: 35px;
     border: 1px solid #1F1F1F;
+    padding: 0 20px;
 }
 .fotogalereya .holidays .box:hover{
 box-shadow: 0px 5px 10px 0px #0A1A2733;
 }
 .fotogalereya .holidays .box .img{
-    width: 331px;
-    height: 230px;
+    width: 100%;
     margin-top: 24px;
-    margin-left: 24px;
     border-radius: 15px;
     background-color: #D9D9D9;
 }
 .fotogalereya .holidays .box h3{
-    width: 143px;
-    height: 36px;
+    width: 100%;
     margin-top: 16px;
     margin-left: 24px;
     font-family: Poppins;
@@ -67,8 +69,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     text-align: left;
 }
 .fotogalereya .holidays .box h5{
-    width: 67px;
-    height: 21px;
+    width: 100%;
     margin-top: 6px;
     margin-left: 24px;
     font-family: Poppins;
@@ -81,10 +82,8 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     color: #1F1F1F99;
 }
 .fotogalereya .holidays .box p{
-    width: 331px;
-    height: 156px;
+    width: 100%;
     margin-top: 12px;
-    margin-left: 24px;
     opacity: 0.8px;
     font-family: Poppins;
     font-size: 16px;
@@ -94,14 +93,13 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     text-align: left;
 }
 .fotogalereya .holidays .box button{
-    width: 176px;
-    height: 56px;
-    margin-left: 101px;
-    border-radius: 30px;
+    padding: 16px 58px;
+    border: 1px solid var(--font-color, #1F1F1F);
+    border-radius: 28px;
+    margin-left: 20%;
 }
 .fotogalereya .holidays .box button p{
     width: 60px;
-    height: 24px;
     align-items: center;
     margin: auto;
     font-family: Poppins;
@@ -112,6 +110,8 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     text-align: center;
     color: #1F1F1F;
 }
+
+
 /* RESPONSIVE */
 @media (min-width: 0px) and (max-width:570px){
     .fotogalereya{
@@ -140,21 +140,21 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
         width: 100%;
     }
     .fotogalereya .holidays{
-        width: 100%;
-        display: block;
-        text-align: center;
-        justify-content: center;
+        width: 100%!important;
+        display: block !important;
     }
     .fotogalereya .bigbox{
-        width: 100%;
+        width: 100% !important;
         text-align: center;
-        margin: 0;
-        padding: 0;
     }
     .fotogalereya .box{
+        width: 100% !important;
         display: block;
-        margin: 0;
-        padding: 0;
-
+        flex-wrap: wrap;
+        justify-content: center;
     }
+    .fotogalereya .box button {
+        margin: 0!important;
+    }
+
 }
