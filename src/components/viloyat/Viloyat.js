@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './viloyat.css'
 import Line from '../line/Line'
 import logo from '../../assets/images/logo1 1.png'
 import website from '../../assets/images/Website.png'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import axios from 'axios'
+import { BASE_URL, REGION_ID } from '../../tools/urls'
 function Viloyat() {
   const { state } = useLocation();
 
+  const pk = useParams()
+
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    let lang = JSON.parse(localStorage.getItem("lang"))
+    console.log(lang)
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`${BASE_URL}/${REGION_ID}/${pk.id}`);
+          setData(response.data);
+          console.log(response.data)
+        } catch (error) {
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchData();
+    }, []);
+  
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
   return (
     <div className='viloyat'>
         <div className='container'>
@@ -19,23 +46,22 @@ function Viloyat() {
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>
-                    <h3>Xorazm viloyati filiali</h3>
-                    <p>Xorazm viloyati filial ma'lumotlari</p>
+                    <h3>{data.translations.uz.name}</h3>
+                    <p>{data.translations.uz.name} ma'lumotlari</p>
                 </div>
             </div>
             <div className='image'>
                 <div className='imagePart'>
-                    <img src={logo} alt="logo"/>
+                    <img src={data.image} alt="logo"/>
                 </div>
                 <div className='textPart'>
-                    <p>Joylarda kadrlar malakasini oshirishning sifatini yaxshilash, tinglovchilarga har tomonlama qulay shart-sharoitlar yaratish maqsadida, O’zbekiston Respublikasi Vazirlar Mahkamasining 2020 yil 8 sentyabrda “Yuridik sohaga oid bilim talab etiladigan mutaxassislarni qayta tayyorlash va malakasini oshirishning zamonaviy tizimini joriy etish chora-tadbirlari to’g’risida”gi 544-son qaroriga asosan Yuristlar malakasini oshirish markazining Xorazm viloyati hududiy filiali tashkil etildi.
-Yuristlar malakasini oshirish markazining Xorazm viloyati hududiy filiali Adliya vazirligining Xorazm viloyati yuridik texnikumi binosida, Urganch tumani, Fayozov ko’chasi 1-uyda joylashgan.</p>
-                    <a href='/'><button><img src={website} alt='website'/>Web saytiga o'tish</button></a>
+                    <p>{data.translations.uz.about}</p>
+                    <a href={data.site}><button><img src={website} alt='website'/>Web saytiga o'tish</button></a>
                 </div>
             </div>
             <div className='maqsadPart'>
                 <h2>Filialning maqsadi</h2>
-                <p>Filialda mutaxassisliklar bo’yicha o’quv mashg’ulotlarini tashkil etish va o’tkazishning talab qilinadigan darajasini ta’minlash, davlat boshqaruvi organlari va ho’jalik birlashmalarining hududiy bo’linmalari va tashkilotlar kadrlarining huquqiy bilimlarini oshirishga qaratilgan ehtiyojlarini o’rganish, o’quv kurslariga jalb qilish, o’qitishning ilg’or usullari va axborot-kommunikasiya texnologiyalarini joriy etish, filial faoliyatini tashkil etishning asosiy maqsadi hisoblanadi.</p>
+                <p>{data.translations.uz.description}</p>
             </div>
             <div className='maqsadPart'>
                 <h2>Filialning asosiy vazifalari</h2>

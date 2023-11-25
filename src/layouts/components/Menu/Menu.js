@@ -1,9 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './menu.css'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
+import { BASE_URL, LANDING } from '../../../tools/urls';
 function Menu() {
+
     const { t } = useTranslation();
+    const [data2, setData2] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    let lang = JSON.parse(localStorage.getItem("lang"))
+    console.log(lang)
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`${BASE_URL}/${LANDING}`);
+          setData2(response.data.regions);
+          console.log(response.data.regions)
+        } catch (error) {
+          setError(error);
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchData();
+    }, []);
+  
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
+    
     const data = [
         {
             menu: t("asosiy_sahifa"),
@@ -75,64 +102,7 @@ function Menu() {
         {
             menu: t("monitoring"),
             link: "/",
-            hoverMenu: [
-                {
-                    menu: "Qoraqolpog'iston Respublikasi",
-                    link: "/"
-                },
-                {
-                    menu: "Andijon viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Buxoro viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Jizzax viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Qashqadaryo viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Jizzax viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Navoi viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Namangan viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Samarqand viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Surxondaryo viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Sirdaryo viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Farg'ona viloyati",
-                    link: "/"
-                },
-                {
-                    menu: "Xorazm viloyati",
-                    link: "/xorazm"
-                },
-                {
-                    menu: "Toshkent viloyati",
-                    link: "/"
-                }
-            ]
+            hoverMenu: data2
         },
         {
             menu: t("aloqa"),
@@ -140,6 +110,7 @@ function Menu() {
             hoverMenu: []
         }
     ]
+
   return (
     <div className='menu'>
         <div className='container'>
@@ -155,7 +126,7 @@ function Menu() {
                                             item.hoverMenu && item.hoverMenu.map((item, index) => {
                                                 return (
                                                     <div className='singleHoverMenu'>
-                                                        <Link className='link' key={index} state={{name: item.menu}} to={item.link}>{item.menu}</Link>
+                                                        <Link className='link' key={index} state={{name: item.menu}} to={item.link || `/region/${item.id}`}>{item.menu || item.translations.uz.name}</Link>
                                                     </div>
                                                 )
                                             })

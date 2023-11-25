@@ -52,6 +52,9 @@
     font-weight: 600;
     margin-top: 56px;
 }
+.registratsiya .upload .writing {
+    height: 200px;
+}
 .uploading[type=file] {
     display: none;
 }

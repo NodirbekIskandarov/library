@@ -10,11 +10,11 @@ function Shartnoma() {
     setSelectedOption(event.target.value);
   };
   const { state } = useLocation();
-const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <div className="shartnoma">
       <div className="container">
-      <div className="locationOfPage">
+        <div className="locationOfPage">
           <p>{t("interaktiv_xizmatlar")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
@@ -26,28 +26,31 @@ const { t } = useTranslation()
             <p>{t("oqish_uchun_shartnomani_online_amalga_oshiring")}</p>
           </div>
         </div>
-        <div className="container2">
+        <h2>Shartnoma ma'lumotlari</h2>
+        <label>
+          <input
+            type="radio"
+            value="option1"
+            checked={selectedOption === "option1"}
+            onChange={handleOptionChange}
+          />
+          Tashkilot orqali
+        </label>
+        <br />
+        <label>
+          <input
+            type="radio"
+            value="option2"
+            checked={selectedOption === "option2"}
+            onChange={handleOptionChange}
+          />
+          O'zi tomonidan
+        </label>
+        
+        
+        {selectedOption==="option1" ? (
+          <div><div className="container2">
           <div className="forms">
-            <h2>Shartnoma ma'lumotlari</h2>
-            <label>
-              <input
-                type="radio"
-                value="option1"
-                checked={selectedOption === "option1"}
-                onChange={handleOptionChange}
-              />
-              Tashkilot orqali
-            </label>
-            <br />
-            <label>
-              <input
-                type="radio"
-                value="option2"
-                checked={selectedOption === "option2"}
-                onChange={handleOptionChange}
-              />
-              O'zi tomonidan
-            </label>
             <div className="box">
               <div className="cart">
                 <p>Shartnoma turi</p>
@@ -189,33 +192,69 @@ const { t } = useTranslation()
             </div>
             <div className="cart">
               <p>MFO</p>
-              <input
-                type="text"
-                className="item"
-                placeholder="MFO"
-              ></input>
+              <input type="text" className="item" placeholder="MFO"></input>
             </div>
             <div className="cart">
               <p>INN (Tashkilot)</p>
-              <input
-                type="text"
-                className="item"
-                placeholder="INN"
-              ></input>
+              <input type="text" className="item" placeholder="INN"></input>
             </div>
             <div className="cart">
               <p>INN (G'aznachilik)</p>
-              <input
-                type="text"
-                className="item"
-                placeholder="INN"
-              ></input>
+              <input type="text" className="item" placeholder="INN"></input>
             </div>
             <div className="saqlash">
-                <button>Saqlash</button>
+              <button>Saqlash</button>
             </div>
           </div>
-        </div>
+        </div></div>
+        ) : (
+          <div><div className="container2">
+          <div className="forms">
+            <div className="box">
+              <div className="cart">
+                <p>Shartnoma turi</p>
+                <select className="item">
+                  <option>Tanlang</option>
+                </select>
+              </div>
+              <div className="cart">
+                <p>Hudud</p>
+                <select className="item">
+                  <option>Tanlang</option>
+                </select>
+              </div>
+              <div className="cart">
+                <p>Tashkilot nomi</p>
+                <input
+                  type="text"
+                  className="item"
+                  placeholder="Tashkilot nomini yozing"
+                ></input>
+              </div>
+              <div className="cart">
+                <p>Tashkilot rahbari</p>
+                <input
+                  type="text"
+                  className="item"
+                  placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                ></input>
+              </div>
+              <div className="cart">
+                <p>To'lov miqdori</p>
+                <input type="text" className="item" placeholder="0%"></input>
+              </div>
+              <div className="cart">
+                <p>Telefon raqami</p>
+                <input
+                  type="phone"
+                  className="item"
+                  placeholder="Telefon raqamini kiriting"
+                ></input>
+              </div>
+            </div>
+          </div>
+        </div></div>
+        )}
       </div>
     </div>
   );
