@@ -11,16 +11,10 @@
 }
 .footer .logo {
     width: 25%;
-    display: flex;
-    justify-content: space-between;
 }
-.footer .logo .images {
-    display: flex;
-    margin-right: 10px;
-}
-.footer .logo .images img {
-    width: 44px;
-    height: 44px;
+.footer .logo img {
+    width: 100%;
+    color: white;
 }
 .footer .logo p {
     margin: 0;

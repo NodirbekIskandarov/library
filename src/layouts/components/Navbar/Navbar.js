@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import vector1 from "../../../assets/images/Vector (1).svg";
 import vector from "../../../assets/images/Vector.svg";
 import avatar from "../../../assets/images/eyeglasses_FILL0_wght400_GRAD0_opsz24 1.svg";
+import logo from "../../../assets/images/Layer_x0020_1.png"
 import "./navbar.css";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -35,11 +36,7 @@ function Navbar() {
       <div className="container">
         <div className="navbarSon">
           <div className="logo">
-            <div className="images">
-              <img src={vector} alt="logo" />
-              <img src={vector1} alt="logo" />
-            </div>
-            <p>RESPUBLIKA AXBOROT-KUTUBXONA MARKAZI</p>
+            <img src={logo} alt="logo"/>
           </div>
           <div className="searchFather">
             <label className="search">

@@ -13,22 +13,12 @@
 }
 .navbar .logo {
     width: 32%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center!important;
 }
-.navbar .logo .images {
-    display: flex;
-    margin-right: 10px;
+
+.navbar .logo img {
+    width: 100%;
 }
-.navbar .logo .images img {
-    width: 44px;
-    height: 44px;
-}
-.navbar .logo p {
-    margin: 0;
-    padding: 0;
-}
+
 .navbar .search {
     width: 80%;
     border: 1px solid gray;
@@ -168,7 +158,7 @@
     .navbar .backMenu {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        /* align-items: center; */
     }
     .navbar .menu {
         display: block;
@@ -182,7 +172,15 @@
     .navbar .menu .singleMenu {
         width: 100%;
         margin-bottom: 20px;
-        text-align: center;
+        /* text-align: center; */
+        position: relative;
+        font-size: x-large;
+    }
+    .navbar .menu .singleMenu .hoverMenu {
+        position: absolute;
+        right: 0;
+        top: -5px;
+        font-size: large;
     }
     .isOpenedSidebar{
         width: 100%;

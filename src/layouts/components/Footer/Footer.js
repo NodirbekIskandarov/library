@@ -8,6 +8,7 @@ import telegram from '../../../assets/images/telegram-fill.png'
 import instagram from '../../../assets/images/instagram-fill.png'
 import facebook from '../../../assets/images/facebook-circle-fill.png'
 import youtube from '../../../assets/images/youtube-fill 1.png'
+import logo from "../../../assets/images/Layer_x0020_1 (2).png"
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 function Footer() {
@@ -17,11 +18,7 @@ function Footer() {
       <div className='container'>
         <div className='footerIn'>
           <div className='logo'>
-            <div className='images'>
-              <img src={vector} alt='logo'/>
-              <img src={vector1} alt='logo'/>
-            </div>
-            <p>RESPUBLIKA AXBOROT-KUTUBXONA MARKAZI</p>
+            <img src={logo} alt='logo'/>
           </div>
           <ul className='footerMenuPart1'>
             <li><Link className='link' to='/'>{t("asosiy_sahifa")}</Link></li>

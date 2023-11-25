@@ -139,11 +139,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
               <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
             </label>
           </div>
           <div className="cart">
@@ -159,11 +155,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat2(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
@@ -179,11 +171,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat3(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
@@ -199,11 +187,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat4(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
@@ -219,11 +203,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat5(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
@@ -239,11 +219,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat6(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
@@ -259,11 +235,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <span>Fayl yuklanmagan</span>
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat7(e.target.value)}/>
-              <div className="uploadImg">
-                <img src={download} alt="logo"/>
-              </div>
+              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
             </label>
           </div>
           <div className="sending">

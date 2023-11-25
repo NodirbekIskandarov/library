@@ -7,7 +7,7 @@ function Aloqa() {
     const { t } = useTranslation()
   return (
     <div className='aloqa'>
-        <div className='container'>
+        <div className='container mainDiv'>
         <div className="locationOfPage">
           <p>{t("aloqa")}</p>
         </div>

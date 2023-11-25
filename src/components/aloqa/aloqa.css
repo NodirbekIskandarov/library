@@ -31,7 +31,9 @@
 .aloqa .contacts .nomerlar p img {
     margin-right: 10px;
 }
-
+.aloqa .mainDiv {
+    width: 100%!important;
+}
 /* RESPONSIVE */
 @media (min-width: 0px) and (max-width:570px){
     .container{
