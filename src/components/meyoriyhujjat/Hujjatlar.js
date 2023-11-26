@@ -8,44 +8,6 @@ import { useTranslation } from 'react-i18next'
 import { BASE_URL, DOCUMENTS } from '../../tools/urls'
 import axios from 'axios'
 function Hujjatlar() {
-    // const data = [
-    //     {
-    //         text: "O‘zbekiston Respublikasi qonunlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Respublikasi Prezidentining farmonlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Respublikasi Prezidentining qarorlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Respublikasi Vazirlar Mahkamasining qarorlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "Muassasaning o‘z kuchini yo‘qotgan me’yoriy-huquqiy hujjatlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Respublikasi Adliya vazirligida davlat ro‘yxatidan o‘tkazilgan normativ-huquqiy hujjatlar",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Respublikasi davlat standartlari",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "O‘zbekiston Milliy kutubxonasi tomonidan qabul qilingan me’yoriy hujjatlar",
-    //         link: "/documents"
-    //     },
-    //     {
-    //         text: "Davlat dasturlari",
-    //         link: "/documents"
-    //     }
-    // ]
   const { state } = useLocation();
 const { t } = useTranslation()
 const [data, setData] = useState(null);

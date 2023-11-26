@@ -55,15 +55,6 @@
 .registratsiya .upload .writing {
     height: 55px;
 }
-/* .uploadImg {
-    width: 76px;
-    height: 56px;
-    float: right;
-    background-color: var(--1, #55697A);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 .upload {
     width: 100%;
     border-radius: 5px;

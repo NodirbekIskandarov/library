@@ -10,32 +10,6 @@ import { useLocation, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL, DOCUMENTS_ID } from '../../tools/urls'
 function Showhujjat() {
-    // const data = [
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     },
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     },
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     },
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     },
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     },
-    //     {
-    //         img: img,
-    //         name: "Xujjat nomi"
-    //     }
-    // ]
   const { state } = useLocation();
 
     const  { t } = useTranslation()

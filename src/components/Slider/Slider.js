@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import { BASE_URL, LANDING } from "../../tools/urls";
 import axios from "axios";
 import { CarouselItem } from "react-bootstrap";
-// import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function Slider() {
   const { t } = useTranslation();
@@ -21,7 +20,6 @@ function Slider() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.sliders);
-        // console.log(response.data.sliders)
       } catch (error) {
         setError(error);
       } finally {
@@ -52,30 +50,6 @@ function Slider() {
             )
           })
         }
-        {/* <Carousel.Item className="sliderIn">
-          <div className="blurImage">
-            <div className="textPart">
-              <h2>Eng yaxshi axborot kutubxona mutaxasisi ko'rik tanlovida qatnashing</h2>
-              <button>{t("batafsil")}</button>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item className="sliderIn">
-          <div className="blurImage">
-            <div className="textPart">
-              <h2>Eng yaxshi axborot kutubxona mutaxasisi ko'rik tanlovida qatnashing</h2>
-              <button>{t("batafsil")}</button>
-            </div>
-          </div>
-        </Carousel.Item>
-        <Carousel.Item className="sliderIn">
-          <div className="blurImage">
-            <div className="textPart">
-              <h2>Eng yaxshi axborot kutubxona mutaxasisi ko'rik tanlovida qatnashing</h2>
-              <button>{t("batafsil")}</button>
-            </div>
-          </div>
-        </Carousel.Item> */}
       </Carousel>
     </div>
   );

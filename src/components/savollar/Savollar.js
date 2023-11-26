@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import "./savollar.css";
-import right from '../../assets/images/Right 2.png'
-import down from '../../assets/images/Down 2.png'
-import { useLocation } from "react-router-dom";
-import { MdKeyboardArrowRight } from "react-icons/md";
 function Savollar() {
   const [questionIndex, setQuestionIndex] = useState(0);
 
@@ -40,7 +36,7 @@ function Savollar() {
               <div className="question">
                 <p>{item.question}</p>
                 <button>
-                  {questionIndex != index ? (
+                  {questionIndex !== index ? (
                     <span onClick={() => setQuestionIndex(index)}><svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
                     <path d="M1 1L2.76297 2.74731C4.1689 4.14075 4.87187 4.83747 4.98011 5.68667C5.00663 5.89473 5.00663 6.10527 4.98011 6.31333C4.87187 7.16252 4.1689 7.85925 2.76297 9.25269L1 11" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
                     </svg></span>
@@ -52,7 +48,7 @@ function Savollar() {
                 </button>
               </div>
               <div
-                className={questionIndex == index ? "answer active" : "answer"}
+                className={questionIndex === index ? "answer active" : "answer"}
               >
                 <h2>Javob:</h2>
                 <p>{item.answer}</p>

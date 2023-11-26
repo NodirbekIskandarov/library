@@ -5,8 +5,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import aoka from '../../assets/images/aoka_logo.png'
-import tatu from '../../assets/images/W73eM8T-hn5cLRoa_rQWKshn3eUutXvm.png'
-import logot from '../../assets/images/logot.png'
 import { useTranslation } from "react-i18next";
 import { BASE_URL, LANDING } from "../../tools/urls";
 import axios from "axios";
@@ -104,7 +102,7 @@ function SamplePrevArrow(props) {
                       <div className="box">
                         <a href={item.url}>
 
-                        <img src={aoka} alt="image" className="img" />
+                        <img src={aoka} alt="rasm" className="img" />
                         </a>
                         
                       </div>

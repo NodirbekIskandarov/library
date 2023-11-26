@@ -1,10 +1,6 @@
-
-
 import "./news.css";
 import Line from "../line/Line";
 import img1 from "../../assets/images/Rectangle 9.png";
-import img2 from "../../assets/images/Rectangle 10.png";
-import img3 from "../../assets/images/Rectangle 11.png";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { useEffect, useState } from "react";
@@ -46,7 +42,6 @@ function News() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.news);
-        // console.log(response.news)
       } catch (error) {
         setError(error);
       } finally {
@@ -99,7 +94,7 @@ function News() {
                         <div key={index}>
                             <div className="caruselItem">
                                 <div className="box">
-                                    <img src={img1} alt="image" className="img"/>
+                                    <img src={img1} alt="rasm" className="img"/>
                                     {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
                                     {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
                                 </div>

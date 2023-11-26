@@ -1,4 +1,3 @@
-/* 
 
 .news {
     width: 100%;
@@ -28,6 +27,7 @@
 }
  .news .carusel .caruselItem {
     width: 100%;
+    align-items: center;
     margin-bottom: 50px;
 }
  .news .carusel .singleCarusel {
@@ -54,79 +54,6 @@
     color: white;
 }
  .news .carusel .singleCarusel .box h3 {
-    color: white;
-    font-size: 24px;
-}
- .news .carusel .singleCarusel .box p {
-    color: white;
-    margin-top: 12px;
-    font-size: 16px;
-}
- .news .box .img{
-    width: 100%;
-} */
-
-.news {
-    width: 100%;
-    margin-top: 150px;
-    background-color: #454343;
-    padding-top: 56px;
-    padding-bottom: 123px;
-    position: relative;
-}
- .news .title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 56px;
-}
- .news .titlePart h2 {
-    color: white;
-    font-size: 32px;
-}
- .news .titlePart p {
-    margin: 0;
-    padding: 0;
-    color: white;
-    font-size: 18px;
-}
- .news .carusel {
-    width: 100%;
-}
- .news .carusel .caruselItem {
-    width: 100%;
-    /* display: flex; */
-    /* justify-content: column; */
-    align-items: center;
-    margin-bottom: 50px;
-}
- .news .carusel .singleCarusel {
-    width: calc(100%/3);
-    /* height: 525px; */
-    /* position: relative; */
-}
- .news .carusel .caruselItem .btn{
-    width: 176px;
-    height: 56px;
-    color: white;
-    background-color: #454343;
-    border: 1px solid white;
-    border-radius: 25px; 
-    margin-left: 29.2%;   
-    position: relative;
-    margin-top: -7%;
-    /* margin-bottom: 10%; */
-}
-.news .box {
-    width: 90%;
-    height: 500px;
-    margin: 0 auto;
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 24px;
-    color: white;
-}
- .news .carusel .singleCarusel .box h3 {
-    /* margin-top: 16px; */
     color: white;
     font-size: 24px;
 }
@@ -153,7 +80,6 @@
 .news .slick-slider .slick-dots li  button {
     width: 8px;
     height: 8px;
-    /* background-color: #fff; */
     content: '';
     color: none;
 }
