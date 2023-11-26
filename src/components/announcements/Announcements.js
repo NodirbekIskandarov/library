@@ -11,13 +11,13 @@ function Announcements() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
-  console.log(lang)
+  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.elon);
-        console.log(response.data)
+        // console.log(response.data)
       } catch (error) {
         setError(error);
       } finally {
@@ -28,8 +28,8 @@ function Announcements() {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
   return (
     <div className='announcements'>
         <div className='container'>
@@ -44,7 +44,7 @@ function Announcements() {
                 {
                     data && data.map((item, index) => {
                         return  (
-                            <div className='textPart'>
+                            <div key={index} className='textPart'>
                                 <span>sana</span>
                                 {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
                             </div>

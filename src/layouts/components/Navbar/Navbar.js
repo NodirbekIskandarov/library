@@ -36,7 +36,8 @@ function Navbar() {
       <div className="container">
         <div className="navbarSon">
           <div className="logo">
-            <img src={logo} alt="logo"/>
+            <a href="/"><img src={logo} alt="logo"/></a>
+            
           </div>
           <div className="searchFather">
             <label className="search">
@@ -98,7 +99,7 @@ function Navbar() {
                 <img src={avatar} alt="avatar" />
               </div>
             </div>
-            <Menu className={showMenyu ? "" : "menu"} />
+            <Menu className={showMenyu ? "" : "menu"} showMenu={showMenu} />
           </div>
         </div>
       </div>

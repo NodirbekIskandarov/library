@@ -14,13 +14,13 @@ function Tarix() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
-  console.log(lang)
+  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/${HISTORY}`);
         setData(response.data.translations);
-        console.log(data)
+        // console.log(data)
       } catch (error) {
         setError(error);
       } finally {
@@ -30,8 +30,7 @@ function Tarix() {
 
     fetchData();
   }, []);
-
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="loading"><img src="https://miro.medium.com/v2/resize:fit:882/format:webp/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loader"/></p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div className="tarix">

@@ -14,6 +14,9 @@
     margin: 0;
     font-size: 16px;
 }
+.constact .inputs {
+    width: 100%;
+}
 .contact .inputPart .singleInput input, .contact .inputPart .singleInput select {
     width: 580px;
     border-radius: 12px;
@@ -36,6 +39,12 @@
     border-radius: 28px;
     border: none;
     margin: 56px auto;
+}
+.contact .image {
+    width: 100%;
+}
+.contact .image img {
+    width: 100%;
 }
 @media (max-width:570px) {
     .contact {

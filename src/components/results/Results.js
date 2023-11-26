@@ -14,13 +14,13 @@ function Results() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
-  console.log(lang)
+  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.results);
-        console.log(response.data.results)
+        // console.log(response.data.results)
       } catch (error) {
         setError(error);
       } finally {

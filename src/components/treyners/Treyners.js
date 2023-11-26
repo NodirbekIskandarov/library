@@ -39,13 +39,13 @@ function Treyners() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"));
-  console.log(lang);
+  // console.log(lang);
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.treners);
-        console.log(response.treners);
+        // console.log(response.treners);
       } catch (error) {
         setError(error);
       } finally {
@@ -56,8 +56,8 @@ function Treyners() {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
 
   const settings = {
     dots: true,

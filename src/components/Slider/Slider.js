@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { BASE_URL, LANDING } from "../../tools/urls";
 import axios from "axios";
 import { CarouselItem } from "react-bootstrap";
-
+import { TbLoader } from "react-icons/tb";
 function Slider() {
   const { t } = useTranslation();
 
@@ -14,7 +14,7 @@ function Slider() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
-  console.log(lang)
+  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,7 +30,7 @@ function Slider() {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="loading"><img src="https://miro.medium.com/v2/resize:fit:882/format:webp/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loader"/></p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (

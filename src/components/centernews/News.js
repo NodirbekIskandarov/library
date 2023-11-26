@@ -36,7 +36,7 @@ function News() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
-  console.log(lang)
+  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -52,8 +52,8 @@ function News() {
     fetchData();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error: {error.message}</p>;
 
   const settings = {
     dots: true,
