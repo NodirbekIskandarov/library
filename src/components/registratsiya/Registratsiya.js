@@ -55,11 +55,12 @@ function Registratsiya() {
     axios.post(`${BASE_URL}/competition/participants/create/`, postData)
     .then(response => {
       // Handle the success of the request
-      console.log('Response:', response.data);
+      alert('yuborildi:', response.status);
     })
     .catch(error => {
       // Handle errors
       console.error('Error:', error);
+      alert("yuborilmadi")
     });
   }
 
@@ -82,7 +83,7 @@ function Registratsiya() {
                 className="writing"
                 type="text"
                 placeholder="To'liq ism sharifingizni kiriting"
-                onChange={(e) => setName(e.target.value)}
+                onInput={(e) => setName(e.target.value)}
               />
             </label>
           </div>
@@ -110,7 +111,7 @@ function Registratsiya() {
                 className="writing"
                 type="text"
                 placeholder="+998 ** *** ****"
-                onChange={(e) => setPhone(e.target.value)}
+                onInput={(e) => setPhone(e.target.value)}
               />
             </label>
           </div>
@@ -122,7 +123,7 @@ function Registratsiya() {
                 className="writing"
                 type="text"
                 placeholder="Ish joyingizni kiriting"
-                onChange={(e) => setIsh(e.target.value)}
+                onInput={(e) => setIsh(e.target.value)}
               />
             </label>
           </div>

@@ -26,14 +26,12 @@
     width: 379px;
     text-align: center;
 }
-/* .tasdiqnoma .filePart img {
-    width: 100%;
-} */
 .tasdiqnoma .filePart h3 {
     font-size: 24px;
     margin-top: 24px;
 }
-.tasdiqnoma .filePart button {
+.tasdiqnoma .filePart a {
+    text-decoration: none;
     width: 232px;
     height: 48px;
     display: flex;
@@ -47,8 +45,9 @@
     margin-top: 16px;
     margin: 16px auto;
 }
-.tasdiqnoma .filePart button img {
+.tasdiqnoma .filePart a img {
     width: 30px;
+    margin-right: 5px;
 }
 /*<<<RESPONSIVE>>>*/
 /*Small devices (landscape phones, 570px and up)*/

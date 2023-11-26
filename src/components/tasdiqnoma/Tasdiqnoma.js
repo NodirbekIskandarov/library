@@ -57,10 +57,10 @@ const [data, setData] = useState(null);
           </div>
           <div className="filePart">
             <img src={fayl} alt="file" />
-            {lang==="uz" ? (<p>{data.translations.uz.title}</p>) : (<p>{data.translations.ru.title}</p>)}
-            <button>
+            {lang==="uz" ? (<h3>{data.translations.uz.title}</h3>) : (<h3>{data.translations.ru.title}</h3>)}
+            <a href={data.file} target='_blank'>
               <img src={download} alt="down" /> PDF da yuklab olish
-            </button>
+            </a>
           </div>
         </div>
       </div>
