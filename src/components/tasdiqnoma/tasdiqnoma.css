@@ -100,3 +100,53 @@
         font-size: 14px;
     }
 }
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+    .tasdiqnoma {
+        margin-top: 42px;
+        width: 100%;
+    }
+    .tasdiqnoma .title {
+        display: flex;
+        align-items: left;
+        margin-left: 16px;
+    }
+    .tasdiqnoma .titlePart h3{
+        width: 100%;
+        font-size: 24px;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .tasdiqnoma .titlePart p{
+        width: 100%;
+        font-size: 16px;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .tasdiqnoma .text {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .tasdiqnoma .filePart {
+        width: 100%;
+        text-align: center;
+    }
+    .tasdiqnoma .filePart img{
+        width: 60%;
+        margin-top: 0;
+    }
+    .tasdiqnoma .filePart h3{
+        font-size: 16px;
+        text-align: center;
+        margin: auto;
+        margin-top: 12px;
+    }
+    .tasdiqnoma .textPart{
+        width: 100%;
+    }
+    .tasdiqnoma .textPart p{
+        width: 100%;
+        font-size: 14px;
+    }
+}

@@ -159,5 +159,49 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     .fotogalereya .box button {
         margin: 0!important;
     }
-
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+    .fotogalereya{
+        margin-top: 48px;
+        margin-right: 16px;
+        margin-left: 16px;
+        width: 100%;
+    } 
+    .fotogalereya .title{
+        display: flex;
+        align-items: left;
+        width: 100%;
+    }
+    .fotogalereya .titlePart{
+        width: 100%;
+    }
+    .fotogalereya .titlePart h3{
+        font-size: 24px !important;
+        margin: 0;
+        width: 100%;
+    }
+    .fotogalereya .titlePart p{
+        font-size: 16px !important;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .fotogalereya .holidays{
+        width: 100%!important;
+        display: block !important;
+    }
+    .fotogalereya .bigbox{
+        width: 100% !important;
+        text-align: center;
+    }
+    .fotogalereya .box{
+        width: 100% !important;
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .fotogalereya .box button {
+        margin: 0!important;
+    }
 }

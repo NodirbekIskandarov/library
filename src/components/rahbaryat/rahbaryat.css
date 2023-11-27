@@ -94,3 +94,72 @@
     text-align: center;
   }
 }
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+  .rahbaryat {
+    margin-top: 48px;
+    margin-right: 16px;
+    margin-left: 16px;
+    width: 100%;
+  }
+  .rahbaryat .title {
+    display: flex;
+    align-items: left;
+    width: 100%;
+  }
+  .rahbaryat .titlePart {
+    width: 100%;
+  }
+  .rahbaryat .titlePart h2 {
+    font-size: 24px;
+    margin: 0;
+    width: 100%;
+  }
+  .rahbaryat .titlePart p {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .rahbaryat .rahbarlar {
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .rahbaryat .rahbarlar .box {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  .rahbaryat .rahbarlar .img1 {
+    width: 100%;
+  }
+  .rahbaryat .rahbarlar h3 {
+    font-size: 16px;
+    font-weight: bolder;
+    width: 100%;
+    margin: auto;
+  }
+  .rahbaryat .rahbarlar .pi {
+    width: 100% !important;
+    font-size: 14px;
+    text-align: center;
+  }
+  .rahbaryat .rahbarlar .icons {
+    display: flex;
+    width: 10%;
+    font-size: 14px;
+    text-align: center;
+  }
+  .rahbaryat .rahbarlar p {
+    font-size: 14px;
+    width: 100% !important;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+  }
+}

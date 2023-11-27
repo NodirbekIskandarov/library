@@ -82,3 +82,39 @@
         font-size: 14px !important;
     }
 }
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+    .aloqa {
+        width: 100%;
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-left: 0;
+    }
+    .aloqa .binnasa{
+        width: 100% !important;
+        margin: 0;
+        padding: 0;       
+    }
+    .aloqa .title{
+        width: 100%;
+    }
+    .aloqa .title .titlePart{
+        width: 100%;
+        margin-left: -10px;
+    }
+    .aloqa .title .titlePart h3{
+        font-size: 24px;
+    }
+    .aloqa .title .titlePart p{
+        font-size: 18px;
+    }
+    .aloqa .contacts{
+        width: 100% !important;
+    }
+    .aloqa .xarita{
+        height: 400px !important;
+    }
+    .aloqa .nomerlar p{
+        font-size: 16;
+    }
+}

@@ -6,9 +6,12 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 function Shartnoma() {
   const [selectedOption, setSelectedOption] = useState("option1");
-  // const [number, setNumber] = useState(1);
-  // const divIndexes = Array.from({ length: number }, (_, index) => index);
-// console.log(number)
+  const [count, setCount] = useState(1);
+  function addNum() {
+    setCount(count + 1);
+  }
+  const divIndexes = Array.from({ length: count }, (_, index) => index);
+
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -29,26 +32,31 @@ function Shartnoma() {
             <p>{t("oqish_uchun_shartnomani_online_amalga_oshiring")}</p>
           </div>
         </div>
-        <h2>Shartnoma ma'lumotlari</h2>
-        <label>
-          <input
-            type="radio"
-            value="option1"
-            checked={selectedOption === "option1"}
-            onChange={handleOptionChange}
-          />
-          Tashkilot orqali
-        </label>
-        <br />
-        <label>
-          <input
-            type="radio"
-            value="option2"
-            checked={selectedOption === "option2"}
-            onChange={handleOptionChange}
-          />
-          O'zi tomonidan
-        </label>
+        <div className="contract_theme">
+          <h2>Shartnoma ma'lumotlari</h2>
+          <label>
+            <input
+              type="radio"
+              value="option1"
+              checked={selectedOption === "option1"}
+              onChange={handleOptionChange}
+            />
+            <span className="ms-3">Tashkilot orqali</span>
+            
+          </label>
+          <br />
+          <br />
+          <label>
+            <input
+              type="radio"
+              value="option2"
+              checked={selectedOption === "option2"}
+              onChange={handleOptionChange}
+            />
+            <span className="ms-3">O'zi tomonidan</span>
+          
+          </label>
+        </div>
 
         {selectedOption === "option1" ? (
           <div>
@@ -106,7 +114,7 @@ function Shartnoma() {
               </h2>
             </div>
             <div className="container3">
-              {/* {divIndexes &&
+              {divIndexes &&
                 divIndexes.map((index) => {
                   return (
                     <div key={index} className="box2">
@@ -160,58 +168,8 @@ function Shartnoma() {
                       </div>
                     </div>
                   );
-                })} */}
-              {/* <div className="box2">
-                <div className="cart">
-                  <p>Tashkilot rahbari</p>
-                  <input
-                    type="text"
-                    className="item"
-                    placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-                  ></input>
-                </div>
-                <div className="cart">
-                  <p>Lavozimi</p>
-                  <input
-                    type="text"
-                    className="item"
-                    placeholder="Lavozimini kiriting"
-                  ></input>
-                </div>
-                <div className="cart">
-                  <p>Telefon raqami</p>
-                  <input
-                    type="tel"
-                    className="item"
-                    placeholder="Telefon raqamini kiriting"
-                  ></input>
-                </div>
-                <div className="cart">
-                  <p>Passport seriasi va raqami</p>
-                  <input
-                    type="text"
-                    className="item"
-                    placeholder="Passport seriasini va raqamini kiriting"
-                  ></input>
-                </div>
-                <div className="cart">
-                  <p>JShShIR</p>
-                  <input
-                    type="text"
-                    className="item"
-                    placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-                  ></input>
-                </div>
-                <div className="cart">
-                  <p>Tinglovchining passport rasmini yuklang</p>
-                  <input
-                    type="file"
-                    className="item"
-                    placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-                  ></input>
-                </div>
-              </div> */}
-              {/* <button onClick={setNumber(number++)}>+ Yana qo'shish</button> */}
+                })}
+              <button onClick={addNum}>+ Yana qo'shish</button>
               <h2>Rekvizitlar</h2>
               <div className="box3">
                 <div className="cart">

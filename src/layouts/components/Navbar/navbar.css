@@ -1,213 +1,212 @@
 .navbar {
-    width: 100%;
-    height: 128px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed!important;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: white;
+  width: 100%;
+  height: 128px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: white;
 }
 .navbarSon {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navbar .logo {
-    width: 30%;
+  width: 30%;
 }
 
 .navbar .logo img {
-    width: 100%;
+  width: 100%;
 }
 .navbar .navbar_right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
 }
 .navbar .searchFather {
-    width: 70%;
+  width: 70%;
 }
 .navbar .search {
-    width: 80%;
-    border: 1px solid gray;
-    border-radius: 32px;
-    padding-left: 24px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    margin: 0 auto;
-    background-color: #ECECEC;
+  width: 80%;
+  border: 1px solid gray;
+  border-radius: 32px;
+  padding-left: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin: 0 auto;
+  background-color: #ececec;
 }
 .navbar .search input {
-    width: 80%;
-    border: none;
-    background-color: #ECECEC;
-    outline: none;
+  width: 80%;
+  border: none;
+  background-color: #ececec;
+  outline: none;
 }
 .navbar .search2 {
-    width: 100%;
-    border: 1px solid gray;
-    border-radius: 32px;
-    padding-left: 24px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    /* margin-left: 200px; */
-    background-color: #ECECEC;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 32px;
+  padding-left: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  /* margin-left: 200px; */
+  background-color: #ececec;
 }
 .navbar .search2 input {
-    width: 80%;
-    border: none;
-    background-color: #ECECEC;
-    outline: none;
+  width: 80%;
+  border: none;
+  background-color: #ececec;
+  outline: none;
 }
 .navbar .locale {
-    width: 10%;
+  width: 10%;
 }
 .navbar .locale select {
-    border: none;
+  border: none;
 }
 .navbar .avatar {
-    width: 48px;
-    height: 48px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 .navbar .menuBars {
-    display: none;
+  display: none;
 }
 .navbar .resMenu {
-    display: none;
+  display: none;
 }
 .navbar .searchres {
-    display: none;
-    position: fixed;
-    top: 150px;
-    left: 15%;
-    z-index: 222;
+  display: none;
+  position: fixed;
+  top: 150px;
+  left: 15%;
+  z-index: 222;
 }
 .navbar .searchButton {
-    display: none;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
-
+  display: none;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
 }
-@media (min-width: 0px) and (max-width:570px) {
-    .navbar {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .navbarSon {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .navbar .search {
-        width: 10%;
-    }
-    
-    .navbar .avatar {
-        display: none;
-    }
-    
-    .navbar .images img {
-        width: 22px!important;
-        height: 22px!important;
-    }
-    .navbar .logo {
-        width: 40%;
-    }
-    .navbar .logo p {
-        font-size: 10px!important;
-    }
-    .navbar .searchButton {
-        display: block;
-    }
-    /* .navbar .searchButton:hover .searchResponsive {
+@media (min-width: 0px) and (max-width: 570px) {
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbarSon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar .search {
+    width: 10%;
+  }
+
+  .navbar .avatar {
+    display: none;
+  }
+
+  .navbar .images img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .navbar .logo {
+    width: 40%;
+  }
+  .navbar .logo p {
+    font-size: 10px !important;
+  }
+  .navbar .searchButton {
+    display: block;
+  }
+  /* .navbar .searchButton:hover .searchResponsive {
         display: block!important;
         position: fixed;
     top: 150px;
     left: 15%;
     z-index: 222;
     } */
-    .navbar .searchResponsive {
-        display: block;
-        position: fixed;
-    top: 150px;
+  .navbar .searchResponsive {
+    display: block;
+    position: fixed;
+    top: 25%;
     left: 15%;
+    right: 15%;
     z-index: 222;
-    }
-    .navbar .searchFather {
-        width: 20%;
-    }
-    .navbar .search {
-        display: none!important;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 40px;
-        margin: 0;
-        padding-left: 10px;
-        padding-right: 20px;
-    }
-    .navbar .menuBars {
-        display: block;
-    }
-    .navbar .avatar2 {
-        display: block;
-        background-color: black;
-        border-radius: 50%;
-        padding: 5px;
-    }
-    .navbar .back {
-        font-size: 50px;
-    }
-    .navbar .backMenu {
-        display: flex;
-        justify-content: space-between;
-        /* align-items: center; */
-    }
-    .navbar .menu {
-        display: block;
-       margin-top: 60px;
-    }
-    .navbar .menu .mainMenuList {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: rgba(255, 255, 255, 0.374);
-    }
-    .navbar .menu .singleMenu {
-        width: 100%;
-        margin-bottom: 20px;
-        /* text-align: center; */
-        position: relative;
-        font-size: x-large;
-    }
-    .navbar .menu .singleMenu .hoverMenu {
-        position: absolute;
-        right: 0;
-        top: -5px;
-        font-size: large;
-    }
-    .isOpenedSidebar{
-        width: 100%;
-        height: 100vh;
-        background-color: white;
-        position: fixed;
-        top: 0;
-        right: 0;
-        padding: 20px 20px;
-        z-index: 2222;
-    }
-
+  }
+  .navbar .searchFather {
+    width: 20%;
+  }
+  .navbar .search {
+    display: none !important;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+  .navbar .menuBars {
+    display: block;
+  }
+  .navbar .avatar2 {
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .navbar .back {
+    font-size: 50px;
+  }
+  .navbar .backMenu {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+  .navbar .menu {
+    display: block;
+    margin-top: 60px;
+  }
+  .navbar .menu .mainMenuList {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.374);
+  }
+  .navbar .menu .singleMenu {
+    width: 100%;
+    margin-bottom: 20px;
+    /* text-align: center; */
+    position: relative;
+    font-size: x-large;
+  }
+  .navbar .menu .singleMenu .hoverMenu {
+    position: absolute;
+    right: 0;
+    top: -5px;
+    font-size: large;
+  }
+  .isOpenedSidebar {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px 20px;
+    z-index: 2222;
+  }
 }

@@ -32,8 +32,7 @@
     color: white;
 }
 .onlineCourse .box .textPart button {
-    width: 252px;
-    height: 56px;
+    padding: 16px 58px;
     color: white;
     display: flex;
     justify-content: center;
@@ -69,6 +68,38 @@
     }
     .onlineCourse .box .textPart p {
         font-size: 14px;
+    }
+    .onlineCourse .box button {
+        margin: 0 auto;
+        font-size: 10px!important;
+    }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+    .onlineCourse {
+        width: 100%;
+        padding: 0;
+    }
+    .onlineCourse .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 0;
+    }
+    .onlineCourse .box .image {
+        width: 100%;
+        text-align: center;
+    }
+    .onlineCourse .box .image img {
+        width: 100px!important;
+    }
+    .onlineCourse .box .textPart h2 {
+        font-size: 28px;
+
+    }
+    .onlineCourse .box .textPart p {
+        font-size: 16px;
     }
     .onlineCourse .box button {
         margin: 0 auto;

@@ -1,8 +1,11 @@
-.shartnoma .forms {
-    margin-top: 150px;
+
+.shartnoma .contract_theme {
+    padding-top: 158px;
+    width: 70%;
+    margin: 0 auto;
 }
-.shartnoma h2 {
-    margin-top: 40px;
+.shartnoma .contract_theme h2 {
+    margin-bottom: 56px;
 }
 .shartnoma .forms label {
     margin-top: 24px;
@@ -12,7 +15,6 @@
     margin: 0 auto;
 }
 .shartnoma .container2 .box {
-    margin-top: 48px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -139,6 +141,130 @@
 }
 /* RESPONSIVE */
 @media (min-width: 0px) and (max-width:570px){
+    .container{
+        width: 100%;
+    }
+    .shartnoma{
+        width: 100%;
+        margin-top: 42px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .shartnoma .title{
+        
+        width: 100%;
+        text-align: left;
+    }
+    .shartnoma .titlePart{
+        width: 100%;
+    }
+    .shartnoma .titlePart h3{
+        width: 100%;
+        font-size: 24px;
+    }
+    .shartnoma .titlePart p{
+        font-size: 16px;
+        width: 100%;
+    }
+    .shartnoma .container2{
+        width: 100%;
+    }
+    .shartnoma .forms{
+        display: block;
+        width: 100% ;
+        margin-top: 20px;
+    }
+    .shartnoma .forms h2{
+        font-size: 20px;
+        text-align: center;
+
+    }
+    .shartnoma .labels{
+        display: block;
+        text-align: left;
+        margin-left: 0;
+    }
+    .shartnoma label span{
+        margin-left: 5px;
+        font-size: 14px;
+    }
+    .shartnoma .container2 .box{
+        width: 100%;
+        margin-top: 0;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .shartnoma .container2 .box .cart p{
+        font-size: 14px;    
+    }
+    .shartnoma .box .item {
+        font-size: 14px;
+    }
+    .shartnoma .container2 .tinglovchi{
+        font-size: 20px;
+        margin-top: 24px;
+        text-align: center;
+    }
+    .shartnoma .container3 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .shartnoma .container3 .box2{
+        width: 100%;
+        margin-top: 0;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .shartnoma .container3 .cart .box2{
+        margin-top: 12px;
+    }
+    .shartnoma .container3 .box2 .cart p{
+        font-size: 14px;  
+        width: 100%;  
+    }
+    .shartnoma .container3 .item{
+        display: flex;
+        width: 100%;
+    }
+    .shartnoma .container3 .cart input::placeholder{
+        font-size: 14px;
+    }
+    .shartnoma .container3 h2{
+        font-size: 20px;
+        text-align: center;
+    }
+    .shartnoma .container3 .box3{
+        width: 100%;
+        margin-top: 0;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .shartnoma .container3 .cart .box3{
+        margin-top: 12px;
+    }
+    .shartnoma .container3 .box3 .cart p{
+        font-size: 14px;  
+        width: 100%;  
+    }
+    .shartnoma .container3 .item{
+        display: flex;
+        width: 100%;
+    }
+    .shartnoma .container3 .box3 .saqlash button{
+        width: 165px;
+        height: 42px;
+        display: flex;
+    }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
     .container{
         width: 100%;
     }

@@ -90,3 +90,54 @@
         margin-right: 10%px;
     }
 }
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px){
+    .hujjatlar {
+        margin-top: 42px;
+        width: 100%;
+    }
+    .hujjatlar .title {
+        display: flex;
+        align-items: left;
+    }
+    .hujjatlar .title .titlePart  {
+        text-align: left;
+        margin-left: 12px;
+        width: 100%;
+    }
+    .hujjatlar .title .titlePart h3 {
+        font-size: 28px;
+        width: 100%;
+    }
+    .hujjatlar .title .titlePart p {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .hujjatlar .box {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .hujjatlar .box .link {
+        width: 100%;
+    }
+    .hujjatlar .box p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    .hujjatlar .cart {
+        background-color: #55697A;
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 106px;
+        width: 100%;
+        margin-right: 10%px;
+    }
+}

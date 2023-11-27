@@ -36,48 +36,81 @@ function Registratsiya() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [success, setSuccess] = useState();
+  // const [data, setData] = useState()
+  const [specialty, setSpecialty] = useState()
+  const [achievement, setAchievement] = useState()
+  const [qualification, setQualification] = useState()
+  const [academ_experience, setAcadem_experience] = useState()
+  const [seminar_participation, setSeminar_participation] = useState()
+  const [experience, setExperience] = useState()
+  const [education, setEducation] = useState()
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
-  const [malumoti, setMalumoti] = useState("")
-  const [mutaxasisligi, setMutaxasisligi] = useState("")
-  const [sohasi, setSohasi] = useState("")
-  const [yutuqlar, setYutuqlar] = useState("")
-  const [malaka, setMalaka] = useState("")
-  const [faoliyati, setFaoliyati] = useState("")
-  const [seminar, setSeminar] = useState("")
+  const [work_place, setWork_place] = useState("")
+  const [education_file, setEducation_file] = useState(null)
+  const [specialty_file, setSpecialty_file] = useState(null)
+  const [experience_file, setExperience_file] = useState(null)
+  const [achievement_file, setAchievement_file] = useState(null)
+  const [qualification_file, setQualification_file] = useState(null)
+  const [academ_experience_file, setAcadem_experience_file] = useState(null)
+  const [seminar_participation_file, setSeminar_participation_file] = useState(null)
+  const [language_cert, setLanguage_cert] = useState("")
+  const [language_cert_file, setLanguage_cert_file] = useState(null)
+  const [region, setRegion] = useState(3)
+  const [education1, setEducation1] = useState()
+  const [specialty1, setSpecialty1] = useState()
+  const [experience1, setExperience1] = useState()
+  const [achievement1, setAchievement1] = useState()
+  const [qualification1, setQualification1] = useState()
+  const [academ_experience1, setAcadem_experience1] = useState()
+  const [seminar_participation1, setSeminar_participation1] = useState()
   const [til, setTil] = useState("")
-  const [viloyat, setViloyat] = useState("")
-  const [ish, setIsh] = useState("")
-  const [xujjat1, setXujjat1] = useState("")
-  const [xujjat2, setXujjat2] = useState("")
-  const [xujjat3, setXujjat3] = useState("")
-  const [xujjat4, setXujjat4] = useState("")
-  const [xujjat5, setXujjat5] = useState("")
-  const [xujjat6, setXujjat6] = useState("")
-  const [xujjat7, setXujjat7] = useState("")
   const postData = {
     "full_name": name,
     "phone": phone,
-    "work_place": "nimadir",
-    "education_file": null,
-    "specialty_file": null,
-    "experience_file": null,
-    "achievement_file": null,
-    "qualification_file": null,
-    "academ_experience_file": null,
-    "seminar_participation_file": null,
-    "language_cert": "",
-    "language_cert_file": null,
-    "region": 3,
-    "education": null,
-    "specialty": null,
-    "experience": null,
-    "achievement": null,
-    "qualification": null,
-    "academ_experience": null,
-    "seminar_participation": null
-}
+    "work_place": work_place,
+    "education_file": education_file,
+    "specialty_file": specialty_file,
+    "experience_file": experience_file,
+    "achievement_file": achievement_file,
+    "qualification_file": qualification_file,
+    "academ_experience_file": academ_experience_file,
+    "seminar_participation_file": seminar_participation_file,
+    "language_cert": language_cert,
+    "language_cert_file": language_cert_file,
+    "region": region,
+    "education": education1,
+    "specialty": specialty1,
+    "experience": experience1,
+    "achievement": achievement1,
+    "qualification": qualification1,
+    "academ_experience": academ_experience1,
+    "seminar_participation": seminar_participation1
+  }
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("https://kutubxonademo.pythonanywhere.com/competition/question/list/");
+      setSpecialty(response.data.specialty);
+      setAcadem_experience(response.data.academ_experience)
+      setAchievement(response.data.achievement)
+      setEducation(response.data.education)
+      setExperience(response.data.experience)
+      setSeminar_participation(response.data.seminar_participation)
+      setQualification(response.data.qualification)
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, []);
 
   async function sendFunc() {
     try {
@@ -142,21 +175,6 @@ function Registratsiya() {
             </Box>
           </Modal>
         )}
-        {/* <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal
-            </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-            </Typography>
-          </Box>
-        </Modal> */}
       </div>
       <div className="container">
         <div className="title">
@@ -187,7 +205,7 @@ function Registratsiya() {
                 className="writing"
                 type="text"
                 placeholder="To'liq ism sharifingizni kiriting"
-                onChange={(e) => setViloyat(e.target.value)}
+                onChange={(e) => setRegion(e.target.value)}
               >
                 <option disabled selected>
                   Viloyatingizni tanlang
@@ -215,111 +233,153 @@ function Registratsiya() {
                 className="writing"
                 type="text"
                 placeholder="Ish joyingizni kiriting"
-                onInput={(e) => setIsh(e.target.value)}
+                onInput={(e) => setWork_place(e.target.value)}
               />
             </label>
           </div>
           <div className="cart">
             <p>Mutaxasisiligi.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setMutaxasisligi(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setExperience1(e.target.value)}>
+                <option selected>
                   Tanlang
                 </option>
+                {
+                  specialty && specialty.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setEducation_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
-            <p>Soxadagi mutaxasisligi.*</p>
+            <p>Soxadagi faoliyati.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setMutaxasisligi(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setSpecialty1(e.target.value)}>
+                <option selected>
                   Tanlang
                 </option>
+                {
+                  experience && experience.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setSpecialty_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
             <p>Yutuqlar.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setYutuqlar(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setAchievement1(e.target.value)}>
+                <option selected>
                   Tanlang
                 </option>
+                {
+                  achievement && achievement.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setExperience_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
             <p>Malaka oshirish.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setMalaka(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setQualification1(e.target.value)}>
+                <option selected>
                   Viloyatingizni tanlang
                 </option>
+                {
+                  qualification && qualification.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setAchievement_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
             <p>Ilmiy faoliyati.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setFaoliyati(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setAcadem_experience1(e.target.value)}>
+                <option selected>
                   Tanlang
                 </option>
+                {
+                  academ_experience && academ_experience.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setQualification_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
             <p>Seminar va konferensiyalarda ishtiroki.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setSeminar(e.target.value)}>
-                <option disabled selected>
+              <select className="writing" onChange={(e) => setSeminar_participation1(e.target.value)}>
+                <option selected>
                   Tanlang
                 </option>
+                {
+                  seminar_participation && seminar_participation.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
+                    )
+                  })
+                }
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setSeminar_participation_file(e.target.value)}/>
             </label>
           </div>
           <div className="cart">
             <p>Xorijiy til bilish darajasi.*</p>
             <label className="cart2">
               <select className="writing" onChange={(e) => setTil(e.target.value)}>
-                <option disabled selected>
+                <option selected>
                   Tanlang
                 </option>
               </select>
@@ -328,7 +388,7 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setXujjat1(e.target.value)}/>
+              <input className="writing uploading" type="file" onChange={(e) => setLanguage_cert_file(e.target.value)}/>
             </label>
           </div>
           <div className="sending">
