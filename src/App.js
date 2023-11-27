@@ -26,7 +26,7 @@ import Onlinecourses from "./pages/onlinecourses/Onlinecourses";
 function App() {
   
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
         <Routes>
           <Route element={<Index />}>

@@ -18,13 +18,21 @@
     align-items: center;
 }
 .navbar .logo {
-    width: 32%;
+    width: 30%;
 }
 
 .navbar .logo img {
     width: 100%;
 }
-
+.navbar .navbar_right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.navbar .searchFather {
+    width: 70%;
+}
 .navbar .search {
     width: 80%;
     border: 1px solid gray;
@@ -32,7 +40,7 @@
     padding-left: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
-    margin-left: 200px;
+    margin: 0 auto;
     background-color: #ECECEC;
 }
 .navbar .search input {
@@ -56,6 +64,9 @@
     border: none;
     background-color: #ECECEC;
     outline: none;
+}
+.navbar .locale {
+    width: 10%;
 }
 .navbar .locale select {
     border: none;

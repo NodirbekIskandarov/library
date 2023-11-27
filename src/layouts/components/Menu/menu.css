@@ -2,7 +2,7 @@
     height: 96px;
     display: flex;
     align-items: center;
-    margin-top: 125px;
+    /* margin-top: 125px; */
 }
 .menu .mainMenuList {
     width: 100%;

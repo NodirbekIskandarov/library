@@ -6,28 +6,35 @@
     align-items: center;
     margin-right: 20px;
 }
-
+.selection .conditions .conditionsPart {
+    /* border: 1px solid red; */
+    padding-bottom: 33px;
+}
 .selection .conditions .conditionsPart .textPart {
     width: 100%;
-    height: 458px;
     background-color: #E47762;
     border-radius: 35px;
-    margin-top: 77px;
+    padding-bottom: 48px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 .selection .conditions .conditionsPart .textPart .singleText {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding-top: 48px;
 }
 .selection .conditions .conditionsPart .textPart .singleText .countPart {
     width: 77px;
-    height: 78px;
+    height: 77px;
     background-image: url('../../assets/images/Ellipse\ 13.svg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* border: 1px solid red; */
 }
 .selection .conditions .conditionsPart .textPart .singleText .countPart span {
     font-size: 36px;
@@ -39,22 +46,28 @@
     color: white;
     font-size: 18px;
 }
+.selection .conditions .imagePart {
+    width: 20%;
+}
+.selection .conditions .imagePart img {
+    width: 100%;
+}
 .selection .conditions .conditionsPart {
-    width: 858px;
+    width: 65%;
     position: relative;
 }
 .selection .conditions .conditionsPart button {
-    width: 252px;
-    height: 56px;
+    width: 30%;
+    padding: 16px 0;
     border-radius: 28px;
     border: 4px solid white;
-    position: absolute;
-    bottom: -30px;
-    left: 35%;
     background-color: #E47762;
     color: white;
     align-items: center;
     font-size: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
 }
 .selection .conditions .conditionsPart button .link {
     text-decoration: none;
@@ -69,23 +82,28 @@
     .selection {
         width: 100%;
     }
+    .selection .conditions .conditionsPart {
+        width: 100%;
+    }
     .selection .imagePart {
         display: none;
     }
-    /* .selection .singleText {
-        padding: 0;
-        margin: 0;
-    } */
+    .selection .conditionsPart button {
+        font-size: 13px!important;
+    }
+    
+    .selection .singleText p {
+        font-size: 14px;
+    }
     .selection .singleText .countPart{
         width: 40px!important;
         height: 40px!important;
         margin-right: 40px!important;
-        padding: 0;
+        background-image: none!important;
+        /* background-position: center;
+        background-size: cover!important; */
     }
-    .selection .link {
-        position: absolute;
-        left: 0;
-    }
+    
     .selection .singleText .countPart span {
         font-size: 20px!important;
     }

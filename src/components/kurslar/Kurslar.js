@@ -52,7 +52,7 @@ const [data, setData] = useState(null);
                     data.map((item, index) => {
                         return (
                             <div key={index} className='box'>
-                                <img src={item.image} alt="rasm"/>
+                                <img src={item.image} alt="rasm" className='main_image'/>
                                 {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
                                 {lang==="uz" ? (<p>{item.translations.uz.sub_name}</p>) : (<p>{item.translations.ru.sub_name}</p>)}
                                 <p><img src={clock} alt='clock'/> {lang==="ru" ? (<span>{item.translations.ru.duration}</span>) : (<span>{item.translations.uz.duration}</span>)}</p>

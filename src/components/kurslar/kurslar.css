@@ -28,6 +28,9 @@
     padding-bottom: 24px;
     margin-bottom: 24px;
 }
+.kurslar .information .box .main_image {
+    width: 100%;
+}
 .kurslar .information .box h3 {
     margin-top: 28px;
     font-size: 18px;

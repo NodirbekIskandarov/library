@@ -46,6 +46,7 @@
 .contact .image img {
     width: 100%;
 }
+
 @media (max-width:570px) {
     .contact {
         width: 100%;

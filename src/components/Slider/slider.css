@@ -57,9 +57,6 @@
     background-color: #ffffff;
 }
 @media (max-width:570px) {
-    .slider {
-        margin-top: 125px;
-    }
     .loading {
         margin-top: 200px;
     }

@@ -63,7 +63,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
 .fotogalereya .holidays .box h3{
     width: 100%;
     margin-top: 16px;
-    margin-left: 24px;
+    /* margin-left: 24px; */
     font-family: Poppins;
     font-size: 24px;
     font-weight: 600;
@@ -74,7 +74,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
 .fotogalereya .holidays .box h5{
     width: 100%;
     margin-top: 6px;
-    margin-left: 24px;
+    /* margin-left: 24px; */
     font-family: Poppins;
     font-size: 14px;
     font-style: italic;
@@ -93,7 +93,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     font-weight: 500;
     line-height: 24px;
     letter-spacing: -0.02em;
-    text-align: left;
+    /* text-align: left; */
 }
 .fotogalereya .holidays .box button{
     padding: 16px 58px;
@@ -102,7 +102,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     margin-top: 20px;
 }
 .fotogalereya .holidays .box button p{
-    width: 60px;
+    /* width: 60px; */
     margin: 0;
     padding: 0;
     font-family: Poppins;
@@ -110,7 +110,7 @@ box-shadow: 0px 5px 10px 0px #0A1A2733;
     font-weight: 600;
     line-height: 24px;
     letter-spacing: -0.02em;
-    text-align: center;
+    /* text-align: center; */
     color: #1F1F1F;
 }
 
