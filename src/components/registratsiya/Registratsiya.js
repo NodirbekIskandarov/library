@@ -6,14 +6,16 @@ import profile from "../../assets/images/Profile 1.png";
 import world from "../../assets/images/Website 2.png";
 import work from "../../assets/images/Work.png";
 import call from "../../assets/images/Call.png";
-import download from '../../assets/images/Download.png'
+import download from "../../assets/images/Download.png";
 import { BASE_URL } from "../../tools/urls";
 import axios from "axios";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography"
+import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+
+import { MuiFileInput } from "mui-file-input";
 
 const style = {
   position: "absolute",
@@ -37,89 +39,131 @@ function Registratsiya() {
   const handleClose = () => setOpen(false);
   const [success, setSuccess] = useState();
   // const [data, setData] = useState()
-  const [specialty, setSpecialty] = useState()
-  const [achievement, setAchievement] = useState()
-  const [qualification, setQualification] = useState()
-  const [academ_experience, setAcadem_experience] = useState()
-  const [seminar_participation, setSeminar_participation] = useState()
-  const [experience, setExperience] = useState()
-  const [education, setEducation] = useState()
+  const [specialty, setSpecialty] = useState();
+  const [achievement, setAchievement] = useState();
+  const [qualification, setQualification] = useState();
+  const [academ_experience, setAcadem_experience] = useState();
+  const [seminar_participation, setSeminar_participation] = useState();
+  const [experience, setExperience] = useState();
+  const [education, setEducation] = useState();
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [name, setName] = useState("")
-  const [phone, setPhone] = useState("")
-  const [work_place, setWork_place] = useState("")
-  const [education_file, setEducation_file] = useState(null)
-  const [specialty_file, setSpecialty_file] = useState(null)
-  const [experience_file, setExperience_file] = useState(null)
-  const [achievement_file, setAchievement_file] = useState(null)
-  const [qualification_file, setQualification_file] = useState(null)
-  const [academ_experience_file, setAcadem_experience_file] = useState(null)
-  const [seminar_participation_file, setSeminar_participation_file] = useState(null)
-  const [language_cert, setLanguage_cert] = useState("")
-  const [language_cert_file, setLanguage_cert_file] = useState(null)
-  const [region, setRegion] = useState(3)
-  const [education1, setEducation1] = useState()
-  const [specialty1, setSpecialty1] = useState()
-  const [experience1, setExperience1] = useState()
-  const [achievement1, setAchievement1] = useState()
-  const [qualification1, setQualification1] = useState()
-  const [academ_experience1, setAcadem_experience1] = useState()
-  const [seminar_participation1, setSeminar_participation1] = useState()
-  const [til, setTil] = useState("")
-  const postData = {
-    "full_name": name,
-    "phone": phone,
-    "work_place": work_place,
-    "education_file": education_file,
-    "specialty_file": specialty_file,
-    "experience_file": experience_file,
-    "achievement_file": achievement_file,
-    "qualification_file": qualification_file,
-    "academ_experience_file": academ_experience_file,
-    "seminar_participation_file": seminar_participation_file,
-    "language_cert": language_cert,
-    "language_cert_file": language_cert_file,
-    "region": region,
-    "education": education1,
-    "specialty": specialty1,
-    "experience": experience1,
-    "achievement": achievement1,
-    "qualification": qualification1,
-    "academ_experience": academ_experience1,
-    "seminar_participation": seminar_participation1
-  }
-useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const response = await axios.get("https://kutubxonademo.pythonanywhere.com/competition/question/list/");
-      setSpecialty(response.data.specialty);
-      setAcadem_experience(response.data.academ_experience)
-      setAchievement(response.data.achievement)
-      setEducation(response.data.education)
-      setExperience(response.data.experience)
-      setSeminar_participation(response.data.seminar_participation)
-      setQualification(response.data.qualification)
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [work_place, setWork_place] = useState("");
+  const [education_file, setEducation_file] = useState("");
+  const [specialty_file, setSpecialty_file] = useState("");
+  const [experience_file, setExperience_file] = useState("");
+  const [achievement_file, setAchievement_file] = useState("");
+  const [qualification_file, setQualification_file] = useState("");
+  const [academ_experience_file, setAcadem_experience_file] = useState("");
+  const [seminar_participation_file, setSeminar_participation_file] =
+    useState("");
+  const [language_cert, setLanguage_cert] = useState("");
+  const [language_cert_file, setLanguage_cert_file] = useState("");
+  const [region, setRegion] = useState(3);
+  const [education1, setEducation1] = useState(1);
+  const [specialty1, setSpecialty1] = useState(1);
+  const [experience1, setExperience1] = useState(1);
+  const [achievement1, setAchievement1] = useState(1);
+  const [qualification1, setQualification1] = useState(1);
+  const [academ_experience1, setAcadem_experience1] = useState(1);
+  const [seminar_participation1, setSeminar_participation1] = useState(1);
+  const [til, setTil] = useState("");
 
-  fetchData();
-}, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://kutubxonademo.pythonanywhere.com/competition/question/list/"
+        );
+        setSpecialty(response.data.specialty);
+        setAcadem_experience(response.data.academ_experience);
+        setAchievement(response.data.achievement);
+        setEducation(response.data.education);
+        setExperience(response.data.experience);
+        setSeminar_participation(response.data.seminar_participation);
+        setQualification(response.data.qualification);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //using formdata for post API
+
+  function handleChange(event) {
+    setEducation_file(event.target.files[0]);
+  }
+
+  function handleChange1(file_value) {
+    setSpecialty_file(file_value.target.files[0]);
+  }
+  function handleChange2(file_value) {
+    setExperience_file(file_value.target.files[0]);
+  }
+  function handleChange3(file_value) {
+    setAchievement_file(file_value.target.files[0]);
+  }
+  function handleChange4(file_value) {
+    setQualification_file(file_value.target.files[0]);
+  }
+  function handleChange5(file_value) {
+    setAcadem_experience_file(file_value.target.files[0]);
+  }
+  function handleChange6(file_value) {
+    setSeminar_participation_file(file_value.target.files[0]);
+  }
+  function handleChange7(file_value) {
+    setLanguage_cert(file_value.target.files[0])
+  }
+
+  const form = new FormData();
+  form.append("full_name", String(name));
+  form.append("phone", String(phone));
+  form.append("work_place", String(work_place));
+  form.append("education_file", education_file);
+  form.append("specialty_file", specialty_file);
+  form.append("experience_file", experience_file);
+  form.append("achievement_file", achievement_file);
+  form.append("qualification_file", qualification_file);
+  form.append("academ_experience_file", academ_experience_file);
+  form.append("seminar_participation_file", seminar_participation_file);
+  form.append("language_cert", language_cert);
+  form.append("language_cert_file", language_cert_file);
+  form.append("region", parseInt(region));
+  form.append("education", parseInt(education1));
+  form.append("specialty", parseInt(specialty1));
+  form.append("experience", parseInt(experience1));
+  form.append("achievement", parseInt(achievement1));
+  form.append("qualification", parseInt(qualification1));
+  form.append("academ_experience", parseInt(academ_experience1));
+  form.append("seminar_participation", parseInt(seminar_participation1));
+
 
   async function sendFunc() {
     try {
-      const response = await axios.post(`${BASE_URL}/competition/participants/create/`, postData);
-      setSuccess(true)
+      const response = await axios.post(
+        `${BASE_URL}/competition/participants/create/`,
+        form,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      setSuccess(true);
     } catch (error) {
-      setSuccess(false)
+      setSuccess(false);
+      console.log(error);
     } finally {
-      setOpen(true)
+      setOpen(true);
     }
   }
 
@@ -238,157 +282,235 @@ useEffect(() => {
             </label>
           </div>
           <div className="cart">
-            <p>Mutaxasisiligi.*</p>
+            <p>Ma'lumoti.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setExperience1(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
-                {
-                  specialty && specialty.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setEducation1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {education &&
+                  education.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setEducation_file(e.target.value)}/>
+              {/* <MuiFileInput placeholder="nimadir" value={education_file}  onChange={handleChange}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange}
+              />
             </label>
           </div>
           <div className="cart">
-            <p>Soxadagi faoliyati.*</p>
+            <p>Mutaxasisligi.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setSpecialty1(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
-                {
-                  experience && experience.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setSpecialty1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {specialty &&
+                  specialty.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setSpecialty_file(e.target.value)}/>
+              {/* <MuiFileInput value={specialty_file} onChange={handleChange1}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange1}
+              />
+            </label>
+          </div>
+          <div className="cart">
+            <p>Sohadagi faoliyati.*</p>
+            <label className="cart2">
+              <select
+                className="writing"
+                onChange={(e) => setExperience1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {experience &&
+                  experience.map((item, index) => {
+                    return (
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
+              </select>
+            </label>
+          </div>
+          <div className="cart">
+            <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
+            <label className="upload">
+              {/* <MuiFileInput value={experience_file} onChange={handleChange2}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange2}
+              />
             </label>
           </div>
           <div className="cart">
             <p>Yutuqlar.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setAchievement1(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
-                {
-                  achievement && achievement.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setAchievement1(e.target.value)}
+              >
+                <option selected>Viloyatingizni tanlang</option>
+                {achievement &&
+                  achievement.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setExperience_file(e.target.value)}/>
+              {/* <MuiFileInput value={achievement_file} onChange={handleChange3}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange3}
+              />
             </label>
           </div>
           <div className="cart">
             <p>Malaka oshirish.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setQualification1(e.target.value)}>
-                <option selected>
-                  Viloyatingizni tanlang
-                </option>
-                {
-                  qualification && qualification.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setQualification1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {qualification &&
+                  qualification.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setAchievement_file(e.target.value)}/>
+              {/* <MuiFileInput value={qualification_file} onChange={handleChange4}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange4}
+              />
             </label>
           </div>
           <div className="cart">
             <p>Ilmiy faoliyati.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setAcadem_experience1(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
-                {
-                  academ_experience && academ_experience.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setAcadem_experience1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {academ_experience &&
+                  academ_experience.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setQualification_file(e.target.value)}/>
+              {/* <MuiFileInput value={qualification_file} onChange={handleChange4}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange5}
+              />
             </label>
           </div>
           <div className="cart">
             <p>Seminar va konferensiyalarda ishtiroki.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setSeminar_participation1(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
-                {
-                  seminar_participation && seminar_participation.map((item, index) => {
+              <select
+                className="writing"
+                onChange={(e) => setSeminar_participation1(e.target.value)}
+              >
+                <option selected>Tanlang</option>
+                {seminar_participation &&
+                  seminar_participation.map((item, index) => {
                     return (
-                      <option key={index} value={item.id}>{item.translations.uz.name}</option>
-                    )
-                  })
-                }
+                      <option key={index} value={item.id}>
+                        {item.translations.uz.name}
+                      </option>
+                    );
+                  })}
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setSeminar_participation_file(e.target.value)}/>
+              {/* <MuiFileInput value={seminar_participation_file} onChange={handleChange5}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange6}
+              />
             </label>
           </div>
           <div className="cart">
             <p>Xorijiy til bilish darajasi.*</p>
             <label className="cart2">
-              <select className="writing" onChange={(e) => setTil(e.target.value)}>
-                <option selected>
-                  Tanlang
-                </option>
+              <select
+                className="writing"
+                onChange={(e) => setLanguage_cert(e.target.value)}
+              >
+                <option selected>Tanlang</option>
               </select>
             </label>
           </div>
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              <input className="writing uploading" type="file" onChange={(e) => setLanguage_cert_file(e.target.value)}/>
+              {/* <MuiFileInput value={language_cert_file} onChange={handleChange6}/> */}
+              <input
+                className="writing uploading"
+                type="file"
+                onChange={handleChange7}
+              />
             </label>
           </div>
           <div className="sending">

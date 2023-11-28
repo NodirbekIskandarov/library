@@ -4,9 +4,36 @@ import "./shartnoma.css";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
+import { BASE_URL } from "../../tools/urls";
+import axios from "axios";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  height: 400,
+  bgcolor: "background.paper",
+  border: "1px solid #000",
+  borderRadius: 10,
+  boxShadow: 24,
+  p: 4,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
 function Shartnoma() {
   const [selectedOption, setSelectedOption] = useState("option1");
   const [count, setCount] = useState(1);
+  const [success, setSuccess] = useState();
+  const [open, setOpen] = React.useState(false);
+  const handleClose = () => setOpen(false);
+
+
   function addNum() {
     setCount(count + 1);
   }
@@ -17,8 +44,131 @@ function Shartnoma() {
   };
   const { state } = useLocation();
   const { t } = useTranslation();
+
+  const [contractType, setContractType] = useState("");
+  const [isCompany, setIsCompany] = useState(true);
+  const [region, setRegion] = useState(0);
+  const [organization, setOrganization] = useState("");
+  const [organizationDirector, setOrganizationDirector] = useState("");
+  const [paymentPercent, setPaymentPercent] = useState("");
+  const [phone, setPhone] = useState("");
+  const [users, setUsers] = useState([]);
+  const [fullName, setFullName] = useState("");
+  const [position, setPosition] = useState("");
+  const [phone1, setPhone1] = useState("");
+  const [passportData, setPassportData] = useState("");
+  const [jshshir, setJshshir] = useState("");
+  const [passportFile, setPassportFile] = useState("");
+  const [rekOrgName, setRekOrgName] = useState("");
+  const [rekOrgAddress, setRekOrgAddress] = useState("");
+  const [rekOrgBank, setRekOrgBank] = useState("");
+  const [rekOrgHisobRaqam, setRekOrgHisobRaqam] = useState("");
+  const [rekOrgMfo, setRekOrgMfo] = useState("");
+  const [rekOrgInn, setRekOrgInn] = useState("");
+  const [rekOrgInnGazna, setRekOrgInnGazna] = useState("");
+  const [rekOrgAccountHisobRaqam, setRekOrgAccountHisobRaqam] = useState("");
+
+  function handleChange(file_value) {
+    setPassportFile(file_value.target.files[0]);
+  }
+
+  const form = new FormData();
+  form.append("contract_type", contractType);
+  form.append("is_company", isCompany);
+  form.append("region", region);
+  form.append("organization", organization);
+  form.append("organization_director", organizationDirector);
+  form.append("payment_percent", paymentPercent);
+  form.append("phone", phone);
+  form.append("users", users); //qaytadan korish kk
+  form.append("full_name", fullName);
+  form.append("position", position);
+  form.append("phone", phone1);
+  form.append("passport_data", passportData);
+  form.append("jshshir", jshshir);
+  form.append("passport_file", passportFile); // file yuklanadigan qismi
+  form.append("rek_org_name", rekOrgName);
+  form.append("rek_org_address", rekOrgAddress);
+  form.append("rek_org_bank", rekOrgBank);
+  form.append("rek_org_hisob_raqam", rekOrgHisobRaqam);
+  form.append("rek_org_account_hisob_raqam", rekOrgAccountHisobRaqam);
+  form.append("rek_org_mfo", rekOrgMfo);
+  form.append("rek_org_inn", rekOrgInn);
+  form.append("rek_org_inn_gazna", rekOrgInnGazna);
+
+  async function sendFunc() {
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/competition/participants/create/`,
+        form,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+      console.log(error);
+    } finally {
+      setOpen(true);
+    }
+  }
+
   return (
     <div className="shartnoma">
+      <div>
+        {success ? (
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  fill="green"
+                  class="bi bi-send-check"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855a.75.75 0 0 0-.124 1.329l4.995 3.178 1.531 2.406a.5.5 0 0 0 .844-.536L6.637 10.07l7.494-7.494-1.895 4.738a.5.5 0 1 0 .928.372l2.8-7Zm-2.54 1.183L5.93 9.363 1.591 6.602l11.833-4.733Z" />
+                  <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0m-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z" />
+                </svg>
+              </Typography>
+            </Box>
+          </Modal>
+        ) : (
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="300"
+                  height="300"
+                  fill="red"
+                  class="bi bi-bag-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M6.146 8.146a.5.5 0 0 1 .708 0L8 9.293l1.146-1.147a.5.5 0 1 1 .708.708L8.707 10l1.147 1.146a.5.5 0 0 1-.708.708L8 10.707l-1.146 1.147a.5.5 0 0 1-.708-.708L7.293 10 6.146 8.854a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </Typography>
+            </Box>
+          </Modal>
+        )}
+      </div>
       <div className="container">
         <div className="locationOfPage">
           <p>{t("interaktiv_xizmatlar")}</p>
@@ -42,7 +192,6 @@ function Shartnoma() {
               onChange={handleOptionChange}
             />
             <span className="ms-3">Tashkilot orqali</span>
-            
           </label>
           <br />
           <br />
@@ -54,7 +203,6 @@ function Shartnoma() {
               onChange={handleOptionChange}
             />
             <span className="ms-3">O'zi tomonidan</span>
-          
           </label>
         </div>
 
@@ -164,6 +312,7 @@ function Shartnoma() {
                           type="file"
                           className="item"
                           placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                          onChange={handleChange}
                         ></input>
                       </div>
                     </div>
@@ -224,9 +373,6 @@ function Shartnoma() {
                   <p>INN (G'aznachilik)</p>
                   <input type="text" className="item" placeholder="INN"></input>
                 </div>
-                <div className="saqlash">
-                  <button>Saqlash</button>
-                </div>
               </div>
             </div>
           </div>
@@ -284,6 +430,10 @@ function Shartnoma() {
             </div>
           </div>
         )}
+
+        <div className="saqlash">
+          <button onClick={sendFunc}>Saqlash</button>
+        </div>
       </div>
     </div>
   );
