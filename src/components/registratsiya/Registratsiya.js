@@ -423,7 +423,6 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              {/* <MuiFileInput value={qualification_file} onChange={handleChange4}/> */}
               <input
                 className="writing uploading"
                 type="file"
@@ -483,7 +482,6 @@ function Registratsiya() {
           <div className="cart">
             <p>Xujjatingizni skaner formatini ushbu maydonga yuklang.*</p>
             <label className="upload">
-              {/* <MuiFileInput value={seminar_participation_file} onChange={handleChange5}/> */}
               <input
                 className="writing uploading"
                 type="file"
