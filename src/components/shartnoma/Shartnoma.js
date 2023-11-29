@@ -47,7 +47,7 @@ function Shartnoma() {
 
   const [contractType, setContractType] = useState("");
   const [isCompany, setIsCompany] = useState(true);
-  const [region, setRegion] = useState(0);
+  const [region, setRegion] = useState(3);
   const [organization, setOrganization] = useState("");
   const [organizationDirector, setOrganizationDirector] = useState("");
   const [paymentPercent, setPaymentPercent] = useState("");
@@ -68,9 +68,50 @@ function Shartnoma() {
   const [rekOrgInnGazna, setRekOrgInnGazna] = useState("");
   const [rekOrgAccountHisobRaqam, setRekOrgAccountHisobRaqam] = useState("");
 
+  // const [object, setObject] = useState()
+
   function handleChange(file_value) {
     setPassportFile(file_value.target.files[0]);
   }
+
+  // const [myArray, setMyArray] = useState([])
+  let myArray = []
+  let myNewArray = [
+    // {
+    //   name: "name"
+    // },
+    // {
+    //   name: "name"
+    // },
+    // {
+    //   name: "name"
+    // },
+    // {
+    //   name: "name"
+    // },
+    // {
+    //   name: "name"
+    // }
+  ]
+  let obj
+  for (let i=0; i<divIndexes.length; i++) {
+    obj =
+      {
+        "full_name": fullName,
+        "position": position,
+        "phone": phone1,
+        "passport_data": passportData,
+        "jshshir": jshshir,
+        "passport_file": passportFile,
+      }
+      // setObject(obj)
+      // console.log(obj)
+      myNewArray.push(obj)
+      myArray=[...myNewArray]
+    }
+    console.log(myArray)
+  // // console.log(myArray)
+  // console.log(myNewArray)
 
   const form = new FormData();
   form.append("contract_type", contractType);
@@ -80,26 +121,40 @@ function Shartnoma() {
   form.append("organization_director", organizationDirector);
   form.append("payment_percent", paymentPercent);
   form.append("phone", phone);
-  form.append("users", users); //qaytadan korish kk
-  form.append("full_name", fullName);
-  form.append("position", position);
-  form.append("phone", phone1);
-  form.append("passport_data", passportData);
-  form.append("jshshir", jshshir);
-  form.append("passport_file", passportFile); // file yuklanadigan qismi
-  form.append("rek_org_name", rekOrgName);
-  form.append("rek_org_address", rekOrgAddress);
-  form.append("rek_org_bank", rekOrgBank);
-  form.append("rek_org_hisob_raqam", rekOrgHisobRaqam);
-  form.append("rek_org_account_hisob_raqam", rekOrgAccountHisobRaqam);
-  form.append("rek_org_mfo", rekOrgMfo);
-  form.append("rek_org_inn", rekOrgInn);
-  form.append("rek_org_inn_gazna", rekOrgInnGazna);
-
+  // for (let i=0; i<divIndexes.length; i++) {
+    //   form.append(`users[${i}].full_name`, myNewArray[i].name)
+    //   form.append(`user[${i}].position`, myNewArray[i].name)
+    //   form.append(`user[${i}].phone`, myNewArray[i].name)
+    //   form.append(`user[${i}].passport_data`, myNewArray[i].name)
+    //   form.append(`user[${i}].passport_file`, myNewArray[i].name)
+    // }
+    
+    // divIndexes.forEach((item) => {
+      //   form.append("users[]", item)
+      // })
+      
+      
+      // form.append("users", myNewArray); //qaytadan korish kk
+      // form.append("full_name", fullName);
+      // form.append("position", position);
+      // form.append("phone", phone1);
+      // form.append("passport_data", passportData);
+      // form.append("jshshir", jshshir);
+      // form.append("passport_file", passportFile); // file yuklanadigan qismi
+      form.append("rek_org_name", rekOrgName);
+      form.append("rek_org_address", rekOrgAddress);
+      form.append("rek_org_bank", rekOrgBank);
+      form.append("rek_org_hisob_raqam", rekOrgHisobRaqam);
+      form.append("rek_org_account_hisob_raqam", rekOrgAccountHisobRaqam);
+      form.append("rek_org_mfo", rekOrgMfo);
+      form.append("rek_org_inn", rekOrgInn);
+      form.append("rek_org_inn_gazna", rekOrgInnGazna);
+      console.log("form")
+      
   async function sendFunc() {
     try {
       const response = await axios.post(
-        `${BASE_URL}/competition/participants/create/`,
+        `${BASE_URL}/onlineservices/contract/create/`,
         form,
         {
           headers: {
@@ -213,13 +268,13 @@ function Shartnoma() {
                 <div className="box">
                   <div className="cart">
                     <p>Shartnoma turi</p>
-                    <select className="item">
+                    <select className="item" onChange={(e) => setContractType(e.target.value)}>
                       <option>Tanlang</option>
                     </select>
                   </div>
                   <div className="cart">
                     <p>Hudud</p>
-                    <select className="item">
+                    <select className="item" onChange={(e) => setRegion(e.target.value)}>
                       <option>Tanlang</option>
                     </select>
                   </div>
@@ -229,6 +284,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot nomini yozing"
+                      onInput={(e) => setOrganization(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -237,6 +293,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                      onInput={(e) => setOrganizationDirector(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -245,6 +302,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="0%"
+                      onInput={(e) => setPaymentPercent(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -253,6 +311,7 @@ function Shartnoma() {
                       type="phone"
                       className="item"
                       placeholder="Telefon raqamini kiriting"
+                      onInput={(e) => setPhone(e.target.value)}
                     ></input>
                   </div>
                 </div>
@@ -267,11 +326,12 @@ function Shartnoma() {
                   return (
                     <div key={index} className="box2">
                       <div className="cart">
-                        <p>Tashkilot rahbari</p>
+                        <p>F.I.Sh</p>
                         <input
                           type="text"
                           className="item"
                           placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                          onInput={(e) => setFullName(e.target.value)}
                         ></input>
                       </div>
                       <div className="cart">
@@ -280,6 +340,7 @@ function Shartnoma() {
                           type="text"
                           className="item"
                           placeholder="Lavozimini kiriting"
+                          onInput={(e) => setPosition(e.target.value)}
                         ></input>
                       </div>
                       <div className="cart">
@@ -288,6 +349,7 @@ function Shartnoma() {
                           type="tel"
                           className="item"
                           placeholder="Telefon raqamini kiriting"
+                          onInput={(e) => setPhone1(e.target.value)}
                         ></input>
                       </div>
                       <div className="cart">
@@ -296,6 +358,7 @@ function Shartnoma() {
                           type="text"
                           className="item"
                           placeholder="Passport seriasini va raqamini kiriting"
+                          onInput={(e) => setPassportData(e.target.value)}
                         ></input>
                       </div>
                       <div className="cart">
@@ -304,6 +367,7 @@ function Shartnoma() {
                           type="text"
                           className="item"
                           placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                          onInput={(e) => setJshshir(e.target.value)}
                         ></input>
                       </div>
                       <div className="cart">
@@ -327,6 +391,7 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Tashkilot nomini yozing"
+                    onInput={(e) => setRekOrgName(e.target.value)}
                   ></input>
                 </div>
                 <div className="cart">
@@ -335,6 +400,7 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Manzilni kiriting"
+                    onInput={(e) => setRekOrgAddress(e.target.value)}
                   ></input>
                 </div>
                 <div className="cart">
@@ -343,6 +409,7 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Bank nomini kiriting"
+                    onInput={(e) => setRekOrgBank(e.target.value)}
                   ></input>
                 </div>
                 <div className="cart">
@@ -351,6 +418,7 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Hisob raqamini kiriting"
+                    onInput={(e) => setRekOrgHisobRaqam(e.target.value)}
                   ></input>
                 </div>
                 <div className="cart">
@@ -359,19 +427,20 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Shaxsiy hisob varag'i raqamini kiriting"
+                    onInput={(e) => setRekOrgAccountHisobRaqam(e.target.value)}
                   ></input>
                 </div>
                 <div className="cart">
                   <p>MFO</p>
-                  <input type="text" className="item" placeholder="MFO"></input>
+                  <input type="text" className="item" placeholder="MFO" onInput={(e) => setRekOrgMfo(e.target.value)}></input>
                 </div>
                 <div className="cart">
                   <p>INN (Tashkilot)</p>
-                  <input type="text" className="item" placeholder="INN"></input>
+                  <input type="text" className="item" placeholder="INN" onInput={(e) => setRekOrgInn(e.target.value)}></input>
                 </div>
                 <div className="cart">
                   <p>INN (G'aznachilik)</p>
-                  <input type="text" className="item" placeholder="INN"></input>
+                  <input type="text" className="item" placeholder="INN" onInput={(e) => setRekOrgInnGazna(e.target.value)}></input>
                 </div>
               </div>
             </div>
@@ -383,13 +452,13 @@ function Shartnoma() {
                 <div className="box">
                   <div className="cart">
                     <p>Shartnoma turi</p>
-                    <select className="item">
+                    <select className="item" onChange={(e) => setContractType(e.target.value)}>
                       <option>Tanlang</option>
                     </select>
                   </div>
                   <div className="cart">
                     <p>Hudud</p>
-                    <select className="item">
+                    <select className="item" onChange={(e) => setRegion(e.target.value)}>
                       <option>Tanlang</option>
                     </select>
                   </div>
@@ -399,6 +468,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot nomini yozing"
+                      onInput={(e) => setOrganization(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -407,6 +477,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                      onInput={(e) => setOrganizationDirector(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -415,6 +486,7 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="0%"
+                      onInput={(e) => setPaymentPercent(e.target.value)}
                     ></input>
                   </div>
                   <div className="cart">
@@ -423,6 +495,7 @@ function Shartnoma() {
                       type="phone"
                       className="item"
                       placeholder="Telefon raqamini kiriting"
+                      onInput={(e) => setPhone(e.target.value)}
                     ></input>
                   </div>
                 </div>
