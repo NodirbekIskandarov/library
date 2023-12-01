@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-function ShartnomaUsers({valueChanger, data}) {
+function ShartnomaUsers({valueChanger, data}) {  //valueChanger  Shartnoma companentidagi CHangeUserContract funksiyasi, bu funcsiya father componentada child componenetdan kelgan malumotlarni tekshiradi fa saqlaydi
 
-    const [contract, setContract] = useState(data)
+    const [contract, setContract] = useState(data)    //contract xar bir card ichidagi object
 
-    const dataChanger = (key, value) => {
-        setContract(prev=> {
+    const dataChanger = (key, value) => {   //dataChanger funksiyasi xar bir inputga kiritilganmalumotni name va value si bilan saqlaydi
+        setContract(prev=> {   // bu qismida contract objectini eski qiymatini clone qilib oladi va va yonidan xar bir bir inputga yangi kiritilgan malumotni name va value si bilan saqlaydi
             valueChanger({
                 ...prev,
                 [key+""]: value
@@ -26,9 +26,9 @@ function ShartnomaUsers({valueChanger, data}) {
             type="text"
             className="item"
             placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-            value={contract.val1}
+            value={contract.full_name}
             onInput={(event) => {
-                dataChanger("val1", event.target.value)
+                dataChanger("full_name", event.target.value)
             }}
           ></input>
         </div>
@@ -38,9 +38,9 @@ function ShartnomaUsers({valueChanger, data}) {
             type="text"
             className="item"
             placeholder="Lavozimini kiriting"
-            value={contract.val2}
+            value={contract.position}
             onInput={(event) => {
-                dataChanger("val2", event.target.value)
+                dataChanger("position", event.target.value)
             }}
           ></input>
         </div>
@@ -51,9 +51,9 @@ function ShartnomaUsers({valueChanger, data}) {
             className="item"
             placeholder="Telefon raqamini kiriting"
             onInput={(event) => {
-                dataChanger("val3", event.target.value)
+                dataChanger("phone", event.target.value)
             }}
-            value={contract.val3}
+            value={contract.phone}
           ></input>
         </div>
         <div className="cart">
@@ -62,9 +62,9 @@ function ShartnomaUsers({valueChanger, data}) {
             type="text"
             className="item"
             placeholder="Passport seriasini va raqamini kiriting"
-            value={contract.val4}
+            value={contract.passport_data}
             onInput={(event) => {
-                dataChanger("val4", event.target.value)
+                dataChanger("passport_data", event.target.value)
             }}
           ></input>
         </div>
@@ -74,13 +74,24 @@ function ShartnomaUsers({valueChanger, data}) {
             type="text"
             className="item"
             placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-            value={contract.val5}
+            value={contract.jshshir}
             onInput={(event) => {
-                dataChanger("val5", event.target.value)
+                dataChanger("jshshir", event.target.value)
             }}
           ></input>
         </div>
-        
+        <div className="cart">
+          <p>file</p>
+          <input
+            type="file"
+            className="item"
+            placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+            value={contract.passport_file}
+            onInput={(event) => {
+                dataChanger("passport_file", event.target.value)
+            }}
+          ></input>
+        </div>
       </div>
     </div>
   );

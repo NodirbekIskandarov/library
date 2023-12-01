@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Line from "../line/Line";
 import "./shartnoma.css";
 import { useLocation } from "react-router-dom";
@@ -10,7 +10,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ShartnomaUsers from "../shartnomaUsers/ShartnomaUsers";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const style = {
   position: "absolute",
@@ -34,39 +34,71 @@ function Shartnoma() {
   const [success, setSuccess] = useState();
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
+  const [use, setUse] = useState([]);
+  // form data states
 
-  const [divIndexes, setDivIndexes] = useState([])
+  const [contract_type, setContract_type] = useState("");
+  const [is_company, setIs_company] = useState(true);
+  const [region, setRegion] = useState(3);
+  const [organization, setOrganization] = useState("");
+  const [organization_director, setOrganization_director] = useState("");
+  const [payment_percent, setPayment_percent] = useState("");
+  const [phone, setPhone] = useState("");
+  const [users, setUsers] = useState([]);
+  const [rek_org_name, setRek_org_name] = useState("");
+  const [rek_org_address, setRek_org_address] = useState("");
+  const [rek_org_bank, setRek_org_bank] = useState("");
+  const [rek_org_hisob_raqam, setRek_org_hisob_raqam] = useState("");
+  const [rek_org_account_hisob_raqam, setRek_org_account_hisob_raqam] =
+    useState("");
+  const [rek_org_mfo, setRek_org_mfo] = useState("");
+  const [rek_org_inn, setRek_org_inn] = useState("");
+  const [rek_org_inn_gazna, setRek_org_inn_gazna] = useState("");
+
+  // end
+
+  const [divIndexes, setDivIndexes] = useState([]); // bu cardlarni objectlarini yigish uchun massiv
 
   const addUserF = () => {
-    setDivIndexes(prev => {
-      return [...prev, {
-        id: uuidv4(),
-        data: {
-          val1: '',
-          val2: '',
-          val3: '',
-          val4: '',
-          val5: ''
-        }
-      }]
-    })
-  }
+    //bu saqlash bosilganda ishlaydigan funksiya
+    setDivIndexes((prev) => {
+      //bu joyida 1-qadam: divindexes ning avvalgi qiymatini oladi,
+      return [
+        ...prev, //  2-qadam: massivning eski qiymatini clone qiladi
+        {
+          id: uuidv4(), // 3-qadam: bu joyda yangi qoshiladigan objectga unikal id saqlaydi
+          data: {
+            // data card ichidagi malumotlar objecti
+            full_name: "",
+            position: "",
+            phone: "",
+            passport_data: "",
+            jshshir: "",
+            passport_file: "",
+          },
+        },
+      ];
+    });
+  };
 
   const chageUserContract = (id, data) => {
+    //bu funksiya ShartnomaUser componentiga yuboriladigan va undan id va data degan qiymatlarni qabul qilib oladigan funksiya
     const new_contract = {
+      // bu qatorda yangi new_contract nomli object yaratilyapdi va unga child componentadan kelgan kelgan id va data(=> yangi toldirilgan malumotlar objecti) saqlanadi
       id: id,
-      data: data
-    }
-    setDivIndexes(prev => {
-      return prev.map(element => {
-        if(element.id === id){
-          return new_contract
-        }else{
-          return element
+      data: data,
+    };
+    setDivIndexes((prev) => {
+      // bu qatorda divIndexes ning eski qiymatini olyapdi va uni map qilib aylantiradi, ichidagi har bir elementining id sini child dan kelgan id tekshiradi, agar true bolsa divindexes ga kelgan objectni qaytaradi, aks holda yani false xolatida map ichidagi elementni ozini qaytaradi
+      return prev.map((element) => {
+        if (element.id === id) {
+          return new_contract;
+        } else {
+          return element;
         }
-      })
-    })
-  }
+      });
+    });
+  };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -75,7 +107,109 @@ function Shartnoma() {
   const { state } = useLocation();
   const { t } = useTranslation();
 
+  //part of append to formData
+  // const form = new FormData();
+  // form.append("contract_type", String(contract_type));
+  // form.append("is_company", String(is_company));
+  // form.append("region", region);
+  // form.append("organization", String(organization));
+  // form.append("organization_director", String(organization_director));
+  // form.append("payment_percent", String(payment_percent));
+  // form.append("phone", String(phone));
+  // // form.append("users", JSON.stringify(divIndexes))
+  // let arr = []
+  //   divIndexes.forEach((item, index) => {
+  //     const serializedObject = item.data;
+  //     arr.push(serializedObject)
+  //   });
+  //   console.log(arr)
+  //   form.append("users", JSON.stringify(arr));
+  //   // form.append("users", arr)
+  //   // arr.forEach((user, index) => {
+  //   //   const file = user.passport_file
 
+  //   // })
+  // form.append("rek_org_name", String(rek_org_name));
+  // form.append("rek_org_address", String(rek_org_address));
+  // form.append("rek_org_bank", String(rek_org_bank));
+  // form.append("rek_org_hisob_raqam", String(rek_org_hisob_raqam));
+  // form.append(
+  //   "rek_org_account_hisob_raqam",
+  //   String(rek_org_account_hisob_raqam)
+  // );
+  // form.append("rek_org_mfo", String(rek_org_mfo));
+  // form.append("rek_org_inn", String(rek_org_inn));
+  // form.append("rek_org_inn_gazna", String(rek_org_inn_gazna));
+
+  // console.log(divIndexes);
+  // part of post FormData to API
+
+  let arr = []
+  divIndexes.map((item, index) => {
+    // console.log(item.data)
+    return arr.push(item.data)
+  })
+  console.log(arr, "arr")
+
+
+
+  const [postData, setPostData] = useState({
+    "is_company": true,
+    "contract_type": "",
+    "region": 3,
+    "organization": "",
+    "organization_director": "",
+    "payment_percent": "",
+    "phone": "",
+    "rek_org_name": "",
+    "rek_org_address": "",
+    "rek_org_bank": "",
+    "rek_org_hisob_raqam": "",
+    "rek_org_account_hisob_raqam": "",
+    "rek_org_mfo": "",
+    "rek_org_inn": "",
+    "rek_org_inn_gazna": "",
+  });
+  
+
+  useEffect(() => {
+    setPostData((prevData) => ({
+      ...prevData,
+      users: arr,
+    }));
+  }, [arr]);  // setPostData ni ham kuzatib boradi
+  
+  // console.log(postData.users)
+
+
+  console.log(postData.users, "users");
+
+  function getValue(key, value) {
+    setPostData({
+      ...postData,
+      [key + ""]: value,
+    });
+  }
+
+  async function sendFunc() {
+    try {
+      const response = await axios.post(
+        `${BASE_URL}/onlineservices/contract/create/`,
+        postData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setSuccess(true);
+    } catch (error) {
+      setSuccess(false);
+      console.log(error);
+    } finally {
+      setOpen(true);
+    }
+  }
   return (
     <div className="shartnoma">
       <div>
@@ -175,6 +309,10 @@ function Shartnoma() {
                     <p>Shartnoma turi</p>
                     <select
                       className="item"
+                      value={postData.contract_type}
+                      onChange={(e) => {
+                        getValue("contract_type", e.target.value);
+                      }}
                     >
                       <option>Tanlang</option>
                     </select>
@@ -183,6 +321,10 @@ function Shartnoma() {
                     <p>Hudud</p>
                     <select
                       className="item"
+                      value={postData.region}
+                      onChange={(e) => {
+                        getValue("region", e.target.value);
+                      }}
                     >
                       <option>Tanlang</option>
                     </select>
@@ -193,6 +335,10 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot nomini yozing"
+                      value={postData.organization}
+                      onChange={(e) => {
+                        getValue("organization", e.target.value);
+                      }}
                     ></input>
                   </div>
                   <div className="cart">
@@ -201,6 +347,10 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
+                      value={postData.organization_director}
+                      onChange={(e) => {
+                        getValue("organization_director", e.target.value);
+                      }}
                     ></input>
                   </div>
                   <div className="cart">
@@ -209,6 +359,10 @@ function Shartnoma() {
                       type="text"
                       className="item"
                       placeholder="0%"
+                      value={postData.payment_percent}
+                      onChange={(e) => {
+                        getValue("payment_percent", e.target.value);
+                      }}
                     ></input>
                   </div>
                   <div className="cart">
@@ -217,6 +371,10 @@ function Shartnoma() {
                       type="phone"
                       className="item"
                       placeholder="Telefon raqamini kiriting"
+                      value={postData.phone}
+                      onChange={(e) => {
+                        getValue("phone", e.target.value);
+                      }}
                     ></input>
                   </div>
                 </div>
@@ -227,8 +385,16 @@ function Shartnoma() {
             </div>
             <div className="container3">
               {divIndexes.map((elem, index) => {
-                  return <ShartnomaUsers key={index} valueChanger={(newdata)=>{chageUserContract(elem.id, newdata);}} data={elem.data}/>
-                })}
+                return (
+                  <ShartnomaUsers
+                    key={index}
+                    valueChanger={(newdata) => {
+                      chageUserContract(elem.id, newdata);
+                    }}
+                    data={elem.data}
+                  />
+                );
+              })}
               <button onClick={addUserF}>+ Yana qo'shish</button>
               <h2>Rekvizitlar</h2>
               <div className="box3">
@@ -238,6 +404,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Tashkilot nomini yozing"
+                    value={postData.rek_org_name}
+                    onChange={(e) => {
+                      getValue("rek_org_name", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -246,6 +416,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Manzilni kiriting"
+                    value={postData.rek_org_address}
+                    onChange={(e) => {
+                      getValue("rek_org_address", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -254,6 +428,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Bank nomini kiriting"
+                    value={postData.rek_org_bank}
+                    onChange={(e) => {
+                      getValue("rek_org_bank", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -262,6 +440,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Hisob raqamini kiriting"
+                    value={postData.rek_org_hisob_raqam}
+                    onChange={(e) => {
+                      getValue("rek_org_hisob_raqam", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -270,6 +452,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="Shaxsiy hisob varag'i raqamini kiriting"
+                    value={postData.rek_org_account_hisob_raqam}
+                    onChange={(e) => {
+                      getValue("rek_org_account_hisob_raqam", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -278,6 +464,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="MFO"
+                    value={postData.rek_org_mfo}
+                    onChange={(e) => {
+                      getValue("rek_org_mfo", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -286,6 +476,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="INN"
+                    value={postData.rek_org_inn}
+                    onChange={(e) => {
+                      getValue("rek_org_inn", e.target.value);
+                    }}
                   ></input>
                 </div>
                 <div className="cart">
@@ -294,6 +488,10 @@ function Shartnoma() {
                     type="text"
                     className="item"
                     placeholder="INN"
+                    value={postData.rek_org_inn_gazna}
+                    onChange={(e) => {
+                      getValue("rek_org_inn_gazna", e.target.value);
+                    }}
                   ></input>
                 </div>
               </div>
@@ -306,17 +504,13 @@ function Shartnoma() {
                 <div className="box">
                   <div className="cart">
                     <p>Shartnoma turi</p>
-                    <select
-                      className="item"
-                    >
+                    <select className="item">
                       <option>Tanlang</option>
                     </select>
                   </div>
                   <div className="cart">
                     <p>Hudud</p>
-                    <select
-                      className="item"
-                    >
+                    <select className="item">
                       <option>Tanlang</option>
                     </select>
                   </div>
@@ -359,7 +553,7 @@ function Shartnoma() {
         )}
 
         <div className="saqlash">
-          <button>Saqlash</button>
+          <button onClick={sendFunc}>Saqlash</button>
         </div>
       </div>
     </div>
