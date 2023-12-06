@@ -21,7 +21,7 @@ function FotoDetail() {
       try {
         const response = await axios.get(`${BASE_URL}/${FOTO_DETAIL}/${pk.id}`);
         setData(response.data);
-        console.log(response);
+        console.log(response.data);
       } catch (error) {
         setError(error);
       } finally {
@@ -47,7 +47,7 @@ function FotoDetail() {
       <div className="container">
         <div className="image_part">
           <div className="image">
-            <FotoDetailImage/>
+            <FotoDetailImage images={data.images}/>
           </div>
           <div className="right_part">
             <div className="title">
