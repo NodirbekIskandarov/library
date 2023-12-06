@@ -4,6 +4,8 @@ import Line from '../line/Line'
 import { useLocation } from 'react-router-dom';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { useTranslation } from 'react-i18next';
+
+import { Form } from '../test/Form';
 function Tuzilmalar() {
   const { state } = useLocation();
 const { t } = useTranslation()
@@ -13,7 +15,7 @@ const { t } = useTranslation()
         <div className="locationOfPage">
           <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
-          <p>{state.name}</p>
+          {/* <p>{state.name}</p> */}
         </div>
             <div className='title'>
                 <Line/>
@@ -22,6 +24,7 @@ const { t } = useTranslation()
                     <p>{t("kutubxonamiz_tashkiliy_tuzilmasi")}</p>
                 </div>
             </div>
+            <Form />
         </div>
     </div>
   )

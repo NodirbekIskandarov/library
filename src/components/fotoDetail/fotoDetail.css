@@ -1,0 +1,21 @@
+.foto_detail {
+    width: 100%;
+    margin-top: 50px;
+}
+.foto_detail .image_part {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.foto_detail .image_part .image {
+    width: 48%;
+}
+.foto_detail .image img {
+    width: 100%;
+}
+.foto_detail .image_part .right_part {
+    width: 48%;
+}
+.foto_detail .image_part .right_part .text {
+    margin-top: 50px;
+}

@@ -1,6 +1,6 @@
 import "./fotogalereya.css";
 import Line from "../line/Line";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 import { BASE_URL, FOTOGLEREYA } from "../../tools/urls";
@@ -20,7 +20,7 @@ function Fotogalereya() {
         try {
           const response = await axios.get(`${BASE_URL}/${FOTOGLEREYA}`);
           setData(response.data);
-          // console.log(response)
+          console.log(response.data)
         } catch (error) {
           setError(error);
         } finally {
@@ -56,9 +56,9 @@ function Fotogalereya() {
                   {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
                   <h5>{item.created}</h5>
                   {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
-                  <button>
+                  <Link to={`/galery/${item.id}`}>
                     <p>{t("batafsil")}</p>
-                  </button>
+                  </Link>
                 </div>
               </div>
             );

@@ -41,11 +41,11 @@ function Showhujjat() {
   return (
     <div className='showhujjat'>
         <div className='container'>
-        {/* <div className="locationOfPage">
+        <div className="locationOfPage">
           <p>{t("markaz_haqida")}</p>
           <MdKeyboardArrowRight />
-          <p>{state.name}</p>
-        </div> */}
+          {/* <p>{state.name}</p> */}
+        </div>
             <div className='title'>
                 <Line/>
                 <div className='titlePart'>

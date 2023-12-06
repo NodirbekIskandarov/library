@@ -16,7 +16,46 @@ function ShartnomaUsers({valueChanger, data}) {  //valueChanger  Shartnoma compa
             }
         })
     }
+    const [base64String, setBase64String] = useState('');
+    
+    const handleChangeFile = (event) => {
+      const file = event.target.files[0]
 
+      // if (file) {
+      //   const fileType = getFileType(file);
+      //   convertFileToBase64(file, fileType)
+      //     .then((result) => {
+      //       setBase64String(result);
+            
+      //       console.log(result)
+            dataChanger("passport_file", file)
+        //   })
+        //   .catch((error) => {
+        //     console.error('Error converting file to Base64:', error);
+        //   });
+        // }
+    }
+
+  // const convertFileToBase64 = (file, fileType) => {
+  //   return new Promise((resolve, reject) => {
+  //     const reader = new FileReader();
+
+  //     reader.onload = () => {
+  //       const base64Data = reader.result.split(',')[1];
+  //     const dataURL = `data:${fileType};base64,${base64Data}`;
+  //     resolve(dataURL);
+  //     };
+
+  //     reader.onerror = (error) => {
+  //       reject(error);
+  //     };
+
+  //     reader.readAsDataURL(file);
+  //   });
+  // };
+  // const getFileType = (file) => {
+  //   return file.type || 'application/octet-stream';
+  // };
   return (
     <div>
       <div className="box2">
@@ -86,10 +125,8 @@ function ShartnomaUsers({valueChanger, data}) {  //valueChanger  Shartnoma compa
             type="file"
             className="item"
             placeholder="Tashkilot rahbari F.I.Sh. ni yozing"
-            value={contract.passport_file}
-            onInput={(event) => {
-                dataChanger("passport_file", event.target.value)
-            }}
+            // value={contract.passport_file}
+            onChange={handleChangeFile}
           ></input>
         </div>
       </div>

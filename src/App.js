@@ -23,6 +23,8 @@ import Galery from "./pages/galery/Galery";
 import Index from "./layouts/components/Index";
 import './i18n'
 import Onlinecourses from "./pages/onlinecourses/Onlinecourses";
+import NewsDetail from "./components/newsDetail/NewsDetail";
+import FotoDetail from "./components/fotoDetail/FotoDetail";
 function App() {
   
   return (
@@ -43,6 +45,7 @@ function App() {
             <Route path="/contract" element={<Contract />} />
             <Route path="/certificate" element={<Certificate />} />
             <Route path={`/documents/:id`} element={<Aboutdocuments />} />
+            <Route path={`/news/:id`} element={<NewsDetail />} />
             <Route path="/application" element={<Application />} />
             <Route path="/online" element={<Onlinecourses />} />
             <Route
@@ -52,6 +55,7 @@ function App() {
             <Route path="/pay" element={<Pay />} />
             <Route path="/questions" element={<Questions />} />
             <Route path="/galery" element={<Galery />} />
+            <Route path={`/galery/:id`} element={<FotoDetail />} />
             <Route path="/registration" element={<Registration />} />
           </Route>
         </Routes>

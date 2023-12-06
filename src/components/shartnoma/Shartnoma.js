@@ -34,28 +34,7 @@ function Shartnoma() {
   const [success, setSuccess] = useState();
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);
-  const [use, setUse] = useState([]);
-  // form data states
-
-  const [contract_type, setContract_type] = useState("");
-  const [is_company, setIs_company] = useState(true);
-  const [region, setRegion] = useState(3);
-  const [organization, setOrganization] = useState("");
-  const [organization_director, setOrganization_director] = useState("");
-  const [payment_percent, setPayment_percent] = useState("");
-  const [phone, setPhone] = useState("");
-  const [users, setUsers] = useState([]);
-  const [rek_org_name, setRek_org_name] = useState("");
-  const [rek_org_address, setRek_org_address] = useState("");
-  const [rek_org_bank, setRek_org_bank] = useState("");
-  const [rek_org_hisob_raqam, setRek_org_hisob_raqam] = useState("");
-  const [rek_org_account_hisob_raqam, setRek_org_account_hisob_raqam] =
-    useState("");
-  const [rek_org_mfo, setRek_org_mfo] = useState("");
-  const [rek_org_inn, setRek_org_inn] = useState("");
-  const [rek_org_inn_gazna, setRek_org_inn_gazna] = useState("");
-
-  // end
+  const [type, setType] = useState(true)
 
   const [divIndexes, setDivIndexes] = useState([]); // bu cardlarni objectlarini yigish uchun massiv
 
@@ -81,6 +60,7 @@ function Shartnoma() {
     });
   };
 
+
   const chageUserContract = (id, data) => {
     //bu funksiya ShartnomaUser componentiga yuboriladigan va undan id va data degan qiymatlarni qabul qilib oladigan funksiya
     const new_contract = {
@@ -98,63 +78,26 @@ function Shartnoma() {
         }
       });
     });
+
   };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
+    const isCompanyValue = event.target.value === "option1";
+    setPostData((prev) => ({
+      ...prev,
+      "is_company": isCompanyValue,
+    }));
   };
 
   const { state } = useLocation();
   const { t } = useTranslation();
 
   //part of append to formData
-  // const form = new FormData();
-  // form.append("contract_type", String(contract_type));
-  // form.append("is_company", String(is_company));
-  // form.append("region", region);
-  // form.append("organization", String(organization));
-  // form.append("organization_director", String(organization_director));
-  // form.append("payment_percent", String(payment_percent));
-  // form.append("phone", String(phone));
-  // // form.append("users", JSON.stringify(divIndexes))
-  // let arr = []
-  //   divIndexes.forEach((item, index) => {
-  //     const serializedObject = item.data;
-  //     arr.push(serializedObject)
-  //   });
-  //   console.log(arr)
-  //   form.append("users", JSON.stringify(arr));
-  //   // form.append("users", arr)
-  //   // arr.forEach((user, index) => {
-  //   //   const file = user.passport_file
 
-  //   // })
-  // form.append("rek_org_name", String(rek_org_name));
-  // form.append("rek_org_address", String(rek_org_address));
-  // form.append("rek_org_bank", String(rek_org_bank));
-  // form.append("rek_org_hisob_raqam", String(rek_org_hisob_raqam));
-  // form.append(
-  //   "rek_org_account_hisob_raqam",
-  //   String(rek_org_account_hisob_raqam)
-  // );
-  // form.append("rek_org_mfo", String(rek_org_mfo));
-  // form.append("rek_org_inn", String(rek_org_inn));
-  // form.append("rek_org_inn_gazna", String(rek_org_inn_gazna));
-
-  // console.log(divIndexes);
-  // part of post FormData to API
-
-  let arr = []
-  divIndexes.map((item, index) => {
-    // console.log(item.data)
-    return arr.push(item.data)
-  })
-  console.log(arr, "arr")
-
-
-
+  
   const [postData, setPostData] = useState({
-    "is_company": true,
+    "is_company": type,
     "contract_type": "",
     "region": 3,
     "organization": "",
@@ -169,45 +112,81 @@ function Shartnoma() {
     "rek_org_mfo": "",
     "rek_org_inn": "",
     "rek_org_inn_gazna": "",
+    "users": []
   });
+
+  console.log(postData.is_company, "is company")
+    useEffect(() => {
+      const updatedMassiv = divIndexes.map(item => item.data)
+      setPostData(prev => ({
+        ...prev,
+        "users": updatedMassiv
+      }))
+    }, [divIndexes])
   
-
-  useEffect(() => {
-    setPostData((prevData) => ({
-      ...prevData,
-      users: arr,
-    }));
-  }, [arr]);  // setPostData ni ham kuzatib boradi
   
-  // console.log(postData.users)
+  
+    
+    function getValue(key, value) {
+      setPostData({
+        ...postData,
+        [key + ""]: value,
+      });
+    }
 
+  const form = new FormData();
+  form.append("contract_type", String(postData.contract_type));
+  form.append("is_company", postData.is_company);
+  form.append("region", postData.region);
+  form.append("organization", String(postData.organization));
+  form.append("organization_director", String(postData.organization_director));
+  form.append("payment_percent", String(postData.payment_percent));
+  form.append("phone", String(postData.phone));
+  form.append("u_count", postData.users.length)
 
-  console.log(postData.users, "users");
+  postData.users.forEach((user, index) => {
+    form.append(`full_name_${index}`, user.full_name);
+    form.append(`position_${index}`, user.position);
+    form.append(`phone_${index}`, user.phone);
+    form.append(`passport_data_${index}`, user.passport_data);
+    form.append(`jshshir_${index}`, user.jshshir);
+    form.append(`passport_file_${index}`, user.passport_file);
+});
 
-  function getValue(key, value) {
-    setPostData({
-      ...postData,
-      [key + ""]: value,
-    });
-  }
+  form.append("rek_org_name", String(postData.rek_org_name));
+  form.append("rek_org_address", String(postData.rek_org_address));
+  form.append("rek_org_bank", String(postData.rek_org_bank));
+  form.append("rek_org_hisob_raqam", String(postData.rek_org_hisob_raqam));
+  form.append(
+    "rek_org_account_hisob_raqam",
+    String(postData.rek_org_account_hisob_raqam)
+  );
+  form.append("rek_org_mfo", String(postData.rek_org_mfo));
+  form.append("rek_org_inn", String(postData.rek_org_inn));
+  form.append("rek_org_inn_gazna", String(postData.rek_org_inn_gazna));
+
 
   async function sendFunc() {
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/onlineservices/contract/create/`,
-        postData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      setSuccess(true);
-    } catch (error) {
-      setSuccess(false);
-      console.log(error);
-    } finally {
-      setOpen(true);
+    if (postData.users.length === 0) {
+      alert("user qo'shish shart")
+    } else {
+      try {
+        const response = await axios.post(
+          `${BASE_URL}/onlineservices/contract/create/`,
+          form,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        setSuccess(true);
+      } catch (error) {
+        setSuccess(false);
+        console.log(error);
+      } finally {
+        setOpen(true);
+      }
     }
   }
   return (

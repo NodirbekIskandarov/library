@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL, LANDING } from "../../tools/urls";
+import { Link } from "react-router-dom";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -98,7 +99,7 @@ function News() {
                                     {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
                                     {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
                                 </div>
-                                <button className="btn">{t("batafsil")}</button>
+                                <Link to={`/news/${item.id}`} className="btn">{t("batafsil")}</Link>
                             </div>
                         </div>
                     )
