@@ -20,6 +20,7 @@ function Slider() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.sliders);
+        // console.log(response.data.sliders)
       } catch (error) {
         setError(error);
       } finally {
@@ -42,7 +43,7 @@ function Slider() {
               <CarouselItem key={index} className="sliderIn">
                 <div className="blurImage">
                   <div className="textPart">
-                    {lang==="uz" ? (<h2>{item.translations.uz.title}</h2>) : (<h2>{item.translations.ru.title}</h2>)}
+                    {lang==="uz" ? (<h2>{item.title_uz}</h2>) : lang==="ru" ? (<h2>{item.title_ru}</h2>): lang==="en" ? (<h2>{item.title_en}</h2>) : (<h2>{item.title}</h2>)}
                     <button>{t("batafsil")}</button>
                   </div>
                 </div>

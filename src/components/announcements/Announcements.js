@@ -17,7 +17,7 @@ function Announcements() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.elon);
-        // console.log(response.data)
+        // console.log(response.data.elon)
       } catch (error) {
         setError(error);
       } finally {
@@ -46,7 +46,7 @@ function Announcements() {
                         return  (
                             <div key={index} className='textPart'>
                                 <span>sana</span>
-                                {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
+                                {lang==="uz" ? (<p>{item.description_uz}</p>) : lang==="ru" ? (<p>{item.description_ru}</p>) : lang==="en" ? (<p>{item.description_en}</p>) : (<p>{item.description}</p>)}
                             </div>
 
                         )

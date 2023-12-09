@@ -45,7 +45,7 @@ function SamplePrevArrow(props) {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.partner);
-        // console.log(response.data.partner);
+        console.log(response.data.partner);
       } catch (error) {
         setError(error);
       } finally {
@@ -102,7 +102,7 @@ function SamplePrevArrow(props) {
                       <div className="box">
                         <a href={item.url}>
 
-                        <img src={aoka} alt="rasm" className="img" />
+                        <img src={item.logo} alt="rasm" className="img" />
                         </a>
                         
                       </div>

@@ -45,7 +45,7 @@ function Treyners() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.treners);
-        // console.log(response.treners);
+        // console.log(response.data.treners);
       } catch (error) {
         setError(error);
       } finally {
@@ -104,15 +104,15 @@ function Treyners() {
                       <div className="box">
                         <img src={item.image} alt="image" className="img" />
                         {lang === "uz" ? (
-                          <h3>{item.translations.uz.full_name}</h3>
-                        ) : (
-                          <h3>{item.translations.ru.full_name}</h3>
-                        )}
+                          <h3>{item.full_name_uz}</h3>
+                        ) : lang==="ru" ? (
+                          <h3>{item.full_name_ru}</h3>
+                        ) : lang==="en" ? (<h3>{item.full_name_en}</h3>) : (<h3>{item.full_name}</h3>)}
                         {lang === "uz" ? (
-                          <p>{item.translations.uz.about}</p>
-                        ) : (
-                          <p>{item.translations.ru.about}</p>
-                        )}
+                          <p>{item.about_uz}</p>
+                        ) : lang==="ru" ? (
+                          <p>{item.about_ru}</p>
+                        ) : lang==="en" ? (<p>{item.about_en}</p>) : (<p>{item.about}</p>)}
                         <div className="socials">
                           <a href={item.telegram}><img src={telegram} alt="social"/></a>
                           <a href={item.instagram}><img src={instagram} alt="social"/></a>

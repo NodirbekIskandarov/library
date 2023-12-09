@@ -43,6 +43,7 @@ function News() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.news);
+        // console.log(response.data.news)
       } catch (error) {
         setError(error);
       } finally {
@@ -96,8 +97,8 @@ function News() {
                             <div className="caruselItem">
                                 <div className="box">
                                     <img src={img1} alt="rasm" className="img"/>
-                                    {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
-                                    {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
+                                    {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en}</h3>) : (<h3>{item.name}</h3>)}
+                                    {lang==="uz" ? (<p>{item.description_uz}</p>) : lang==="ru" ? (<p>{item.description_ru}</p>) : lang==="en" ? (<p>{item.description_en}</p>) : (<p>{item.description}</p>)}
                                 </div>
                                 <Link to={`/news/${item.id}`} className="btn">{t("batafsil")}</Link>
                             </div>

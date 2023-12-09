@@ -19,3 +19,6 @@
 .foto_detail .image_part .right_part .text {
     margin-top: 50px;
 }
+.foto_detail .image_part .image .MuiPper-root {
+    width: 100%;
+}
