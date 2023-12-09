@@ -19,8 +19,8 @@ function Tarix() {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${BASE_URL}/${HISTORY}`);
-        setData(response.data.translations);
-        // console.log(data)
+        setData(response.data);
+        // console.log(response.data)
       } catch (error) {
         setError(error);
       } finally {
@@ -42,14 +42,14 @@ function Tarix() {
         </div>
         <div className="main">
           <div className="image">
-            <img src={books} alt="books image" />
+            <img src={data.file} alt="books image" />
           </div>
           <div className="text1">
             <div className="title">
               <Line />
               <div className="titlePart">
-                <div>{lang==="uz" ? (<h2>{data.uz.title}</h2>) : (<h2>{data.ru.title}</h2>)}</div>
-                <div>{lang==="uz" ? (<p>{data.uz.subtitle}</p>) : (<p>{data.ru.subtitle}</p>)}</div>
+                <div>{lang==="uz" ? (<h2>{data.title_uz}</h2>) : lang==="ru" ? (<h2>{data.title_ru===null ? data.title : data.title_ru}</h2>) : lang==="en" ? (<h2>{data.title_en===null ? data.title : data.title_en}</h2>) : (<h2>{data.title}</h2>)}</div>
+                <div>{lang==="uz" ? (<p>{data.subtitle_uz}</p>) : lang==="ru" ? (<p>{data.subtitle_ru===null ? data.subtitle : data.subtitle_ru}</p>) : lang==="en" ? (<p>{data.subtitle_en===null ? data.subtitle : data.subtitle_en}</p>) : (<p>{data.subtitle}</p>)}</div>
               </div>
             </div>
             {/* {lang==="ru" ? (<p>{data.ru.body}</p>) : (<p>{data.uz.body}</p>)} */}

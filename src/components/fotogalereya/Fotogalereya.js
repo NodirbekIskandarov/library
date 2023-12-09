@@ -20,7 +20,7 @@ function Fotogalereya() {
         try {
           const response = await axios.get(`${BASE_URL}/${FOTOGLEREYA}`);
           setData(response.data);
-          console.log(response.data)
+          // console.log(response.data)
         } catch (error) {
           setError(error);
         } finally {
@@ -53,10 +53,10 @@ function Fotogalereya() {
               <div className="bigbox">
                 <div className="box" key={index}>
                   <img src={item.image} className="img" alt="rasm"/>
-                  {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
+                  {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru===null ? item.name : item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en===null ? item.name : item.name_en}</h3>) : (<h3>{item.name}</h3>)}
                   <h5>{item.created}</h5>
-                  {lang==="uz" ? (<p>{item.translations.uz.description}</p>) : (<p>{item.translations.ru.description}</p>)}
-                  <Link to={`/galery/${item.id}`}>
+                  {lang==="uz" ? (<p>{item.about_uz}</p>) : lang==="ru" ? (<p>{item.about_ru===null ? item.about : item.about_ru}</p>) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
+                  <Link className="link" to={`/galery/${item.id}`}>
                     <p>{t("batafsil")}</p>
                   </Link>
                 </div>

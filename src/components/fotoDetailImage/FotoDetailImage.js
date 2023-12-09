@@ -35,7 +35,7 @@ function FotoDetailImage(images_data) {
           display: "flex",
           alignItems: "center",
           height: 300,
-          width: 100,
+          width: 400,
           pl: 2,
           bgcolor: "background.default",
         }}

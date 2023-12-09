@@ -20,7 +20,7 @@ const [data, setData] = useState(null);
         try {
           const response = await axios.get(`${BASE_URL}/${DOCUMENTS}`);
           setData(response.data);
-          // console.log(response)
+          // console.log(response.data)
         } catch (error) {
           setError(error);
         } finally {
@@ -53,7 +53,7 @@ const [data, setData] = useState(null);
                         return (
                             <Link className='link' to={`/documents/${item.id}`}>
                                 <div key={index} className='cart'>
-                                    {lang==="uz" ? (<p>{item.translations.uz.name}</p>) : (<p>{item.translations.ru.name}</p>)}
+                                    {lang==="uz" ? (<p>{item.name_uz}</p>) : lang==="ru" ? (<p>{item.name_ru===null ? item.name : item.name_ru}</p>) : lang==="en" ? (<p>{item.name_en===null ? item.name : item.name_en}</p>) : (<p>{item.name}</p>)}
                                     <img src={right} alt="toright"/>
                                 </div>
                             </Link>

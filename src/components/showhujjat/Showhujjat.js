@@ -59,9 +59,8 @@ function Showhujjat() {
                         return (
                             <div key={index} className='cart'>
                                 <img src={img} alt="rasm"/>
-                                {lang==="uz" ? (<p>{item.translations.uz.name}</p>) : (<p>{item.translations.ru.name}</p>)}
-                                {/* <button onClick={() =>lang==="ru" ? handleDownload(item.translations.ru.file) : handleDownload(item.translations.uz.file)}><img src={download} alt="download"/>PDF da yuklab olish</button> */}
-                                <a className='button' href={lang==="uz" ? item.translations.uz.file : item.translations.ru.file} target='_blank'><img src={download} alt="download"/>PDF da yuklab olish</a>
+                                {lang==="uz" ? (<p>{item.name_uz}</p>) : lang==="ru" ? (<p>{item.name_ru===null ? item.name : item.name_ru}</p>) : lang==="en" ? (<p>{item.name_en===null ? item.name : item.name_en}</p>) : (<p>{item.name}</p>)}
+                                {lang==="uz" ? (<a className='button' href={item.file_uz}><img src={download} alt="download"/>PDF da yuklab olish</a>) : lang==="ru" ? (<a className='button' href={item.file_ru===null ? item.file : item.file_ru}><img src={download} alt="download"/>PDF da yuklab olish</a>) : lang==="en" ? (<a className='button' href={item.file_en===null ? item.file : item.file_en}><img src={download} alt="download"/>PDF da yuklab olish</a>) : (<a className='button' href={item.file}><img src={download} alt="download"/>PDF da yuklab olish</a>)}
                                 <br/>
                                 <br/>
                                 <a href={item.url}> Manba <img src={right} alt="right"/></a>

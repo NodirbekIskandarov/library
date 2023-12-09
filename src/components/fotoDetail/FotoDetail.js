@@ -58,10 +58,10 @@ function FotoDetail() {
               </div>
             </div>
             {lang === "uz" ? (
-              <p className="text">{data.translations.uz.description}</p>
-            ) : (
-              <p className="text">{data.translations.ru.description}</p>
-            )}
+              <p className="text">{data.description_uz}</p>
+            ) : lang==="ru" ? (
+              <p className="text">{data.description_ru==="" ? data.description : data.description_ru}</p>
+            ) : lang==="en" ? (<p className="text">{data.description_en==="" ? data.description : data.description_en}</p>) : (<p className="text">{data.description}</p>)}
           </div>
         </div>
       </div>

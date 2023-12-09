@@ -20,7 +20,7 @@ const [data, setData] = useState(null);
         try {
           const response = await axios.get(`${BASE_URL}/${OFFLINE}`);
           setData(response.data);
-          // console.log(response)
+          // console.log(response.data)
         } catch (error) {
           setError(error);
         } finally {
@@ -53,9 +53,12 @@ const [data, setData] = useState(null);
                         return (
                             <div key={index} className='box'>
                                 <img src={item.image} alt="rasm" className='main_image'/>
-                                {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)}
-                                {lang==="uz" ? (<p>{item.translations.uz.sub_name}</p>) : (<p>{item.translations.ru.sub_name}</p>)}
-                                <p><img src={clock} alt='clock'/> {lang==="ru" ? (<span>{item.translations.ru.duration}</span>) : (<span>{item.translations.uz.duration}</span>)}</p>
+                                {/* {lang==="uz" ? (<h3>{item.translations.uz.name}</h3>) : (<h3>{item.translations.ru.name}</h3>)} */}
+                                {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru===null ? item.name : item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en===null ? item.name : item.name_en}</h3>) : (<h3>{item.name}</h3>)}
+                                {/* {lang==="uz" ? (<p>{item.translations.uz.sub_name}</p>) : (<p>{item.translations.ru.sub_name}</p>)} */}
+                                {lang==="uz" ? (<p>{item.sub_name_uz}</p>) : lang==="ru" ? (<p>{item.sub_name_ru===null ? item.sub_name : item.sub_name_ru}</p>) : lang==="en" ? (<p>{item.sub_name_en===null ? item.sub_name : item.sub_name_en}</p>) : (<p>{item.sub_name}</p>)}
+                                {/* <p><img src={clock} alt='clock'/> {lang==="ru" ? (<span>{item.translations.ru.duration}</span>) : (<span>{item.translations.uz.duration}</span>)}</p> */}
+                                <p><img src={clock} alt='clock'/> {lang==="uz" ? (<span>{item.duration_uz}</span>) : lang==="ru" ? (<span>{item.duration_ru===null ? item.duration : item.duration_ru}</span>) : lang==="en" ? (<span>{item.duration_en===null ? item.duration : item.duration_en}</span>) : (<span>{item.duration}</span>)}</p>
                                 <div className='narx'>
                                 <Link className='link' to={`/batafsil/${item.id}`}><button>{t("batafsil")}</button></Link>
                                     <div className='p'>

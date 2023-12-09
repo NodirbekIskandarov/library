@@ -52,11 +52,11 @@ const [data, setData] = useState(null);
         </div>
         <div className="text">
           <div className="textPart">
-            {lang==="uz" ? (<p>{data.translations.uz.body}</p>) : (<p>{data.translations.ru.body}</p>)}
+            {lang==="uz" ? (<p>{data.body_uz}</p>) : lang==="ru" ? (<p>{data.body_ru==="" ? data.body : data.body_ru}</p>) : lang==="en" ? (<p>{data.body_en==="" ? data.body : data.body_en}</p>) : (<p>{data.body}</p>)}
           </div>
           <div className="filePart">
             <img src={fayl} alt="file" />
-            {lang==="uz" ? (<h3>{data.translations.uz.title}</h3>) : (<h3>{data.translations.ru.title}</h3>)}
+            {lang==="uz" ? (<h3>{data.title_uz}</h3>) : lang==="ru" ? (<h3>{data.title_ru==="" ? data.title : data.title_ru}</h3>) : lang==="en" ? (<h3>{data.title_en==="" ? data.title : data.title_en}</h3>) : (<h3>{data.title}</h3>)}
             <a href={data.file} target='_blank'>
               <img src={download} alt="down" /> PDF da yuklab olish
             </a>

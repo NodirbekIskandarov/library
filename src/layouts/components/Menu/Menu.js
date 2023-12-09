@@ -109,7 +109,7 @@ function Menu({ showMenu, children }) {
       hoverMenu: [],
     },
   ];
-  console.log(data);
+//   console.log(data);
   return (
     <div className="menu">
       <div className="container">

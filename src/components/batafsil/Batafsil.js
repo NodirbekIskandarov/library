@@ -48,14 +48,14 @@ function Batafsil() {
                     <img src={data.image} alt='rasm'/>
                 </div>
                 <div className='cart'>
-                    {lang==="uz" ? (<h2>{data.translations.uz.name}</h2>) : (<h2>{data.translations.ru.name}</h2>)}
+                    {lang==="uz" ? (<h2>{data.name_uz}</h2>) : lang==="ru" ? (<h2>{data.name_ru===null ? data.name : data.name_ru}</h2>) : lang==="en" ? (<h2>{data.name_en===null ? data.name : data.name_en}</h2>) : (<h2>{data.name}</h2>)}
                     <div className='group'>
                         <p className='first'><img src={group} alt='group'/>{t("tinglovchi_kontingenti")}:</p>
-                        {lang==="uz" ? (<p className='second'>{data.translations.uz.sub_name}</p>) : (<p className='second'>{data.translations.ru.sub_name}</p>)}
+                        {lang==="uz" ? (<p className='second'>{data.sub_name_uz}</p>) : lang==="ru" ? (<p className='second'>{data.sub_name_ru===null ? data.sub_name : data.sub_name_ru}</p>) : lang==="en" ? (<p className='second'>{data.sub_name_en===null ? data.sub_name : data.sub_name_en}</p>) : (<p className='second'>{data.sub_name}</p>)}
                     </div>
                     <div className='time'>
                         <p className='first'><img src={clock} alt="clock"/>{t("kurs_davomiyligi")}</p>
-                        {lang==="uz" ? (<p className='second'>{data.translations.uz.duration}</p>) : (<p className='second'>{data.translations.ru.duration}</p>)}
+                        {lang==="uz" ? (<p className='second'>{data.duration_uz}</p>) : lang==="ru" ? (<p className='second'>{data.duration_ru===null ? data.duration : data.duration_ru}</p>) : lang==="en" ? (<p className='second'>{data.duration_en===null ? data.duration : data.duration_en}</p>) : (<p className='second'>{data.duration}</p>)}
                     </div>
                     <div className='buttonPart'>
                         <Link className='link' to="/application"><button>{t("ariza_berish")}</button></Link>
@@ -64,7 +64,7 @@ function Batafsil() {
                 </div>
             </div>
             <div className='plan'>
-                {lang==="uz" ? (<p>{data.translations.uz.description}</p>) : (<p>{data.translations.ru.description}</p>)}
+                {lang==="uz" ? (<p>{data.description_uz}</p>) : lang==="ru" ? (<p>{data.description_ru===null ? data.description : data.description_ru}</p>) : lang==="en" ? (<p>{data.description_en===null ? data.description : data.description_en}</p>) : (<p>{data.description}</p>)}
             </div>
         </div>
     </div>

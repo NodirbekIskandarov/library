@@ -54,9 +54,9 @@ function Rahbaryat() {
                     data.map((item, index) => {
                         return (
                             <div className='col-4 box' key={index}>
-                                <img src={item.image} alt="rasm"/>
-                                {lang==="uz" ? (<h3>{item.translations.uz.full_name}</h3>) : (<h3>{item.translations.ru.full_name}</h3>)}
-                                {lang==="uz" ? (<p>{item.translations.uz.about}</p>) : (<p>{item.translations.ru.about}</p>)}
+                                <img className='w-100 rounded-circle' src={item.image} alt="rasm"/>
+                                {lang==="uz" ? (<h3>{item.full_name_uz}</h3>) : lang==="ru" ? (<h3>{item.full_name_ru===null ? item.full_name : item.full_name_ru}</h3>) : lang==="en" ? (<h3>{item.full_name_en===null ? item.full_name : item.full_name_en}</h3>) : (<h3>{item.full_name}</h3>)}
+                                {lang==="uz" ? (<p>{item.about_uz}</p>) : lang==="ru" ? (<p>{item.about_ru===null ? item.about : item.about_ru}</p>) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
                                 <p><img src={clock} alt='clock'/> {item.work_time}</p>
                                 <p><img src={phone} alt='phone'/> {item.phone}</p>
                                 <p><img src={gmail} alt='gmail'/> {item.email}</p>

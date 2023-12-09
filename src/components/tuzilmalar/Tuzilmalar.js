@@ -24,7 +24,7 @@ const { t } = useTranslation()
                     <p>{t("kutubxonamiz_tashkiliy_tuzilmasi")}</p>
                 </div>
             </div>
-            <Form />
+            {/* <Form /> */}
         </div>
     </div>
   )
