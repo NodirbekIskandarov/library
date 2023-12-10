@@ -14,6 +14,7 @@ function Batafsil() {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [content, setContent] = useState("")
     let lang = JSON.parse(localStorage.getItem("lang"))
     // console.log(lang)
     useEffect(() => {
@@ -21,7 +22,25 @@ function Batafsil() {
         try {
           const response = await axios.get(`${BASE_URL}/${DETAIL}/${pk.id}`);
           setData(response.data);
-          // console.log(response.data)
+          console.log(response.data)
+          const firstItem = response.data
+          if(lang==="uz") {
+            setContent(firstItem.description_uz)
+          } else if(lang==="ru") {
+            if(firstItem.description_ru==="") {
+              setContent(firstItem.description)
+            } else {
+              setContent(firstItem.description_ru)
+            }
+          } else if(lang==="en") {
+            if(firstItem.description_en==="") {
+              setContent(firstItem.description)
+            } else {
+              setContent(firstItem.description_en)
+            }
+          } else {
+            setContent(firstItem.description)
+          }
         } catch (error) {
           setError(error);
         } finally {
@@ -64,7 +83,8 @@ function Batafsil() {
                 </div>
             </div>
             <div className='plan'>
-                {lang==="uz" ? (<p>{data.description_uz}</p>) : lang==="ru" ? (<p>{data.description_ru===null ? data.description : data.description_ru}</p>) : lang==="en" ? (<p>{data.description_en===null ? data.description : data.description_en}</p>) : (<p>{data.description}</p>)}
+                {/* {lang==="uz" ? (<p>{data.description_uz}</p>) : lang==="ru" ? (<p>{data.description_ru===null ? data.description : data.description_ru}</p>) : lang==="en" ? (<p>{data.description_en===null ? data.description : data.description_en}</p>) : (<p>{data.description}</p>)} */}
+                <p dangerouslySetInnerHTML={{__html: content}}/>
             </div>
         </div>
     </div>

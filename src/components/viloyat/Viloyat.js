@@ -22,9 +22,25 @@ function Viloyat() {
       try {
         const response = await axios.get(`${BASE_URL}/${REGION_ID}/${pk.id}`);
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
         const firstItem = response.data;
-        setContent(firstItem.description);
+        if(lang==="uz") {
+          setContent(firstItem.description_uz);
+        } else if(lang==="ru") {
+          if(firstItem.description_ru===null) {
+            setContent(firstItem.description)
+          } else {
+            setContent(firstItem.description_ru)
+          }
+        } else if(lang==="en") {
+          if(firstItem.description_en===null) {
+            setContent(firstItem.description)
+          } else {
+            setContent(firstItem.description_en)
+          }
+        } else {
+          setContent(firstItem.description)
+        }
         // console.log(response.data)
       } catch (error) {
         setError(error);
