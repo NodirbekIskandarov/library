@@ -106,13 +106,13 @@ function Treyners() {
                         {lang === "uz" ? (
                           <h3>{item.full_name_uz}</h3>
                         ) : lang==="ru" ? (
-                          <h3>{item.full_name_ru}</h3>
-                        ) : lang==="en" ? (<h3>{item.full_name_en}</h3>) : (<h3>{item.full_name}</h3>)}
+                          <h3>{item.full_name_ru===null ? item.full_name : item.full_name_ru}</h3>
+                        ) : lang==="en" ? (<h3>{item.full_name_en===null ? item.full_name : item.full_name_en}</h3>) : (<h3>{item.full_name}</h3>)}
                         {lang === "uz" ? (
                           <p>{item.about_uz}</p>
                         ) : lang==="ru" ? (
-                          <p>{item.about_ru}</p>
-                        ) : lang==="en" ? (<p>{item.about_en}</p>) : (<p>{item.about}</p>)}
+                          <p>{item.about_ru===null ? item.about : item.about_ru}</p>
+                        ) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
                         <div className="socials">
                           <a href={item.telegram}><img src={telegram} alt="social"/></a>
                           <a href={item.instagram}><img src={instagram} alt="social"/></a>

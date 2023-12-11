@@ -47,6 +47,13 @@
 .forms .formPart .cart .cart2 img {
     margin-right: 10px;
 }
+.ariza .forms select {
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-right: 20px;
+    background-color: #ECECEC;
+}
 .ariza .forms .formPart button {
     width: 227px;
     height: 56px;

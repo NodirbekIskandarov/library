@@ -19,3 +19,12 @@
 .news_detail .image_part .right_part .text {
     margin-top: 50px;
 }
+/*<<<RESPONSIVE>>>*/
+/*Small devices (landscape phones, 570px and up)*/
+@media (min-width: 0px) and (max-width:570px)  {
+    .news_detail  .image{
+    display: none;
+    width: 0;
+  } 
+}
+/*Medium devices (tablets, 768px and up)*/

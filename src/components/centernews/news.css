@@ -34,8 +34,11 @@
     width: calc(100%/3);
 }
  .news .carusel .caruselItem .btn{
-    width: 176px;
-    height: 56px;
+    width: 40%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     background-color: #454343;
     border: 1px solid white;
@@ -46,7 +49,7 @@
 }
 .news .box {
     width: 90%;
-    height: 500px;
+    /* height: 500px; */
     margin: 0 auto;
     border: 1px solid white;
     border-radius: 20px;

@@ -43,7 +43,7 @@ function News() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.news);
-        // console.log(response.data.news)
+        console.log(response.data.news)
       } catch (error) {
         setError(error);
       } finally {
@@ -98,7 +98,7 @@ function News() {
                                 <div className="box">
                                     <img src={img1} alt="rasm" className="img"/>
                                     {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en}</h3>) : (<h3>{item.name}</h3>)}
-                                    {lang==="uz" ? (<p>{item.description_uz}</p>) : lang==="ru" ? (<p>{item.description_ru}</p>) : lang==="en" ? (<p>{item.description_en}</p>) : (<p>{item.description}</p>)}
+                                    {lang==="uz" ? (<p>{item.about_uz}</p>) : lang==="ru" ? (<p>{item.about_ru===null ? item.about : item.about_ru}</p>) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
                                 </div>
                                 <Link to={`/news/${item.id}`} className="btn">{t("batafsil")}</Link>
                             </div>

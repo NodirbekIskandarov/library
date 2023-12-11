@@ -46,7 +46,7 @@ function Announcements() {
                         return  (
                             <div key={index} className='textPart'>
                                 <span>sana</span>
-                                {lang==="uz" ? (<p>{item.description_uz}</p>) : lang==="ru" ? (<p>{item.description_ru}</p>) : lang==="en" ? (<p>{item.description_en}</p>) : (<p>{item.description}</p>)}
+                                {lang==="uz" ? (<p>{item.description_uz}</p>) : lang==="ru" ? (<p>{item.description_ru==="" ? item.description : item.description_ru}</p>) : lang==="en" ? (<p>{item.description_en==="" ? item.description : item.description_en}</p>) : (<p>{item.description}</p>)}
                             </div>
 
                         )

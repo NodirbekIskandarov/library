@@ -22,7 +22,6 @@ function NewsDetail() {
       try {
         const response = await axios.get(`${BASE_URL}/${NEWS_DETAIL}/${pk.id}`);
         setData(response.data);
-        console.log(response);
       } catch (error) {
         setError(error);
       } finally {
@@ -33,9 +32,7 @@ function NewsDetail() {
     fetchData();
   }, []);
 
-  if (loading) return <p className="loading"><img src="https://miro.medium.com/v2/resize:fit:882/format:webp/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="loader"/></p>;
-  if (error) return <p>Error: {error.message}</p>;
-
+  if (loading)
     return (
       <p className="loading">
         <img
@@ -45,6 +42,7 @@ function NewsDetail() {
       </p>
     );
   if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="news_detail">
       <div className="container">
@@ -60,9 +58,26 @@ function NewsDetail() {
                 <p>{t("huquqiy_meyoriy_hujjatlar")}</p>
               </div>
             </div>
-            {lang === "uz" ? (<p className="text">{data.translations.uz.description}</p>) : (<p className="text">{data.translations.ru.description}</p>)}
           </div>
         </div>
+        <br />
+        {lang === "uz" ? (
+          <p className="text">{data.description_uz}</p>
+        ) : lang == "ru" ? (
+          <p className="text">
+            {data.description_ru === ""
+              ? data.description
+              : data.description_ru}
+          </p>
+        ) : lang === "en" ? (
+          <p className="text">
+            {data.description_en === ""
+              ? data.description
+              : data.description_en}
+          </p>
+        ) : (
+          <p className="text">{data.description}</p>
+        )}
       </div>
     </div>
   );

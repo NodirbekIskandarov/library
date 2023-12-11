@@ -33,11 +33,15 @@
 }
 .partners .box {
     width: 90%;
+    height: 45vh;
     margin: 0 auto;
     padding: 40px;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
- .partners .box .img{
+ .partners .box .image{
     width: 100%;
 }
 

@@ -6,10 +6,12 @@ import { useLocation, useParams } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import axios from "axios";
 import { BASE_URL, REGION_ID } from "../../tools/urls";
+import { useTranslation } from "react-i18next";
 function Viloyat() {
   const { state } = useLocation();
 
   const pk = useParams();
+  const { t } = useTranslation();
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -85,7 +87,7 @@ function Viloyat() {
                 {data.name_en === null ? data.name : data.name_en} ma'lumotlari
               </p>
             ) : (
-              <p>{data.name} ma'lumotlari</p>
+              <p>{data.name} {t("malumotlari")}</p>
             )}
           </div>
         </div>
@@ -107,7 +109,7 @@ function Viloyat() {
             <a href={data.site}>
               <button>
                 <img src={website} alt="website" />
-                Web saytiga o'tish
+                {t("web_saytga_otish")}
               </button>
             </a>
           </div>

@@ -46,7 +46,7 @@ function App() {
             <Route path="/certificate" element={<Certificate />} />
             <Route path={`/documents/:id`} element={<Aboutdocuments />} />
             <Route path={`/news/:id`} element={<NewsDetail />} />
-            <Route path="/application" element={<Application />} />
+            <Route path={`/application/:id`} element={<Application />} />
             <Route path="/online" element={<Onlinecourses />} />
             <Route
               path="/applicationforonline"

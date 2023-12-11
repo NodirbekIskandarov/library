@@ -77,7 +77,7 @@ function Batafsil() {
                         {lang==="uz" ? (<p className='second'>{data.duration_uz}</p>) : lang==="ru" ? (<p className='second'>{data.duration_ru===null ? data.duration : data.duration_ru}</p>) : lang==="en" ? (<p className='second'>{data.duration_en===null ? data.duration : data.duration_en}</p>) : (<p className='second'>{data.duration}</p>)}
                     </div>
                     <div className='buttonPart'>
-                        <Link className='link' to="/application"><button>{t("ariza_berish")}</button></Link>
+                        <Link className='link' to={`/application/${pk.id}`}><button>{t("ariza_berish")}</button></Link>
                         <p><span>{t("narx")} </span> 300 000 UZS</p>
                     </div>
                 </div>
