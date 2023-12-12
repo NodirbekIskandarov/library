@@ -66,3 +66,15 @@
 .savollar .question button span:hover {
     transition: 0.4s;
 }
+
+@media (min-width: 0px) and (max-width:570px){
+    .savollar{
+        width: 100%;
+    }
+}
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 700px) and (max-width: 991px){
+    .savollar{
+        width: 100%;
+    }
+}

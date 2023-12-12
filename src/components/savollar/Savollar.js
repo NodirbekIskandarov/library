@@ -36,29 +36,6 @@ function Savollar() {
       </p>
     );
   if (error) return <p>Error: {error.message}</p>;
-  // const data = [
-  //   {
-  //     question: "Qanday qilib kursda o’qish uchun ariza berish mumkin?",
-  //     answer:
-  //       "Lorem ipsum dolor sit amet consectetur. Venenatis faucibus porttitor in sapien. Semper a quis blandit volutpat sodales. Tristique quis orci cum vitae bibendum diam fusce. Eget sed iaculis blandit proin ac morbi. Cras et accumsan orci dui urna amet vitae. Purus pretium dictum tellus faucibus dui enim. Odio quisque tellus phasellus faucibus pharetra. Sed mauris risus at praesent nulla odio.",
-  //   },
-  //   {
-  //     question: "Qanday qilib kursda o’qish uchun ariza berish mumkin?",
-  //     answer:
-  //       "Lorem ipsum dolor sit amet consectetur. Venenatis faucibus porttitor in sapien. Semper a quis blandit volutpat sodales. Tristique quis orci cum vitae bibendum diam fusce. Eget sed iaculis blandit proin ac morbi. Cras et accumsan orci dui urna amet vitae. Purus pretium dictum tellus faucibus dui enim. Odio quisque tellus phasellus faucibus pharetra. Sed mauris risus at praesent nulla odio.",
-  //   },
-  //   {
-  //     question: "Qanday qilib kursda o’qish uchun ariza berish mumkin?",
-  //     answer:
-  //       "Lorem ipsum dolor sit amet consectetur. Venenatis faucibus porttitor in sapien. Semper a quis blandit volutpat sodales. Tristique quis orci cum vitae bibendum diam fusce. Eget sed iaculis blandit proin ac morbi. Cras et accumsan orci dui urna amet vitae. Purus pretium dictum tellus faucibus dui enim. Odio quisque tellus phasellus faucibus pharetra. Sed mauris risus at praesent nulla odio.",
-  //   },
-  //   {
-  //     question: "Qanday qilib kursda o’qish uchun ariza berish mumkin?",
-  //     answer:
-  //       "Lorem ipsum dolor sit amet consectetur. Venenatis faucibus porttitor in sapien. Semper a quis blandit volutpat sodales. Tristique quis orci cum vitae bibendum diam fusce. Eget sed iaculis blandit proin ac morbi. Cras et accumsan orci dui urna amet vitae. Purus pretium dictum tellus faucibus dui enim. Odio quisque tellus phasellus faucibus pharetra. Sed mauris risus at praesent nulla odio.",
-  //   },
-  // ];
-
   function openFunc(a) {
     if (questionIndex === null) {
       setQuestionIndex(a);
@@ -77,7 +54,6 @@ function Savollar() {
               onClick={() => openFunc(index)}
             >
               <div className="question">
-                {/* <p>{item.question}</p> */}
                 {lang==="uz" ? (<p>{item.question_uz}</p>) : lang==="ru" ? (<p>{item.question_ru===null ? item.question : item.question_ru}</p>) : lang==="en" ? (<p>{item.question_en===null ? item.question : item.question_en}</p>) : (<p>{item.question}</p>)}
                 <button>
                   {questionIndex !== index ? (

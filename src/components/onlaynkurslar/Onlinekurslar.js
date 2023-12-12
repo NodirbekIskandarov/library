@@ -58,7 +58,7 @@ function Onlaynkurslar() {
           {data.map((item, index) => {
             return (
               <div key={index} className="box">
-                <img src={item.image} alt="rasm" />
+                <img src={item.image} alt="rasm" className="main_image"/>
                 {lang === "uz" ? (
                   <h3>{item.name_uz}</h3>
                 ) : lang === "ru" ? (

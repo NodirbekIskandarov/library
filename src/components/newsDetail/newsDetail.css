@@ -2,22 +2,18 @@
     width: 100%;
     margin-top: 50px;
 }
-.news_detail .image_part {
+.news_detail {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.news_detail .image_part .image {
+.news_detail .image {
     width: 48%;
+    float: left;
+    margin-right: 20px;
 }
 .news_detail .image img {
     width: 100%;
-}
-.news_detail .image_part .right_part {
-    width: 48%;
-}
-.news_detail .image_part .right_part .text {
-    margin-top: 50px;
 }
 /*<<<RESPONSIVE>>>*/
 /*Small devices (landscape phones, 570px and up)*/

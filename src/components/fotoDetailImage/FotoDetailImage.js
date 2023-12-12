@@ -40,7 +40,7 @@ function FotoDetailImage(images_data) {
           bgcolor: "background.default",
         }}
       >
-        <img className="rasm" src={images_data.images[activeStep].image} alt="rasm" />
+        <img className="foto_detail_rasm" src={images_data.images[activeStep].image} alt="rasm" />
       </Paper>
       <MobileStepper
         steps={maxSteps}

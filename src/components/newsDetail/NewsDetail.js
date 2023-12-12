@@ -46,37 +46,46 @@ function NewsDetail() {
   return (
     <div className="news_detail">
       <div className="container">
-        <div className="image_part">
-          <div className="image">
-            <img src={data.image} alt="rasm" />
-          </div>
-          <div className="right_part">
-            <div className="title">
-              <Line />
-              <div className="titlePart">
-                <h3>{t("yangiliklar")}</h3>
-                <p>{t("huquqiy_meyoriy_hujjatlar")}</p>
-              </div>
-            </div>
+        <div className="title">
+          <Line />
+          <div className="titlePart">
+            <h3>{t("yangiliklar")}</h3>
+            <p>{t("huquqiy_meyoriy_hujjatlar")}</p>
           </div>
         </div>
         <br />
         {lang === "uz" ? (
-          <p className="text">{data.description_uz}</p>
+          <p className="text">
+            <div className="image">
+              <img src={data.image} alt="rasm" />
+            </div>
+            {data.description_uz}
+          </p>
         ) : lang == "ru" ? (
           <p className="text">
+            <div className="image">
+              <img src={data.image} alt="rasm" />
+            </div>
             {data.description_ru === ""
               ? data.description
               : data.description_ru}
           </p>
         ) : lang === "en" ? (
           <p className="text">
+            <div className="image">
+              <img src={data.image} alt="rasm" />
+            </div>
             {data.description_en === ""
               ? data.description
               : data.description_en}
           </p>
         ) : (
-          <p className="text">{data.description}</p>
+          <p className="text">
+            <div className="image">
+              <img src={data.image} alt="rasm" />
+            </div>
+            {data.description}
+          </p>
         )}
       </div>
     </div>

@@ -530,7 +530,6 @@ function Shartnoma() {
             </div>
           </div>
         )}
-
         <div className="saqlash">
           <button onClick={sendFunc}>Saqlash</button>
         </div>

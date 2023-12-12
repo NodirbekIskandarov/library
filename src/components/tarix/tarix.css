@@ -1,87 +1,91 @@
 .tarix .main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .tarix .main .image {
-    width: 48%;
+  width: 48%;
+  float: left;
+  margin-right: 20px;
 }
 .tarix .main .image img {
-    border-radius: 20px;
-    width: 100%;
+  border-radius: 20px;
+  width: 100%;
 }
 .tarix .main .text1 {
-    width: 50%;
+  width: 100%;
 }
 .tarix .main .text1 .title {
-    display: flex;
-    align-items: center;
-    margin-bottom: 56px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 56px;
 }
-
+.tarix .textp {
+  width: 100%;
+}
 .tarix .main .text1 .title .titlePart p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .locationOfPage {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 57px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 57px;
 }
 .locationOfPage p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 /*<<<RESPONSIVE>>>*/
 /*Small devices (landscape phones, 570px and up)*/
-@media (min-width: 0px) and (max-width:570px)  {
-    .tarix .main {
-        width: 100%;
-        display: block;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 16px !important;
-    }
-    .tarix  .img{
+@media (min-width: 0px) and (max-width: 570px) {
+  .tarix .main {
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 16px !important;
+  }
+  .tarix .img {
     display: none;
     width: 0;
-  } 
+  }
   .tarix .text1 {
     text-align: left;
     margin-left: 16px;
     width: 100% !important;
   }
-  .tarix .titlePart{
+  .tarix .titlePart {
     margin-left: 0;
     text-align: left;
     width: 100%;
   }
-  .tarix .title .titlePart h2{
+  .tarix .title .titlePart h2 {
     font-size: 24px;
     margin-left: 0px;
   }
-  .tarix .title .titlePart p{
+  .tarix .title .titlePart p {
     font-size: 16px;
     width: 100%;
   }
-  .tarix .title .bodyPi{
+  .tarix .title .bodyPi {
     font-size: 14px;
     width: 100% !important;
     margin-right: 16px !important;
     text-align: left;
   }
-  .tarix  .bodyPi p{
+  .tarix .bodyPi p {
     width: 100%;
   }
-  .tarix .title .text2{
-    font-size:14px;
-    width: 100% !important; 
+  .tarix .title .text2 {
+    font-size: 14px;
+    width: 100% !important;
     text-align: left;
   }
-  .tarix  .text2 p{
+  .tarix .text2 p {
     width: 100%;
     margin-left: 16px;
   }
@@ -90,58 +94,16 @@
   }
 }
 /*Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991px){
-  
-  .tarix .main {
+@media (min-width: 768px) and (max-width: 991px) {
+  .tarix .title .titlePart h2 {
+    font-size: 24px;
+    margin-left: 0px;
+  }
+  .tarix .title .titlePart p {
+    font-size: 16px;
+  }
+  .tarix .text2 p {
     width: 100%;
-    display: block;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 16px !important;
-}
-.tarix  .img{
-display: none;
-width: 0;
-} 
-.tarix .text1 {
-text-align: left;
-margin-left: 16px;
-width: 100% !important;
-}
-.tarix .titlePart{
-margin-left: 0;
-text-align: left;
-width: 100%;
-}
-.tarix .title .titlePart h2{
-font-size: 24px;
-margin-left: 0px;
-}
-.tarix .title .titlePart p{
-font-size: 16px;
-width: 100%;
-}
-.tarix .title .bodyPi{
-font-size: 14px;
-/* display: none;  */
-width: 100% !important;
-margin-right: 16px !important;
-text-align: left;
-}
-.tarix  .bodyPi p{
-width: 100%;
-}
-.tarix .title .text2{
-font-size:14px;
-width: 100% !important; 
-text-align: left;
-}
-.tarix  .text2 p{
-width: 100%;
-margin-left: 16px;
-}
-.tarix .image {
-display: none;
-}
+    margin-left: 16px;
+  }
 }

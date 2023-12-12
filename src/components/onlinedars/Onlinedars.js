@@ -9,11 +9,11 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
 function Onlinedars() {
   const { state } = useLocation();
-const { t } = useTranslation()
+  const { t } = useTranslation();
   return (
     <div className="onlayndars">
       <div className="container">
-      <div className="locationOfPage">
+        <div className="locationOfPage">
           <p>{t("oquv_kurslari")}</p>
           <MdKeyboardArrowRight />
           <p>{state.name}</p>
@@ -30,7 +30,10 @@ const { t } = useTranslation()
             <img src={img} alt="image" />
           </div>
           <div className="cart">
-            <h2>{t("axborot_kutubxona_muassasalari_tizimini_rivojlantirish_asoslari")}
+            <h2>
+              {t(
+                "axborot_kutubxona_muassasalari_tizimini_rivojlantirish_asoslari"
+              )}
             </h2>
             <div className="group">
               <p className="first">
@@ -46,7 +49,10 @@ const { t } = useTranslation()
                 <img src={clock} alt="clock" />
                 {t("kurs_davomiyligi")}
               </p>
-              <p className="second"> 5 {t("kun")} (40 {t("soat")})</p>
+              <p className="second">
+                {" "}
+                5 {t("kun")} (40 {t("soat")})
+              </p>
             </div>
             <div className="buttonPart">
               <Link className="link" to="/applicationforonline">

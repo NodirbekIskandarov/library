@@ -122,13 +122,13 @@
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.20);
 }
-.shartnoma .container3 .box3 .saqlash {
+.shartnoma .saqlash {
     width: 100%;
     margin-top: 56px;
 }
-.shartnoma .container3 .box3 .saqlash button {
-    width: 339px;
-    height: 71px;
+.shartnoma .saqlash button {
+    width: 20%;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,8 +191,14 @@
     .shartnoma .container2 .box{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin: auto;
+    }
+    .shartnoma .container2 .box .cart {
+        width: 100%;
     }
     .shartnoma .container2 .box .cart p{
         font-size: 14px;    
@@ -213,14 +219,17 @@
     .shartnoma .container3 .box2{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         margin-left: 0;
         margin-right: 0;
-        padding-right: 0;
-        padding-left: 0;
+        padding: 20px;
     }
-    .shartnoma .container3 .cart .box2{
+    .shartnoma .container3 .box2 .cart {
         margin-top: 12px;
+        width: 100%;
     }
     .shartnoma .container3 .box2 .cart p{
         font-size: 14px;  
@@ -240,14 +249,18 @@
     .shartnoma .container3 .box3{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
         margin-left: 0;
         margin-right: 0;
         padding-right: 0;
         padding-left: 0;
     }
-    .shartnoma .container3 .cart .box3{
+    .shartnoma .container3 .box3 .cart {
         margin-top: 12px;
+        width: 100%;
     }
     .shartnoma .container3 .box3 .cart p{
         font-size: 14px;  
@@ -257,10 +270,8 @@
         display: flex;
         width: 100%;
     }
-    .shartnoma .container3 .box3 .saqlash button{
-        width: 165px;
-        height: 42px;
-        display: flex;
+    .shartnoma .saqlash button{
+        font-size: 14px;
     }
 }
 /*Medium devices (tablets, 768px and up)*/
@@ -274,8 +285,7 @@
         margin-left: 16px;
         margin-right: 16px;
     }
-    .shartnoma .title{
-        
+    .shartnoma .title{ 
         width: 100%;
         text-align: left;
     }
@@ -315,8 +325,6 @@
     .shartnoma .container2 .box{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
-        margin: auto;
     }
     .shartnoma .container2 .box .cart p{
         font-size: 14px;    
@@ -337,15 +345,15 @@
     .shartnoma .container3 .box2{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
+        
         margin-left: 0;
         margin-right: 0;
         padding-right: 0;
         padding-left: 0;
     }
-    .shartnoma .container3 .cart .box2{
+    /* .shartnoma .container3 .cart .box2{
         margin-top: 12px;
-    }
+    } */
     .shartnoma .container3 .box2 .cart p{
         font-size: 14px;  
         width: 100%;  
@@ -364,7 +372,7 @@
     .shartnoma .container3 .box3{
         width: 100%;
         margin-top: 0;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         margin-left: 0;
         margin-right: 0;
         padding-right: 0;
@@ -380,10 +388,5 @@
     .shartnoma .container3 .item{
         display: flex;
         width: 100%;
-    }
-    .shartnoma .container3 .box3 .saqlash button{
-        width: 165px;
-        height: 42px;
-        display: flex;
     }
 }

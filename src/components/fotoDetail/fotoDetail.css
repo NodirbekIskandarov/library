@@ -8,17 +8,35 @@
     justify-content: space-between;
 }
 .foto_detail .image_part .image {
-    width: 48%;
+    float: left;
+    margin-right: 20px;
 }
 .foto_detail .image img {
     width: 100%;
 }
 .foto_detail .image_part .right_part {
-    width: 48%;
+    width: 100%;
 }
 .foto_detail .image_part .right_part .text {
     margin-top: 50px;
 }
 .foto_detail .image_part .image .MuiPper-root {
     width: 100%;
+}
+/*Small devices (landscape phones, 570px and up)*/
+@media (min-width: 0px) and (max-width:570px)  {
+    .foto_detail  .image{
+    display: none;
+    width: 0;
+  } 
+  .foto_detail .text {
+    width: 100%;
+    font-size: 12px;
+  }
+  .title h3 {
+    font-size: 24px!important;
+  }
+  .title p {
+    font-size: 14px!important;
+  }
 }
