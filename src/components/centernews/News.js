@@ -43,7 +43,7 @@ function News() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.news);
-        console.log(response.data.news)
+        // console.log(response.data.news)
       } catch (error) {
         setError(error);
       } finally {

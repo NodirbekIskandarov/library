@@ -1,6 +1,9 @@
 .selection {
     margin-top: 150px;
 }
+.selection_none {
+    display: none;
+}
 .selection .titlePart {
     display: flex;
     align-items: center;

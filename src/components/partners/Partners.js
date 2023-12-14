@@ -42,7 +42,7 @@ function Partners() {
       try {
         const response = await axios.get(`${BASE_URL}/${LANDING}`);
         setData(response.data.partner);
-        console.log(response.data.partner);
+        // console.log(response.data.partner);
       } catch (error) {
         setError(error);
       } finally {
