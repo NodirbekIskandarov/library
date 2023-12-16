@@ -14,7 +14,6 @@ function Selection() {
   const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"));
   const [checking, setChecking] = useState(true)
-  // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,7 +22,6 @@ function Selection() {
         if(response.data.conditions.length === 0) {
             setChecking(false)
         }
-        // console.log(response.data.conditions);
       } catch (error) {
         setError(error);
       } finally {
