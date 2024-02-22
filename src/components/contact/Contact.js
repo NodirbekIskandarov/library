@@ -164,7 +164,7 @@ function Contact() {
                   data.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}

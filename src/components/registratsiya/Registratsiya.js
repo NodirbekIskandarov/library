@@ -63,7 +63,7 @@ function Registratsiya() {
     useState("");
   const [language_cert, setLanguage_cert] = useState("");
   const [language_cert_file, setLanguage_cert_file] = useState("");
-  const [region, setRegion] = useState(3);
+  const [region, setRegion] = useState(2);
   const [education1, setEducation1] = useState(1);
   const [specialty1, setSpecialty1] = useState(1);
   const [experience1, setExperience1] = useState(1);
@@ -71,7 +71,7 @@ function Registratsiya() {
   const [qualification1, setQualification1] = useState(1);
   const [academ_experience1, setAcadem_experience1] = useState(1);
   const [seminar_participation1, setSeminar_participation1] = useState(1);
-  const [til, setTil] = useState("");
+  const [til, setTil] = useState("B1");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -293,7 +293,7 @@ function Registratsiya() {
                   education.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -323,7 +323,7 @@ function Registratsiya() {
                   specialty.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -353,7 +353,7 @@ function Registratsiya() {
                   experience.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -383,7 +383,7 @@ function Registratsiya() {
                   achievement.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -413,7 +413,7 @@ function Registratsiya() {
                   qualification.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -442,7 +442,7 @@ function Registratsiya() {
                   academ_experience.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
@@ -472,7 +472,7 @@ function Registratsiya() {
                   seminar_participation.map((item, index) => {
                     return (
                       <option key={index} value={item.id}>
-                        {item.translations.uz.name}
+                        {item.name_uz}
                       </option>
                     );
                   })}
