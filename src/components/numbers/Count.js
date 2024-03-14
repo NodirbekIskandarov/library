@@ -21,12 +21,12 @@ const CounterAnimation = (props) => {
         }
       });
     };
-
+    var counter_ref_current = counterRef.current
     const observer = new IntersectionObserver(handleIntersect, options);
-    observer.observe(counterRef.current);
+    observer.observe(counter_ref_current);
 
     return () => {
-      observer.unobserve(counterRef.current);
+      observer.unobserve(counter_ref_current);
     };
   }, []);
 
