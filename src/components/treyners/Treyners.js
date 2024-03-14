@@ -64,7 +64,7 @@ function Treyners() {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -113,11 +113,6 @@ function Treyners() {
                         ) : lang==="ru" ? (
                           <p>{item.about_ru===null ? item.about : item.about_ru}</p>
                         ) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
-                        <div className="socials">
-                          <a href={item.telegram}><img src={telegram} alt="social"/></a>
-                          <a href={item.instagram}><img src={instagram} alt="social"/></a>
-                          <a href={item.facebook}><img src={facebook} alt="social"/></a>
-                        </div>
                       </div>
                     </div>
                   </div>
