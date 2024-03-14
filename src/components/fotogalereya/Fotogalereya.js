@@ -50,7 +50,7 @@ function Fotogalereya() {
         <div className="holidays">
           {data.map((item, index) => {
             return (
-              <div className="bigbox">
+              <div key={index} className="bigbox">
                 <div className="box" key={index}>
                   <img src={item.image} className="img" alt="rasm"/>
                   {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru===null ? item.name : item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en===null ? item.name : item.name_en}</h3>) : (<h3>{item.name}</h3>)}

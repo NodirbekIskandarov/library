@@ -33,9 +33,10 @@ function SamplePrevArrow(props) {
 function News() {
   const { t } = useTranslation();
 
+  const font = localStorage.getItem('font')
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"))
   // console.log(lang)
   useEffect(() => {
@@ -45,10 +46,8 @@ function News() {
         setData(response.data.news);
         // console.log(response.data.news)
       } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
+        console.log(error);
+      } 
     };
 
     fetchData();
@@ -97,8 +96,8 @@ function News() {
                             <div className="caruselItem">
                                 <div className="box">
                                     <img src={img1} alt="rasm" className="img"/>
-                                    {lang==="uz" ? (<h3>{item.name_uz}</h3>) : lang==="ru" ? (<h3>{item.name_ru}</h3>) : lang==="en" ? (<h3>{item.name_en}</h3>) : (<h3>{item.name}</h3>)}
-                                    {lang==="uz" ? (<p>{item.about_uz}</p>) : lang==="ru" ? (<p>{item.about_ru===null ? item.about : item.about_ru}</p>) : lang==="en" ? (<p>{item.about_en===null ? item.about : item.about_en}</p>) : (<p>{item.about}</p>)}
+                                    {lang==="uz" ? (<h3 className={`${font}h3`}>{item.name_uz}</h3>) : lang==="ru" ? (<h3 className={`${font}h3`}>{item.name_ru}</h3>) : lang==="en" ? (<h3 className={`${font}h3`}>{item.name_en}</h3>) : (<h3 className={`${font}h3`}>{item.name}</h3>)}
+                                    {lang==="uz" ? (<p className={`${font}p`}>{item.about_uz}</p>) : lang==="ru" ? (<p className={`${font}p`}>{item.about_ru===null ? item.about : item.about_ru}</p>) : lang==="en" ? (<p className={`${font}p`}>{item.about_en===null ? item.about : item.about_en}</p>) : (<p className={`${font}p`}>{item.about}</p>)}
                                 </div>
                                 <Link to={`/news/${item.id}`} className="btn">{t("batafsil")}</Link>
                             </div>

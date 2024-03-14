@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./tarix.css";
 import Line from "../line/Line";
-import books from "../../assets/images/books-1617327_1280 1.png";
 import { useLocation } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useTranslation } from "react-i18next";
@@ -9,6 +8,8 @@ import axios from "axios";
 import { BASE_URL, HISTORY } from "../../tools/urls";
 function Tarix() {
   const { t } = useTranslation();
+  const font = localStorage.getItem('font')
+
   const { state } = useLocation();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -89,9 +90,9 @@ function Tarix() {
                 </div>
               </div>
             </div>
-            <p className="textp">
+            <p  className={`${font}p textp`}>
               <div className="image">
-                <img src={data.file} alt="books image" />
+                <img src={data.file} alt="books" />
               </div>
               Lorem ipsum dolor sit amet consectetur. Ipsum sollicitudin egestas
               posuere a. Nisl est commodo adipiscing donec et tellus eu facilisi

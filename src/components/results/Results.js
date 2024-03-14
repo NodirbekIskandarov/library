@@ -9,11 +9,12 @@ import { BASE_URL, LANDING } from "../../tools/urls";
 import CounterAnimation from "../numbers/Count";
 function Results() {
   const { t } = useTranslation();
+  const font = localStorage.getItem('font')
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  let lang = JSON.parse(localStorage.getItem("lang"));
+  // let lang = JSON.parse(localStorage.getItem("lang"));
   // console.log(lang)
   useEffect(() => {
     const fetchData = async () => {
@@ -40,17 +41,17 @@ function Results() {
         <div className="numbers">
           <div className="box">
             <img src={group} alt="logo" />
-            <p>{t("jami_oquvchilarimiz_soni")}</p>
+            <p className={`${font}p`}>{t("jami_oquvchilarimiz_soni")}</p>
             <span><CounterAnimation count={data.offline + data.online-1}/></span>
           </div>
           <div className="box">
             <img src={macbook} alt="logo" />
-            <p>{t("online_oqigan_oquvchilarimiz_soni")}</p>
+            <p className={`${font}p`}>{t("online_oqigan_oquvchilarimiz_soni")}</p>
             <span><CounterAnimation count={data.online-1}/></span>
           </div>
           <div className="box">
             <img src={hat} alt="logo" />
-            <p>{t("offline_oqigan_oquvchilarimiz_soni")}</p>
+            <p className={`${font}p`}>{t("offline_oqigan_oquvchilarimiz_soni")}</p>
             <span><CounterAnimation count={data.offline-1}/></span>
           </div>
         </div>

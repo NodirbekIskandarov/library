@@ -1,23 +1,20 @@
 import React, { useState } from "react";
-import vector1 from "../../../assets/images/Vector (1).svg";
-import vector from "../../../assets/images/Vector.svg";
 import avatar from "../../../assets/images/eyeglasses_FILL0_wght400_GRAD0_opsz24 1.svg";
 import logo from "../../../assets/images/Layer_x0020_1.png";
 import "./navbar.css";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import Menu from "../Menu/Menu";
+import FontSizeButton from "../../../components/fontSizeButton/FontSizeButton";
 function Navbar() {
-  // const [lang, setLang] = useState("uz")
   const [showMenyu, setShowMenyu] = useState(true);
   const [btn1, setBtn1] = useState(false);
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
+  // const changeLanguage = (lng) => {
+  //   i18n.changeLanguage(lng);
+  // };
 
   const changedFunc = (props) => {
     i18n.changeLanguage(props);
@@ -40,6 +37,7 @@ function Navbar() {
               <img src={logo} alt="logo" />
             </a>
           </div>
+          <FontSizeButton/>
           <div className="navbar_right">
             <div className="searchFather">
               <label className="search">

@@ -27,6 +27,5 @@
 }
 .announcements .textPart p {
     margin-top: 16px;
-    font-size: 18px;
     color: var(--font-color, #1F1F1F);
 }

@@ -7,8 +7,7 @@ import { BASE_URL, LANDING } from "../../../tools/urls";
 function Menu({ showMenu, children }) {
   const { t } = useTranslation();
   const [data2, setData2] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   let lang = JSON.parse(localStorage.getItem("lang"));
   // console.log(lang)
   useEffect(() => {
@@ -18,9 +17,8 @@ function Menu({ showMenu, children }) {
         setData2(response.data.regions);
         //   console.log(response.data.regions)
       } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
+        // setError(error);
+        console.log(error)
       }
     };
 
@@ -129,11 +127,11 @@ function Menu({ showMenu, children }) {
                   >
                     {item.menu}
                     <div className="hoverMenu">
-                      {item.hoverMenu != data2
+                      {item.hoverMenu !== data2
                         ? item.hoverMenu &&
                           item.hoverMenu.map((item, index) => {
                             return (
-                              <div className="singleHoverMenu">
+                              <div key={index} className="singleHoverMenu">
                                 <Link
                                   onClick={showMenu}
                                   className="link"
@@ -149,7 +147,7 @@ function Menu({ showMenu, children }) {
                         : item.hoverMenu &&
                           item.hoverMenu.map((item, index) => {
                             return (
-                              <div className="singleHoverMenu">
+                              <div key={index} className="singleHoverMenu">
                                 <Link
                                   onClick={showMenu}
                                   className="link"

@@ -9,6 +9,8 @@ import { BASE_URL } from "../../tools/urls";
 function Selection() {
   const { t } = useTranslation();
 
+  const font = localStorage.getItem('font')
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,18 +60,18 @@ function Selection() {
             <div className="textPart">
               {data.map((item, index) => {
                 return (
-                  <div className="singleText">
+                  <div key={index} className="singleText">
                     <div className="countPart">
                       <span>{index + 1}</span>
                     </div>
                     {lang === "uz" ? (
-                      <p>{item.body_uz}</p>
+                      <p className={`${font}p`}>{item.body_uz}</p>
                     ) : lang === "ru" ? (
-                      <p>{item.body_ru === null ? item.body : item.body_ru}</p>
+                      <p className={`${font}p`}>{item.body_ru === null ? item.body : item.body_ru}</p>
                     ) : lang === "en" ? (
-                      <p>{item.body_en === null ? item.body : item.body_en}</p>
+                      <p className={`${font}p`}>{item.body_en === null ? item.body : item.body_en}</p>
                     ) : (
-                      <p>{item.body}</p>
+                      <p className={`${font}p`}>{item.body}</p>
                     )}
                   </div>
                 );

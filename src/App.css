@@ -8,3 +8,33 @@ button:hover {
     transform: scale(1.1);
     transition: 0.5s;
 }
+.redp {
+    font-size: 18px;
+}
+.yellowp {
+    font-size: 40px;
+}
+.redh1 {
+    font-size: 40px;
+}
+.yellowh1 {
+    font-size: 80px;
+}
+.redh2 {
+    font-size: 30px;
+}
+.yellowh2 {
+    font-size: 60px;
+}
+.redh3 {
+    font-size: 24px;
+}
+.yellowh3 {
+    font-size: 50px;
+}
+.redh4 {
+    font-size: 20px;
+}
+.yellowh4 {
+    font-size: 40px;
+}
