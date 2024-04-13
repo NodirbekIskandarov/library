@@ -37,7 +37,7 @@ function Navbar() {
               <img src={logo} alt="logo" />
             </a>
           </div>
-          <FontSizeButton/>
+          
           <div className="navbar_right">
             <div className="searchFather">
               <label className="search">
@@ -87,6 +87,9 @@ function Navbar() {
             </div>
             <div className="avatar">
               <img src={avatar} alt="avatar" />
+              <div className="font_buttons">
+                <FontSizeButton/>
+              </div>
             </div>
 
             <div className="menuBars" onClick={showMenu}>

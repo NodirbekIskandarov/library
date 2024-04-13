@@ -1,0 +1,15 @@
+.father_of_buttons {
+    width: 100px;
+    height: 50px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+}
+.father_of_buttons .single_font_button {
+    width: 50%;
+}
+.father_of_buttons .single_font_button .single_button {
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+}
